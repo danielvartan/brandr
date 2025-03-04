@@ -103,15 +103,33 @@ codes.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>To control the colors for each brand color scale, assign the desired
+
+<div class="section">
+<h3 id="path-to-brand-yml">Path to <code>_brand.yml</code><a class="anchor" aria-label="anchor" href="#path-to-brand-yml"></a></h3>
+
+
+<p><code>brandr</code> will always look for the <code>_brand.yml</code> file in the root directory of
+your project. If the file is not found, an error message will be displayed.
+You can also set the path to the file manually using the
+<code><a href="https://rdrr.io/r/base/options.html" class="external-link">options()</a></code> function:</p>
+<p></p><div class="sourceCode r"><pre><code>options(BRANDR_BRAND_YML = [PATH TO _brand.yml])
+</code></pre><p></p></div>
+</div>
+
+<div class="section">
+<h3 id="brand-color-scales">Brand color scales<a class="anchor" aria-label="anchor" href="#brand-color-scales"></a></h3>
+
+
+<p>To control the colors for each brand color scale, assign the desired
 hexadecimal color codes in a <code><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></code> vector to the
-following options:</p><ul><li><p><code>BRANDR_COLOR_SEQUENTIAL</code> for sequential color scales</p></li>
-<li><p><code>BRANDR_COLOR_DIVERGING</code> for diverging color scales</p></li>
-<li><p><code>BRANDR_COLOR_QUALITATIVE</code> for qualitative color scales</p></li>
+following options:</p><ul><li><p><code>BRANDR_COLOR_SEQUENTIAL</code>: For sequential color scales</p></li>
+<li><p><code>BRANDR_COLOR_DIVERGING</code>:  For diverging color scales</p></li>
+<li><p><code>BRANDR_COLOR_QUALITATIVE</code>: For qualitative color scales</p></li>
 </ul><p>Use <code><a href="get_brand_color.html">get_brand_color()</a></code> to get the hexadecimal
 color codes from the <code>_brand.yml</code> file.</p>
 <p>Example:</p>
 <p></p><div class="sourceCode r"><pre><code><span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span></span>
+<span>  BRANDR_BRAND_YML <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org//reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="st">"_brand.yml"</span><span class="op">)</span>,</span>
 <span>  BRANDR_COLOR_SEQUENTIAL <span class="op">=</span></span>
 <span>    <span class="fu"><a href="../reference/get_brand_color.html">get_brand_color</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"primary"</span>, <span class="st">"secondary"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>  BRANDR_COLOR_DIVERGING <span class="op">=</span></span>
@@ -119,6 +137,8 @@ color codes from the <code>_brand.yml</code> file.</p>
 <span>  BRANDR_COLOR_QUALITATIVE <span class="op">=</span></span>
 <span>    <span class="fu"><a href="../reference/get_brand_color.html">get_brand_color</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"primary"</span>, <span class="st">"secondary"</span>, <span class="st">"tertiary"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre><p></p></div>
+</div>
+
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -130,19 +150,24 @@ color codes from the <code>_brand.yml</code> file.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">interpolate_colors</span><span class="op">(</span><span class="fl">3</span>, color <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"red"</span>, <span class="st">"blue"</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"seq"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "#FF0000" "#7F007F" "#0000FF"</span>
+<span class="r-in"><span><span class="co">#&gt; [1] "#FF0000" "#7F007F" "#0000FF" # Expected</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Produce the same results when `type = "seq"`</span></span></span>
+<span class="r-in"><span><span class="co"># Same results of `type = "seq"`</span></span></span>
 <span class="r-in"><span><span class="fu">interpolate_colors</span><span class="op">(</span><span class="fl">3</span>, color <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"red"</span>, <span class="st">"white"</span>, <span class="st">"blue"</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"div"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "#FF0000" "#FFFFFF" "#0000FF"</span>
+<span class="r-in"><span><span class="co">#&gt; [1] "#FF0000" "#FFFFFF" "#0000FF" # Expected</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">interpolate_colors</span><span class="op">(</span><span class="fl">3</span>, color <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"red"</span>, <span class="st">"blue"</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"qual"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "red"  "blue" "red" </span>
+<span class="r-in"><span><span class="co">#&gt; [1] "red"  "blue" "red" # Expected</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">interpolate_colors</span><span class="op">(</span><span class="fl">3</span>, color <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"red"</span>, <span class="st">"blue"</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"seq"</span>, direction <span class="op">=</span> <span class="op">-</span><span class="fl">1</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "#0000FF" "#7F007F" "#FF0000"</span>
+<span class="r-in"><span><span class="co">#&gt; [1] "#0000FF" "#7F007F" "#FF0000" # Expected</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">interpolate_colors</span><span class="op">(</span><span class="fl">3</span>, color <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"red"</span>, <span class="st">"blue"</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"seq"</span>, bias <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "#FF0000" "#7F007F" "#0000FF"</span>
+<span class="r-in"><span><span class="co">#&gt; [1] "#FF0000" "#7F007F" "#0000FF" # Expected</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

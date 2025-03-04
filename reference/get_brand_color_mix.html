@@ -49,8 +49,7 @@
 <span>  position <span class="op">=</span> <span class="fl">500</span>,</span>
 <span>  color_1 <span class="op">=</span> <span class="st">"primary"</span>,</span>
 <span>  color_2 <span class="op">=</span> <span class="st">"secondary"</span>,</span>
-<span>  alpha <span class="op">=</span> <span class="fl">0.5</span>,</span>
-<span>  brand_yml <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org//reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="st">"_brand.yml"</span><span class="op">)</span></span>
+<span>  alpha <span class="op">=</span> <span class="fl">0.5</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -74,18 +73,50 @@ file.</p></dd>
 <dd><p>A number between 0 and 1 indicating the alpha transparency of
 the color mix (Default: <code>0.5</code>).</p></dd>
 
-
-<dt id="arg-brand-yml">brand_yml<a class="anchor" aria-label="anchor" href="#arg-brand-yml"></a></dt>
-<dd><p>(Optional) A <code><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></code> string
-indicating the path to the <code>_brand.yml</code> file. If not provided, the
-function will look for a <code>_brand.yml</code> file in the current working
-directory.</p></dd>
-
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></code> vector with hexadecimal color
 codes.</p>
+    </div>
+    <div class="section level2">
+    <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
+
+<div class="section">
+<h3 id="path-to-brand-yml">Path to <code>_brand.yml</code><a class="anchor" aria-label="anchor" href="#path-to-brand-yml"></a></h3>
+
+
+<p><code>brandr</code> will always look for the <code>_brand.yml</code> file in the root directory of
+your project. If the file is not found, an error message will be displayed.
+You can also set the path to the file manually using the
+<code><a href="https://rdrr.io/r/base/options.html" class="external-link">options()</a></code> function:</p>
+<p></p><div class="sourceCode r"><pre><code>options(BRANDR_BRAND_YML = [PATH TO _brand.yml])
+</code></pre><p></p></div>
+</div>
+
+<div class="section">
+<h3 id="brand-color-scales">Brand color scales<a class="anchor" aria-label="anchor" href="#brand-color-scales"></a></h3>
+
+
+<p>To control the colors for each brand color scale, assign the desired
+hexadecimal color codes in a <code><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></code> vector to the
+following options:</p><ul><li><p><code>BRANDR_COLOR_SEQUENTIAL</code>: For sequential color scales</p></li>
+<li><p><code>BRANDR_COLOR_DIVERGING</code>:  For diverging color scales</p></li>
+<li><p><code>BRANDR_COLOR_QUALITATIVE</code>: For qualitative color scales</p></li>
+</ul><p>Use <code><a href="get_brand_color.html">get_brand_color()</a></code> to get the hexadecimal
+color codes from the <code>_brand.yml</code> file.</p>
+<p>Example:</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span></span>
+<span>  BRANDR_BRAND_YML <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org//reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="st">"_brand.yml"</span><span class="op">)</span>,</span>
+<span>  BRANDR_COLOR_SEQUENTIAL <span class="op">=</span></span>
+<span>    <span class="fu"><a href="../reference/get_brand_color.html">get_brand_color</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"primary"</span>, <span class="st">"secondary"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>  BRANDR_COLOR_DIVERGING <span class="op">=</span></span>
+<span>    <span class="fu"><a href="../reference/get_brand_color.html">get_brand_color</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"primary"</span>, <span class="st">"white"</span>, <span class="st">"secondary"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>  BRANDR_COLOR_QUALITATIVE <span class="op">=</span></span>
+<span>    <span class="fu"><a href="../reference/get_brand_color.html">get_brand_color</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"primary"</span>, <span class="st">"secondary"</span>, <span class="st">"tertiary"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre><p></p></div>
+</div>
+
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -97,14 +128,14 @@ codes.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
-<span class="r-in"><span>  <span class="fu">get_brand_color_mix</span><span class="op">(</span></span></span>
-<span class="r-in"><span>    position <span class="op">=</span> <span class="fl">500</span>,</span></span>
-<span class="r-in"><span>    color_1 <span class="op">=</span> <span class="st">"primary"</span>,</span></span>
-<span class="r-in"><span>    color_2 <span class="op">=</span> <span class="st">"secondary"</span>,</span></span>
-<span class="r-in"><span>    alpha <span class="op">=</span> <span class="fl">0.5</span></span></span>
-<span class="r-in"><span>  <span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">}</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">get_brand_color_mix</span><span class="op">(</span></span></span>
+<span class="r-in"><span>  position <span class="op">=</span> <span class="fl">500</span>,</span></span>
+<span class="r-in"><span>  color_1 <span class="op">=</span> <span class="st">"primary"</span>,</span></span>
+<span class="r-in"><span>  color_2 <span class="op">=</span> <span class="st">"secondary"</span>,</span></span>
+<span class="r-in"><span>  alpha <span class="op">=</span> <span class="fl">0.5</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "#8A2C50"</span>
+<span class="r-in"><span><span class="co">#&gt; [1] "#8A2C50" # Expected</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
