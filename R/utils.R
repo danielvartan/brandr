@@ -3,8 +3,8 @@
 # library(prettycheck) # github.com/danielvartan/prettycheck
 
 clean_arg_list <- function(list) {
-  prettycheck:::assert_multi_class(list, c("list", "pairlist"))
-  prettycheck:::assert_list(as.list(list), names = "named")
+  checkmate::assert_multi_class(list, c("list", "pairlist"))
+  checkmate::assert_list(as.list(list), names = "named")
 
   list <- list |> nullify_list()
 
@@ -22,8 +22,8 @@ clean_arg_list <- function(list) {
 # library(prettycheck) # github.com/danielvartan/prettycheck
 
 nullify_list <- function(list) {
-  prettycheck:::assert_multi_class(list, c("list", "pairlist"))
-  prettycheck:::assert_list(as.list(list), names = "named")
+  checkmate::assert_multi_class(list, c("list", "pairlist"))
+  checkmate::assert_list(as.list(list), names = "named")
 
   for (i in names(list)) {
     if (!is.null(list[[i]]) && is.atomic(list[[i]])) {

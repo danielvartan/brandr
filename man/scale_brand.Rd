@@ -134,10 +134,10 @@ A \code{\link[ggplot2:continuous_scale]{ggplot2}} scale object.
 }
 \description{
 \verb{scale_*_brand_*()} functions provide color scales for
-\link[=?ggplot2]{ggplot2} based on brand colors defined in the \verb{_brand.yml}
-file. These functions create discrete, continuous, or binned scales with
-sequential, diverging, or qualitative color palettes that match your
-brand identity.
+\href{https://ggplot2.tidyverse.org/}{ggplot2} based on brand colors defined
+in the \verb{_brand.yml} file. These functions create discrete, continuous, or
+binned scales with sequential, diverging, or qualitative color palettes
+that match your brand identity.
 }
 \details{
 To control the colors for each brand color scale, assign the desired

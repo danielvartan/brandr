@@ -28,6 +28,8 @@ Imports:
     lifecycle (>= 1.0.4),
     ggplot2 (>= 3.5.1),
     grDevices (>= 4.3.0),
+    prettycheck,
+    rutils,
     yaml (>= 2.3.10)
 Suggests:
     bslib (>= 0.9.0),

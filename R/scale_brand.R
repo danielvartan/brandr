@@ -3,10 +3,10 @@
 #' @description
 #'
 #' `scale_*_brand_*()` functions provide color scales for
-#' [ggplot2][?ggplot2] based on brand colors defined in the `_brand.yml`
-#' file. These functions create discrete, continuous, or binned scales with
-#' sequential, diverging, or qualitative color palettes that match your
-#' brand identity.
+#' [ggplot2](https://ggplot2.tidyverse.org/) based on brand colors defined
+#' in the `_brand.yml` file. These functions create discrete, continuous, or
+#' binned scales with sequential, diverging, or qualitative color palettes
+#' that match your brand identity.
 #'
 #' @param aesthetics (Optional) A [`character`][base::character] string
 #'   indicating the name of the aesthetic of the scale (e.g., `"color"``,

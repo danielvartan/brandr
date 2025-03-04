@@ -77,7 +77,7 @@ Example:
 interpolate_colors(3, color = c("red", "blue"), type = "seq")
 
 # Produce the same results when `type = "seq"`
-interpolate_colors(3, color = c("red", "white"m "blue"), type = "div")
+interpolate_colors(3, color = c("red", "white", "blue"), type = "div")
 
 interpolate_colors(3, color = c("red", "blue"), type = "qual")
 
