@@ -20,14 +20,13 @@ scale_brand(
   direction = 1,
   na.value = NA,
   reverse = FALSE,
-  brand_yml = here::here("_brand.yml"),
   ...
 )
 
 scale_color_brand_d(
   aesthetics = "color",
   scale_type = "d",
-  color_type = "seq",
+  color_type = "qual",
   direction = 1,
   ...
 )
@@ -51,7 +50,7 @@ scale_color_brand_b(
 scale_colour_brand_d(
   aesthetics = "color",
   scale_type = "d",
-  color_type = "seq",
+  color_type = "qual",
   direction = 1,
   ...
 )
@@ -75,7 +74,7 @@ scale_colour_brand_b(
 scale_fill_brand_d(
   aesthetics = "fill",
   scale_type = "d",
-  color_type = "seq",
+  color_type = "qual",
   direction = 1,
   ...
 )
@@ -119,11 +118,6 @@ hexadecimal color code or one of the values in
 \item{reverse}{A \code{\link[base:logical]{logical}} indicating whether the
 legend or color bar should be reversed (Default: \code{FALSE}).}
 
-\item{brand_yml}{(Optional) A \code{\link[base:character]{character}} string
-indicating the path to the \verb{_brand.yml} file. If not provided, the
-function will look for a \verb{_brand.yml} file in the current working
-directory.}
-
 \item{...}{Additional arguments passed to the \code{ggplot2} scale function:
 \code{\link[ggplot2:discrete_scale]{discrete_scale()}},
 \code{\link[ggplot2:continuous_scale]{continuous_scale()}}, or
@@ -165,18 +159,42 @@ Example:
 }\if{html}{\out{</div>}}
 }
 \examples{
-if (base::interactive()) {
-  library(ggplot2)
+library(ggplot2)
 
-  ggplot(mtcars, aes(mpg, wt, color = cyl)) +
-    geom_bar() +
-    scale_color_brand_c() +
-    theme_bw()
+iris |>
+  ggplot(
+    aes(
+      x = Sepal.Length,
+      y = Sepal.Width,
+      shape = Species,
+      size = Species,
+      color = Species
+    )
+  ) +
+  geom_point() +
+  scale_color_brand_d() +
+  theme_bw()
 
-  ggplot(mtcars, aes(mpg, wt, fill = factor(cyl))) +
-    geom_boxplot() +
-    scale_fill_brand_d(color_type = "qual") +
-    theme_bw()
-}
+faithfuld |>
+  ggplot(aes(waiting, eruptions, fill = density)) +
+  geom_raster() +
+  scale_x_continuous(NULL, expand = c(0, 0)) +
+  scale_y_continuous(NULL, expand = c(0, 0)) +
+  scale_fill_brand_b() +
+  theme_bw()
+
+mtcars |>
+  ggplot(aes(mpg, wt, fill = factor(cyl))) +
+  geom_boxplot() +
+  scale_fill_brand_d() +
+  theme_bw()
+
+data.frame(x = runif(10000), y = runif(10000)) |>
+  ggplot(aes(x, y)) +
+  geom_hex() +
+  coord_fixed() +
+  scale_fill_brand_c() +
+  labs(fill = "") +
+  theme_bw()
 }
 \concept{ggplot2 functions.}

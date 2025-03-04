@@ -228,6 +228,18 @@
     },
     "10": {
       "@type": "SoftwareApplication",
+      "identifier": "prettycheck",
+      "name": "prettycheck",
+      "sameAs": "https://github.com/danielvartan/prettycheck"
+    },
+    "11": {
+      "@type": "SoftwareApplication",
+      "identifier": "rutils",
+      "name": "rutils",
+      "sameAs": "https://github.com/danielvartan/rutils"
+    },
+    "12": {
+      "@type": "SoftwareApplication",
       "identifier": "yaml",
       "name": "yaml",
       "version": ">= 2.3.10",
@@ -241,7 +253,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "106.791KB",
+  "fileSize": "110.114KB",
   "citation": [
     {
       "@type": "CreativeWork",
@@ -261,6 +273,8 @@
     }
   ],
   "releaseNotes": "https://github.com/danielvartan/brandr/blob/master/NEWS.md",
+  "readme": "https://github.com/danielvartan/brandr/blob/main/README.md",
   "contIntegration": ["https://github.com/danielvartan/brandr/actions/workflows/check-standard.yaml", "https://app.codecov.io/gh/danielvartan/brandr?branch=main"],
-  "developmentStatus": ["https://www.repostatus.org/#active", "https://lifecycle.r-lib.org/articles/stages.html#experimental"]
+  "developmentStatus": ["https://www.repostatus.org/#active", "https://lifecycle.r-lib.org/articles/stages.html#experimental"],
+  "keywords": ["brand-identity", "brand-management", "branding", "color-palettes", "color-schemes", "r-programming", "typography", "visual-assets", "visual-identity", "branding-tools", "project-theming", "brand-yml"]
 }

@@ -140,7 +140,7 @@ make_color_ramp <- function(
     direction = 1,
     values = NULL,
     n_prop = NULL,
-    n_prop_res = 10000,
+    n_prop_res = 100000,
     ...
   ) {
   checkmate::assert_int(n, lower = 1, null.ok = TRUE)

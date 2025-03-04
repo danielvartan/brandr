@@ -11,6 +11,14 @@
 
 groomr::remove_blank_line_dups(here::here("README.md"))
 
+# Copy `_brand.yml` to `./inst/extdata/` -----
+
+file.copy(
+  from = here::here("_brand.yml"),
+  to = here::here("inst", "extdata", "_brand.yml"),
+  overwrite = TRUE
+)
+
 # Update package versions in `DESCRIPTION` -----
 
 rutils::update_pkg_versions()

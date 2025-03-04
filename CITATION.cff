@@ -228,6 +228,28 @@ references:
   year: '2025'
   version: '>= 4.3.0'
 - type: software
+  title: prettycheck
+  abstract: 'prettycheck: Pretty assertive programming'
+  notes: Imports
+  url: https://danielvartan.github.io/prettycheck/
+  authors:
+  - family-names: Vartanian
+    given-names: Daniel
+    email: danvartan@gmail.com
+    orcid: https://orcid.org/0000-0001-7782-759X
+  year: '2025'
+- type: software
+  title: rutils
+  abstract: 'rutils: Utility Functions for R'
+  notes: Imports
+  url: https://danielvartan.github.io/rutils/
+  authors:
+  - family-names: Vartanian
+    given-names: Daniel
+    email: danvartan@gmail.com
+    orcid: https://orcid.org/0000-0001-7782-759X
+  year: '2025'
+- type: software
   title: yaml
   abstract: 'yaml: Methods to Convert R Data to YAML and Back'
   notes: Imports

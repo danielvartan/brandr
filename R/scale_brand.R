@@ -23,10 +23,6 @@
 #'   [`colors()`][grDevices::colors] (Default: `NA`).
 #' @param reverse A [`logical`][base::logical] indicating whether the
 #'   legend or color bar should be reversed (Default: `FALSE`).
-#' @param brand_yml (Optional) A [`character`][base::character] string
-#'   indicating the path to the `_brand.yml` file. If not provided, the
-#'   function will look for the `_brand.yml` file in the current working
-#'   directory.
 #' @param ... Additional arguments passed to the `ggplot2` scale function:
 #'   [`discrete_scale()`][ggplot2::discrete_scale],
 #'   [`continuous_scale()`][ggplot2::continuous_scale], or
@@ -35,25 +31,49 @@
 #' @return A [`ggplot2`][ggplot2::continuous_scale] scale object.
 #'
 #' @template param_direction
-#' @template param_brand_yml
 #' @template details_options
 #' @family ggplot2 functions.
 #' @export
 #'
 #' @examples
-#' if (base::interactive()) {
-#'   library(ggplot2)
+#' library(ggplot2)
 #'
-#'   ggplot(mtcars, aes(mpg, wt, color = cyl)) +
-#'     geom_bar() +
-#'     scale_color_brand_c() +
-#'     theme_bw()
+#' iris |>
+#'   ggplot(
+#'     aes(
+#'       x = Sepal.Length,
+#'       y = Sepal.Width,
+#'       shape = Species,
+#'       color = Species
+#'     )
+#'   ) +
+#'   geom_point(size = 5) +
+#'   scale_color_brand_d() +
+#'   theme_bw()
 #'
-#'   ggplot(mtcars, aes(mpg, wt, fill = factor(cyl))) +
-#'     geom_boxplot() +
-#'     scale_fill_brand_d(color_type = "qual") +
-#'     theme_bw()
-#' }
+#' faithfuld |>
+#'   ggplot(aes(waiting, eruptions, fill = density)) +
+#'   geom_raster() +
+#'   scale_x_continuous(NULL, expand = c(0, 0)) +
+#'   scale_y_continuous(NULL, expand = c(0, 0)) +
+#'   scale_fill_brand_b() +
+#'   labs(fill = "Density") +
+#'   theme_bw()
+#'
+#' mtcars |>
+#'   ggplot(aes(mpg, wt, fill = factor(cyl))) +
+#'   geom_boxplot() +
+#'   scale_fill_brand_d() +
+#'   labs(fill = "cyl") +
+#'   theme_bw()
+#'
+#' data.frame(x = runif(10000), y = runif(10000)) |>
+#'   ggplot(aes(x, y)) +
+#'   geom_hex() +
+#'   coord_fixed() +
+#'   scale_fill_brand_c() +
+#'   labs(fill = "") +
+#'   theme_bw()
 scale_brand <- function(
     aesthetics = "color", #nolint
     scale_type = "c",
@@ -61,7 +81,6 @@ scale_brand <- function(
     direction = 1,
     na.value = NA, # Must follow ggplot2 arg names. # "grey50" #nolint
     reverse = FALSE,
-    brand_yml = here::here("_brand.yml"),
     ...
   ) {
   # https://ggplot2-book.org/extensions#sec-new-scales to learn more.
@@ -85,7 +104,6 @@ scale_brand <- function(
   checkmate::assert_choice(direction, c(-1, 1))
   if (!is.na(na.value)) prettycheck::assert_color(na.value)
   checkmate::assert_flag(reverse)
-  checkmate::assert_file_exists(brand_yml)
 
   if (color_type %in% c("seq", "sequential")) {
     palette <- \(x) color_brand_sequential(x, direction = direction)
@@ -128,7 +146,7 @@ scale_brand <- function(
 scale_color_brand_d <- function(
     aesthetics = "color", #nolint
     scale_type = "d",
-    color_type = "seq",
+    color_type = "qual",
     direction = 1,
     ...
   ) {
@@ -176,7 +194,7 @@ scale_colour_brand_b <- scale_color_brand_b
 scale_fill_brand_d <- function(
     aesthetics = "fill", #nolint
     scale_type = "d",
-    color_type = "seq",
+    color_type = "qual",
     direction = 1,
     ...
   ) {
