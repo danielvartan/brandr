@@ -1,0 +1,47 @@
+Package: brandr
+Title: Brand Identity Management Using brand.yml Standard
+Version: 0.0.0
+Authors@R: c(
+        person(
+            given = "Daniel",
+            family = "Vartanian",
+            role = c("aut", "cre", "ccp", "cph"),
+            email = "danvartan@gmail.com",
+            comment = c(ORCID = "0000-0001-7782-759X")
+        )
+    )
+Description: Facilitate brand identity management using the 'brand.yml'
+    standard, providing functions to consistently access and apply brand
+    colors, typography, and other visual elements across your R projects.
+License: MIT + file LICENSE
+URL: https://danielvartan.github.io/brandr/,
+    https://github.com/danielvartan/brandr/
+BugReports: https://github.com/danielvartan/brandr/issues/
+Depends:
+    R (>= 4.3)
+Imports:
+    checkmate (>= 2.3.2),
+    cli (>= 3.6.3),
+    colorspace (>= 2.1.1),
+    dplyr (>= 1.1.4),
+    here (>= 1.0.1),
+    lifecycle (>= 1.0.4),
+    ggplot2 (>= 3.5.1),
+    grDevices (>= 4.3.0),
+    yaml (>= 2.3.10)
+Suggests:
+    bslib (>= 0.9.0),
+    covr (>= 3.6.4),
+    knitr (>= 1.49),
+    rmarkdown (>= 2.29),
+    spelling (>= 2.3.1),
+    testthat (>= 3.2.2)
+Remotes:
+    github::danielvartan/prettycheck,
+    github::danielvartan/rutils
+Config/testthat/edition: 3
+Encoding: UTF-8
+Language: en-US
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+LazyData: true

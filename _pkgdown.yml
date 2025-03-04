@@ -1,0 +1,55 @@
+# (2025-03-02) You may have to install the development version of `bslib` to
+# use `_brands.yml` (`remotes::install_github("rstudio/bslib", force = TRUE)`).
+
+url: https://danielvartan.github.io/brandr/
+
+template:
+  bslib:
+    version: 5
+    brand: "./_brand.yml"
+  math-rendering: mathjax
+  light-switch: true
+  params:
+    noindex: false
+
+navbar:
+  structure:
+    left:
+    - home
+    - intro
+    - reference
+    - articles
+    - news
+    right:
+    - search
+    - lightswitch
+    - github
+  components:
+    home: ~
+    intro: ~
+    articles: ~
+
+reference:
+- title: ggplot2
+  contents:
+  - scale_brand
+
+- title: Colors
+  contents:
+  - color_brand_sequential
+
+- title: Utilities
+  contents:
+  - get_brand_color
+  - get_brand_font
+  - get_brand_color_tint
+  - get_brand_color_mix
+  - interpolate_colors
+
+authors:
+  Daniel Vartanian:
+    href: https://github.com/danielvartan/
+
+development:
+  mode: auto
+  version_label: warning
