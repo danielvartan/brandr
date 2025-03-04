@@ -8,8 +8,7 @@ get_brand_color_mix(
   position = 500,
   color_1 = "primary",
   color_2 = "secondary",
-  alpha = 0.5,
-  brand_yml = here::here("_brand.yml")
+  alpha = 0.5
 )
 }
 \arguments{
@@ -23,11 +22,6 @@ file.}
 
 \item{alpha}{A number between 0 and 1 indicating the alpha transparency of
 the color mix (Default: \code{0.5}).}
-
-\item{brand_yml}{(Optional) A \code{\link[base:character]{character}} string
-indicating the path to the \verb{_brand.yml} file. If not provided, the
-function will look for a \verb{_brand.yml} file in the current working
-directory.}
 }
 \value{
 A \code{\link[base:character]{character}} vector with hexadecimal color
@@ -36,15 +30,54 @@ codes.
 \description{
 \code{get_brand_color_mix()} mixes two specific brand colors.
 }
-\examples{
-if (interactive()) {
-  get_brand_color_mix(
-    position = 500,
-    color_1 = "primary",
-    color_2 = "secondary",
-    alpha = 0.5
-  )
+\details{
+\subsection{Path to \verb{_brand.yml}}{
+
+\code{brandr} will always look for the \verb{_brand.yml} file in the root directory of
+your project. If the file is not found, an error message will be displayed.
+You can also set the path to the file manually using the
+\code{\link[base:options]{options()}} function:
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = [PATH TO _brand.yml])
+}\if{html}{\out{</div>}}
 }
+
+\subsection{Brand color scales}{
+
+To control the colors for each brand color scale, assign the desired
+hexadecimal color codes in a \code{\link[base:character]{character}} vector to the
+following options:
+\itemize{
+\item \code{BRANDR_COLOR_SEQUENTIAL}: For sequential color scales
+\item \code{BRANDR_COLOR_DIVERGING}:  For diverging color scales
+\item \code{BRANDR_COLOR_QUALITATIVE}: For qualitative color scales
+}
+
+Use \code{\link[=get_brand_color]{get_brand_color()}} to get the hexadecimal
+color codes from the \verb{_brand.yml} file.
+
+Example:
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(
+  BRANDR_BRAND_YML = here::here("_brand.yml"),
+  BRANDR_COLOR_SEQUENTIAL =
+    get_brand_color(c("primary", "secondary")),
+  BRANDR_COLOR_DIVERGING =
+    get_brand_color(c("primary", "white", "secondary")),
+  BRANDR_COLOR_QUALITATIVE =
+    get_brand_color(c("primary", "secondary", "tertiary"))
+)
+}\if{html}{\out{</div>}}
+}
+}
+\examples{
+get_brand_color_mix(
+  position = 500,
+  color_1 = "primary",
+  color_2 = "secondary",
+  alpha = 0.5
+)
+#> [1] "#8A2C50" # Expected
 }
 \seealso{
 Other utility functions.: 

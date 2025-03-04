@@ -4,17 +4,12 @@
 \alias{get_brand_font}
 \title{Get brand fonts/typefaces}
 \usage{
-get_brand_font(font, brand_yml = here::here("_brand.yml"))
+get_brand_font(font)
 }
 \arguments{
 \item{font}{A \code{\link[base:character]{character}} vector indicating the name of
 fonts/typefaces categories present in the \code{typography} section of the
 \verb{_brand.yml} file.}
-
-\item{brand_yml}{(Optional) A \code{\link[base:character]{character}} string
-indicating the path to the \verb{_brand.yml} file. If not provided, the
-function will look for a \verb{_brand.yml} file in the current working
-directory.}
 }
 \value{
 A \code{\link[base:character]{character}} vector with fonts/typeface names.
@@ -23,16 +18,64 @@ A \code{\link[base:character]{character}} vector with fonts/typeface names.
 \code{get_brand_font()} retrieves the names of fonts/typefaces in the
 \verb{_brand.yml} file.
 }
-\examples{
-if (interactive()) {
-  get_brand_font("base")
-  get_brand_font("headings")
-  get_brand_font("monospace")
-  get_brand_font("monospace-inline")
-  get_brand_font("monospace-block")
+\details{
+\subsection{Path to \verb{_brand.yml}}{
 
-  get_brand_font(c("base", "headings"))
+\code{brandr} will always look for the \verb{_brand.yml} file in the root directory of
+your project. If the file is not found, an error message will be displayed.
+You can also set the path to the file manually using the
+\code{\link[base:options]{options()}} function:
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = [PATH TO _brand.yml])
+}\if{html}{\out{</div>}}
 }
+
+\subsection{Brand color scales}{
+
+To control the colors for each brand color scale, assign the desired
+hexadecimal color codes in a \code{\link[base:character]{character}} vector to the
+following options:
+\itemize{
+\item \code{BRANDR_COLOR_SEQUENTIAL}: For sequential color scales
+\item \code{BRANDR_COLOR_DIVERGING}:  For diverging color scales
+\item \code{BRANDR_COLOR_QUALITATIVE}: For qualitative color scales
+}
+
+Use \code{\link[=get_brand_color]{get_brand_color()}} to get the hexadecimal
+color codes from the \verb{_brand.yml} file.
+
+Example:
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(
+  BRANDR_BRAND_YML = here::here("_brand.yml"),
+  BRANDR_COLOR_SEQUENTIAL =
+    get_brand_color(c("primary", "secondary")),
+  BRANDR_COLOR_DIVERGING =
+    get_brand_color(c("primary", "white", "secondary")),
+  BRANDR_COLOR_QUALITATIVE =
+    get_brand_color(c("primary", "secondary", "tertiary"))
+)
+}\if{html}{\out{</div>}}
+}
+}
+\examples{
+get_brand_font("base")
+#> [1] "Open Sans" # Expected
+
+get_brand_font("headings")
+#> [1] "Rubik" # Expected
+
+get_brand_font("monospace")
+#> [1] "IBM Plex Mono" # Expected
+
+get_brand_font("monospace-inline")
+#> [1] "IBM Plex Mono" # Expected
+
+get_brand_font("monospace-block")
+#> [1] "IBM Plex Mono" # Expected
+
+get_brand_font(c("base", "headings"))
+#> [1] "Open Sans" "Rubik" # Expected
 }
 \seealso{
 Other utility functions.: 

@@ -17,11 +17,14 @@
 #' @export
 #'
 #' @examples
-#' if (interactive()) {
-#'   color_brand_sequential(5)
-#'   color_brand_diverging(5)
-#'   color_brand_qualitative(5)
-#' }
+#' color_brand_sequential(5)
+#' #> [1] "#DA4E3C" "#B13C45" "#892B4F" "#611A59" "#390963" # Expected
+#'
+#' color_brand_diverging(5)
+#' #> [1] "#DA4E3C" "#ECA69D" "#FFFFFF" "#9C83B1" "#390963" # Expected
+#'
+#' color_brand_qualitative(5)
+#' #> [1] "#DA4E3C" "#390963" "#FB9706" "#DA4E3C" "#390963" # Expected
 color_brand_sequential <- function(n, direction = 1) {
   interpolate_colors(
     n = n,

@@ -11,25 +11,29 @@
 #' @return A [`character`][base::character] vector with hexadecimal color
 #'   codes.
 #'
-#' @template param_brand_yml
+#' @template details_options
 #' @family utility functions.
 #' @export
 #'
 #' @examples
-#' if (interactive()) {
-#'   get_brand_color("primary")
-#'   get_brand_color("secondary")
-#'   get_brand_color("tertiary")
+#' get_brand_color("primary")
+#' #> [1] "#DA4E3C" # Expected
 #'
-#'   get_brand_color(c("primary", "secondary"))
-#'   get_brand_color(c("red", "green", "blue"))
-#' }
-get_brand_color <- function(color, brand_yml = here::here("_brand.yml")) {
+#' get_brand_color("secondary")
+#' #> [1] "#390963" # Expected
+#'
+#' get_brand_color("tertiary")
+#' #> [1] "#FB9706" # Expected
+#'
+#' get_brand_color(c("primary", "secondary"))
+#' #> [1] "#DA4E3C" "#390963" # Expected
+#'
+#' get_brand_color(c("red", "purple", "orange"))
+#' #> [1] "#DA4E3C" "#390963" "#F06F20" # Expected
+get_brand_color <- function(color) {
   checkmate::assert_character(color, null.ok = FALSE, any.missing = FALSE)
-  checkmate::assert_string(basename(brand_yml), pattern = "_brand.yml")
-  checkmate::assert_file_exists(brand_yml)
 
-  brands_list <- yaml::read_yaml(brand_yml)
+  brands_list <- yaml::read_yaml(assert_brand_yml())
   palette_names <- brands_list$color$palette |> names()
   color_names <- brands_list$color |> names()
 
@@ -85,29 +89,32 @@ get_brand_color <- function(color, brand_yml = here::here("_brand.yml")) {
 #'
 #' @return A [`character`][base::character] vector with fonts/typeface names.
 #'
-#' @template param_brand_yml
+#' @template details_options
 #' @family utility functions.
 #' @export
 #'
 #' @examples
-#' if (interactive()) {
-#'   get_brand_font("base")
-#'   get_brand_font("headings")
-#'   get_brand_font("monospace")
-#'   get_brand_font("monospace-inline")
-#'   get_brand_font("monospace-block")
+#' get_brand_font("base")
+#' #> [1] "Open Sans" # Expected
 #'
-#'   get_brand_font(c("base", "headings"))
-#' }
-get_brand_font <- function( #nolint
-    font, #nolint
-    brand_yml = here::here("_brand.yml")
-  ) {
+#' get_brand_font("headings")
+#' #> [1] "Rubik" # Expected
+#'
+#' get_brand_font("monospace")
+#' #> [1] "IBM Plex Mono" # Expected
+#'
+#' get_brand_font("monospace-inline")
+#' #> [1] "IBM Plex Mono" # Expected
+#'
+#' get_brand_font("monospace-block")
+#' #> [1] "IBM Plex Mono" # Expected
+#'
+#' get_brand_font(c("base", "headings"))
+#' #> [1] "Open Sans" "Rubik" # Expected
+get_brand_font <- function(font) { #nolint
   checkmate::assert_character(font, null.ok = FALSE, any.missing = FALSE)
-  checkmate::assert_string(brand_yml, pattern = "\\_brand\\.yml$")
-  checkmate::assert_file_exists(brand_yml)
 
-  brands_list <- yaml::read_yaml(brand_yml)
+  brands_list <- yaml::read_yaml(assert_brand_yml())
   typography_names <- brands_list$typography |> names()
 
   valid_values <- c(
@@ -176,26 +183,21 @@ get_brand_font <- function( #nolint
 #'   codes.
 #'
 #' @template param_position
-#' @template param_brand_yml
+#' @template details_options
 #' @family utility functions.
 #' @export
 #'
 #' @examples
-#' if (interactive()) {
-#'   seq(0, 1000, 250)
-#'   #> [1] 0  250  500  750 1000 # Expected
+#' seq(0, 1000, 250)
+#' #> [1]    0  250  500  750 1000 # Expected
 #'
-#'   get_brand_color_tint(seq(0, 1000, 250), color = "primary")
-#'   #> [1] "#000000" "#6D271E" "#DA4E3C" "#ECA69D" "#FFFFFF" # Expected
-#' }
+#' get_brand_color_tint(seq(0, 1000, 250), color = "primary")
+#' #> [1] "#000000" "#6D271E" "#DA4E3C" "#ECA69D" "#FFFFFF" # Expected
 get_brand_color_tint <- function(
     position = 500, #nolint
-    color = "primary",
-    brand_yml = here::here("_brand.yml")
+    color = "primary"
   ) {
   checkmate::assert_integerish(position, lower = 0, upper = 1000)
-  checkmate::assert_string(brand_yml, pattern = "\\_brand\\.yml$")
-  checkmate::assert_file_exists(brand_yml)
 
   color <- get_brand_color(color)
 
@@ -223,30 +225,26 @@ get_brand_color_tint <- function(
 #'   codes.
 #'
 #' @template param_position
-#' @template param_brand_yml
+#' @template details_options
 #' @family utility functions.
 #' @export
 #'
 #' @examples
-#' if (interactive()) {
-#'   get_brand_color_mix(
-#'     position = 500,
-#'     color_1 = "primary",
-#'     color_2 = "secondary",
-#'     alpha = 0.5
-#'   )
-#' }
+#' get_brand_color_mix(
+#'   position = 500,
+#'   color_1 = "primary",
+#'   color_2 = "secondary",
+#'   alpha = 0.5
+#' )
+#' #> [1] "#8A2C50" # Expected
 get_brand_color_mix <- function(
     position = 500, #nolint
     color_1 = "primary",
     color_2 = "secondary",
-    alpha = 0.5,
-    brand_yml = here::here("_brand.yml")
+    alpha = 0.5
   ) {
   checkmate::assert_integerish(position, lower = 0, upper = 1000)
   checkmate::assert_number(alpha, lower = 0, upper = 1)
-  checkmate::assert_string(brand_yml, pattern = "\\_brand\\.yml$")
-  checkmate::assert_file_exists(brand_yml)
 
   # scales::rescale(0.9, to = c(0, 1000), from = c(-1, 1))
 

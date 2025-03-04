@@ -24,15 +24,20 @@
 #'
 #' @examples
 #' interpolate_colors(3, color = c("red", "blue"), type = "seq")
+#' #> [1] "#FF0000" "#7F007F" "#0000FF" # Expected
 #'
-#' # Produce the same results when `type = "seq"`
+#' # Same results of `type = "seq"`
 #' interpolate_colors(3, color = c("red", "white", "blue"), type = "div")
+#' #> [1] "#FF0000" "#FFFFFF" "#0000FF" # Expected
 #'
 #' interpolate_colors(3, color = c("red", "blue"), type = "qual")
+#' #> [1] "red"  "blue" "red" # Expected
 #'
 #' interpolate_colors(3, color = c("red", "blue"), type = "seq", direction = -1)
+#' #> [1] "#0000FF" "#7F007F" "#FF0000" # Expected
 #'
 #' interpolate_colors(3, color = c("red", "blue"), type = "seq", bias = 100)
+#' #> [1] "#FF0000" "#7F007F" "#0000FF" # Expected
 interpolate_colors <- function(
     n, #nolint
     colors = getOption("BRANDR_COLOR_SEQUENTIAL"),
@@ -116,24 +121,31 @@ interpolate_colors <- function(
 #'
 #' @examples
 #' make_color_ramp(3, colors = c("red", "blue"))
+#' #> [1] "#FF0000" "#7F007F" "#0000FF" # Expected
 #'
 #' make_color_ramp(3, colors = c("red", "blue"), direction = -1)
+#' #> [1] "#0000FF" "#7F007F" "#FF0000" # Expected
 #'
 #' make_color_ramp(3, colors = c("red", "blue"), bias = 100)
+#' #> [1] "#FF0000" "#7F007F" "#0000FF" # Expected
 #'
 #' make_color_ramp(
 #'   n = 3,
 #'   colors = c("red", "blue"),
 #'   values = c("low", "middle", "high")
 #' )
+#' #>       low    middle      high # Expected
+#' #> "#FF0000" "#7F007F" "#0000FF"
 #'
 #' make_color_ramp(n_prop = c(0.1, 0.5, 1), colors = c("red", "blue"))
+#' #> [1] "#E50019" "#7F007F" "#0000FF" # Expected
 #'
 #' make_color_ramp(
 #'   n_prop = c(0.1, 0.5, 1),
 #'   colors = c("red", "blue"),
-#'   nprop_res = 10
+#'   n_prop_res = 10
 #' )
+#' #> [1] "#FF0000" "#8D0071" "#0000FF" # Expected
 make_color_ramp <- function(
     n = NULL, #nolint
     colors = getOption("BRANDR_COLOR_SEQUENTIAL"),

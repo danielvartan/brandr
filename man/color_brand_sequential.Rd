@@ -40,13 +40,26 @@ and qualitative brand color scales. They serve as facilitators for the
 visualization of the colors being used in each brand scale.
 }
 \details{
+\subsection{Path to \verb{_brand.yml}}{
+
+\code{brandr} will always look for the \verb{_brand.yml} file in the root directory of
+your project. If the file is not found, an error message will be displayed.
+You can also set the path to the file manually using the
+\code{\link[base:options]{options()}} function:
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = [PATH TO _brand.yml])
+}\if{html}{\out{</div>}}
+}
+
+\subsection{Brand color scales}{
+
 To control the colors for each brand color scale, assign the desired
 hexadecimal color codes in a \code{\link[base:character]{character}} vector to the
 following options:
 \itemize{
-\item \code{BRANDR_COLOR_SEQUENTIAL} for sequential color scales
-\item \code{BRANDR_COLOR_DIVERGING} for diverging color scales
-\item \code{BRANDR_COLOR_QUALITATIVE} for qualitative color scales
+\item \code{BRANDR_COLOR_SEQUENTIAL}: For sequential color scales
+\item \code{BRANDR_COLOR_DIVERGING}:  For diverging color scales
+\item \code{BRANDR_COLOR_QUALITATIVE}: For qualitative color scales
 }
 
 Use \code{\link[=get_brand_color]{get_brand_color()}} to get the hexadecimal
@@ -55,6 +68,7 @@ color codes from the \verb{_brand.yml} file.
 Example:
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{options(
+  BRANDR_BRAND_YML = here::here("_brand.yml"),
   BRANDR_COLOR_SEQUENTIAL =
     get_brand_color(c("primary", "secondary")),
   BRANDR_COLOR_DIVERGING =
@@ -64,12 +78,16 @@ Example:
 )
 }\if{html}{\out{</div>}}
 }
-\examples{
-if (interactive()) {
-  color_brand_sequential(5)
-  color_brand_diverging(5)
-  color_brand_qualitative(5)
 }
+\examples{
+color_brand_sequential(5)
+#> [1] "#DA4E3C" "#B13C45" "#892B4F" "#611A59" "#390963" # Expected
+
+color_brand_diverging(5)
+#> [1] "#DA4E3C" "#ECA69D" "#FFFFFF" "#9C83B1" "#390963" # Expected
+
+color_brand_qualitative(5)
+#> [1] "#DA4E3C" "#390963" "#FB9706" "#DA4E3C" "#390963" # Expected
 }
 \seealso{
 Other color functions.: 

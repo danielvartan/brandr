@@ -4,11 +4,7 @@
 \alias{get_brand_color_tint}
 \title{Get tints of brand colors}
 \usage{
-get_brand_color_tint(
-  position = 500,
-  color = "primary",
-  brand_yml = here::here("_brand.yml")
-)
+get_brand_color_tint(position = 500, color = "primary")
 }
 \arguments{
 \item{position}{(Optional) A \code{\link[base:numeric]{numeric}} vector indicating
@@ -18,11 +14,6 @@ positions is from \code{0} to \code{1000} (Default: \code{500}).}
 \item{color}{A \code{\link[base:character]{character}} string indicating the name
 of a color present in the \code{color} section of the \verb{_brand.yml}
 file (Default: \code{"primary"}).}
-
-\item{brand_yml}{(Optional) A \code{\link[base:character]{character}} string
-indicating the path to the \verb{_brand.yml} file. If not provided, the
-function will look for a \verb{_brand.yml} file in the current working
-directory.}
 }
 \value{
 A \code{\link[base:character]{character}} vector with hexadecimal color
@@ -34,14 +25,52 @@ specific brand color, from black (position 0) through the brand color
 (position 500) to white (position 1000), and returns the hexadecimal color
 code at the specified position.
 }
-\examples{
-if (interactive()) {
-  seq(0, 1000, 250)
-  #> [1] 0  250  500  750 1000 # Expected
+\details{
+\subsection{Path to \verb{_brand.yml}}{
 
-  get_brand_color_tint(seq(0, 1000, 250), color = "primary")
-  #> [1] "#000000" "#6D271E" "#DA4E3C" "#ECA69D" "#FFFFFF" # Expected
+\code{brandr} will always look for the \verb{_brand.yml} file in the root directory of
+your project. If the file is not found, an error message will be displayed.
+You can also set the path to the file manually using the
+\code{\link[base:options]{options()}} function:
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = [PATH TO _brand.yml])
+}\if{html}{\out{</div>}}
 }
+
+\subsection{Brand color scales}{
+
+To control the colors for each brand color scale, assign the desired
+hexadecimal color codes in a \code{\link[base:character]{character}} vector to the
+following options:
+\itemize{
+\item \code{BRANDR_COLOR_SEQUENTIAL}: For sequential color scales
+\item \code{BRANDR_COLOR_DIVERGING}:  For diverging color scales
+\item \code{BRANDR_COLOR_QUALITATIVE}: For qualitative color scales
+}
+
+Use \code{\link[=get_brand_color]{get_brand_color()}} to get the hexadecimal
+color codes from the \verb{_brand.yml} file.
+
+Example:
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(
+  BRANDR_BRAND_YML = here::here("_brand.yml"),
+  BRANDR_COLOR_SEQUENTIAL =
+    get_brand_color(c("primary", "secondary")),
+  BRANDR_COLOR_DIVERGING =
+    get_brand_color(c("primary", "white", "secondary")),
+  BRANDR_COLOR_QUALITATIVE =
+    get_brand_color(c("primary", "secondary", "tertiary"))
+)
+}\if{html}{\out{</div>}}
+}
+}
+\examples{
+seq(0, 1000, 250)
+#> [1]    0  250  500  750 1000 # Expected
+
+get_brand_color_tint(seq(0, 1000, 250), color = "primary")
+#> [1] "#000000" "#6D271E" "#DA4E3C" "#ECA69D" "#FFFFFF" # Expected
 }
 \seealso{
 Other utility functions.: 

@@ -30,13 +30,13 @@ navbar:
     articles: ~
 
 reference:
-- title: ggplot2
-  contents:
-  - scale_brand
-
 - title: Colors
   contents:
   - color_brand_sequential
+
+- title: ggplot2
+  contents:
+  - scale_brand
 
 - title: Utilities
   contents:

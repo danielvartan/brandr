@@ -2,10 +2,11 @@
 
 default_options <- function(option) {
   brandr_options <- list(
+    "BRANDR_BRAND_YML" = here::here("_brand.yml"),
     "BRANDR_COLOR_SEQUENTIAL" =
-      get_brand_color(c("primary", "secondary")),
+      get_brand_color(c("secondary", "primary", "tertiary")),
     "BRANDR_COLOR_DIVERGING" =
-      get_brand_color(c("primary", "white", "secondary")),
+      get_brand_color(c("secondary", "white", "tertiary")),
     "BRANDR_COLOR_QUALITATIVE" =
       get_brand_color(c("primary", "secondary", "tertiary"))
   )

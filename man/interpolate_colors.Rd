@@ -49,13 +49,26 @@ codes.
 and qualitative color scales.
 }
 \details{
+\subsection{Path to \verb{_brand.yml}}{
+
+\code{brandr} will always look for the \verb{_brand.yml} file in the root directory of
+your project. If the file is not found, an error message will be displayed.
+You can also set the path to the file manually using the
+\code{\link[base:options]{options()}} function:
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = [PATH TO _brand.yml])
+}\if{html}{\out{</div>}}
+}
+
+\subsection{Brand color scales}{
+
 To control the colors for each brand color scale, assign the desired
 hexadecimal color codes in a \code{\link[base:character]{character}} vector to the
 following options:
 \itemize{
-\item \code{BRANDR_COLOR_SEQUENTIAL} for sequential color scales
-\item \code{BRANDR_COLOR_DIVERGING} for diverging color scales
-\item \code{BRANDR_COLOR_QUALITATIVE} for qualitative color scales
+\item \code{BRANDR_COLOR_SEQUENTIAL}: For sequential color scales
+\item \code{BRANDR_COLOR_DIVERGING}:  For diverging color scales
+\item \code{BRANDR_COLOR_QUALITATIVE}: For qualitative color scales
 }
 
 Use \code{\link[=get_brand_color]{get_brand_color()}} to get the hexadecimal
@@ -64,6 +77,7 @@ color codes from the \verb{_brand.yml} file.
 Example:
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{options(
+  BRANDR_BRAND_YML = here::here("_brand.yml"),
   BRANDR_COLOR_SEQUENTIAL =
     get_brand_color(c("primary", "secondary")),
   BRANDR_COLOR_DIVERGING =
@@ -73,17 +87,23 @@ Example:
 )
 }\if{html}{\out{</div>}}
 }
+}
 \examples{
 interpolate_colors(3, color = c("red", "blue"), type = "seq")
+#> [1] "#FF0000" "#7F007F" "#0000FF" # Expected
 
-# Produce the same results when `type = "seq"`
+# Same results of `type = "seq"`
 interpolate_colors(3, color = c("red", "white", "blue"), type = "div")
+#> [1] "#FF0000" "#FFFFFF" "#0000FF" # Expected
 
 interpolate_colors(3, color = c("red", "blue"), type = "qual")
+#> [1] "red"  "blue" "red" # Expected
 
 interpolate_colors(3, color = c("red", "blue"), type = "seq", direction = -1)
+#> [1] "#0000FF" "#7F007F" "#FF0000" # Expected
 
 interpolate_colors(3, color = c("red", "blue"), type = "seq", bias = 100)
+#> [1] "#FF0000" "#7F007F" "#0000FF" # Expected
 }
 \seealso{
 Other color functions.: 

@@ -4,16 +4,11 @@
 \alias{get_brand_color}
 \title{Get brand colors}
 \usage{
-get_brand_color(color, brand_yml = here::here("_brand.yml"))
+get_brand_color(color)
 }
 \arguments{
 \item{color}{A \code{\link[base:character]{character}} vector indicating the name of
 colors present in the \code{color} section of the \verb{_brand.yml} file.}
-
-\item{brand_yml}{(Optional) A \code{\link[base:character]{character}} string
-indicating the path to the \verb{_brand.yml} file. If not provided, the
-function will look for a \verb{_brand.yml} file in the current working
-directory.}
 }
 \value{
 A \code{\link[base:character]{character}} vector with hexadecimal color
@@ -23,15 +18,61 @@ codes.
 \code{get_brand_color()} retrieves hexadecimal color codes from the \verb{_brand.yml}
 file.
 }
-\examples{
-if (interactive()) {
-  get_brand_color("primary")
-  get_brand_color("secondary")
-  get_brand_color("tertiary")
+\details{
+\subsection{Path to \verb{_brand.yml}}{
 
-  get_brand_color(c("primary", "secondary"))
-  get_brand_color(c("red", "green", "blue"))
+\code{brandr} will always look for the \verb{_brand.yml} file in the root directory of
+your project. If the file is not found, an error message will be displayed.
+You can also set the path to the file manually using the
+\code{\link[base:options]{options()}} function:
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = [PATH TO _brand.yml])
+}\if{html}{\out{</div>}}
 }
+
+\subsection{Brand color scales}{
+
+To control the colors for each brand color scale, assign the desired
+hexadecimal color codes in a \code{\link[base:character]{character}} vector to the
+following options:
+\itemize{
+\item \code{BRANDR_COLOR_SEQUENTIAL}: For sequential color scales
+\item \code{BRANDR_COLOR_DIVERGING}:  For diverging color scales
+\item \code{BRANDR_COLOR_QUALITATIVE}: For qualitative color scales
+}
+
+Use \code{\link[=get_brand_color]{get_brand_color()}} to get the hexadecimal
+color codes from the \verb{_brand.yml} file.
+
+Example:
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(
+  BRANDR_BRAND_YML = here::here("_brand.yml"),
+  BRANDR_COLOR_SEQUENTIAL =
+    get_brand_color(c("primary", "secondary")),
+  BRANDR_COLOR_DIVERGING =
+    get_brand_color(c("primary", "white", "secondary")),
+  BRANDR_COLOR_QUALITATIVE =
+    get_brand_color(c("primary", "secondary", "tertiary"))
+)
+}\if{html}{\out{</div>}}
+}
+}
+\examples{
+get_brand_color("primary")
+#> [1] "#DA4E3C" # Expected
+
+get_brand_color("secondary")
+#> [1] "#390963" # Expected
+
+get_brand_color("tertiary")
+#> [1] "#FB9706" # Expected
+
+get_brand_color(c("primary", "secondary"))
+#> [1] "#DA4E3C" "#390963" # Expected
+
+get_brand_color(c("red", "purple", "orange"))
+#> [1] "#DA4E3C" "#390963" "#F06F20" # Expected
 }
 \seealso{
 Other utility functions.: 

@@ -49,7 +49,6 @@ remotes::install_github("danielvartan/brandr")
   `scale_color_brand_b()`, `scale_fill_brand_d()`,
   `scale_fill_brand_c()`, `scale_fill_brand_b()`:
   [`ggplot2`](https://ggplot2.tidyverse.org/) scales for brand colors
-- `interpolate_colors()`: Interpolate colors
 - `get_brand_color()`: Get a brand color by name
 - `get_brand_color_tint()`: Get a brand color tint by name
 - `get_brand_color_mix()`: Get a mix of brand colors
