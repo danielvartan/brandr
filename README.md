@@ -1,4 +1,4 @@
-# brandr <a href = "https://danielvartan.github.io/brandr/"><img src = "man/figures/hex-logo.svg" align="right" width="150" /></a>
+# brandr <a href = "https://danielvartan.github.io/brandr/"><img src = "man/figures/hex-logo.svg" align="right" width="135" /></a>
 
 <!-- quarto render -->
 
