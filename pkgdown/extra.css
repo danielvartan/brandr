@@ -1,3 +1,7 @@
+.navbar {
+  background-color: #35131F
+}
+
 [data-bs-theme="dark"] pre, [data-bs-theme="dark"] code {
   color: #FFFFFF;
 }
