@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #35131F
+  background-color: #35131F !important;
 }
 
 [data-bs-theme="dark"] pre, [data-bs-theme="dark"] code {
