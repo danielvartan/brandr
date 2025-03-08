@@ -6,6 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Brand Identity Management Using brand.yml Standard • brandr</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <script src="lightswitch.js"></script><script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/Open_Sans-0.4.9/font.css" rel="stylesheet">
@@ -13,10 +19,11 @@
 <link href="deps/IBM_Plex_Mono-0.4.9/font.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><script src="deps/MathJax-3.2.2/tex-chtml.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
-<meta property="og:title" content="Brand Identity Management Using brand.yml Standard">
-<meta name="description" content="Facilitate brand identity management using the brand.yml standard, providing functions to consistently access and apply brand colors, typography, and other visual elements across your R projects.">
-<meta property="og:description" content="Facilitate brand identity management using the brand.yml standard, providing functions to consistently access and apply brand colors, typography, and other visual elements across your R projects.">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><script src="deps/MathJax-3.2.2/tex-chtml.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Brand Identity Management Using brand.yml Standard">
+<meta name="description" content="A system to facilitate brand identity management using the brand.yml standard, providing functions to consistently access and apply brand colors, typography, and other visual elements across your R projects.">
+<meta property="og:description" content="A system to facilitate brand identity management using the brand.yml standard, providing functions to consistently access and apply brand colors, typography, and other visual elements across your R projects.">
+<meta property="og:image" content="https://danielvartan.github.io/brandr/reference/figures/og-image.png">
+<meta property="og:image:alt" content="{brandr} logo">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -59,9 +66,11 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="brandr-">brandr <a href="https://danielvartan.github.io/brandr/"><img src="reference/figures/hex-logo.svg" align="right" width="135"></a>
+<div class="page-header">
+<img src="logo.png" class="logo" alt=""><h1 id="brandr-">brandr 
 <a class="anchor" aria-label="anchor" href="#brandr-"></a>
-</h1></div>
+</h1>
+</div>
 <!-- quarto render -->
 <!-- badges: start -->
 
@@ -70,7 +79,7 @@
 </h2>
 <p>👁️🎨🌈🔠🆎🔠🔡🔤📐✒️🖋️🖌️🖍️💭📢🎯💡📱🖥️🖨️🎪🎭🚀💼✨🌟</p>
 <p><code>brandr</code> is an R package designed to facilitate brand identity management using the <a href="https://posit-dev.github.io/brand-yml/" class="external-link">brand.yml</a> standard, providing functions to consistently access and apply brand colors, typography, and other visual elements across your R projects.</p>
-<p>Please note that <code>brandr</code> <strong>is not affiliated with <a href="https://posit.co/" class="external-link">Posit</a></strong>.</p>
+<p><strong>Please note that <code>brandr</code> is not affiliated with <a href="https://posit.co/" class="external-link">Posit</a></strong>.</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -82,12 +91,13 @@
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<p><code>brandr</code> is equipped with several functions to help you use your <code>_brand.yml</code> file. Like:</p>
+<p><code>brandr</code> is equipped with several functions to help you use your <code>_brand.yml</code> file, like:</p>
 <ul>
 <li>
 <code><a href="reference/color_brand_sequential.html">color_brand_sequential()</a></code>, <code><a href="reference/color_brand_sequential.html">color_brand_diverging()</a></code>, <code><a href="reference/color_brand_sequential.html">color_brand_qualitative()</a></code>: Brand color functions</li>
 <li>
-<code><a href="reference/scale_brand.html">scale_brand()</a></code>, <code><a href="reference/scale_brand.html">scale_color_brand_d()</a></code>, <code><a href="reference/scale_brand.html">scale_color_brand_c()</a></code>, <code><a href="reference/scale_brand.html">scale_color_brand_b()</a></code>, <code><a href="reference/scale_brand.html">scale_fill_brand_d()</a></code>, <code><a href="reference/scale_brand.html">scale_fill_brand_c()</a></code>, <code><a href="reference/scale_brand.html">scale_fill_brand_b()</a></code>: <a href="https://ggplot2.tidyverse.org/" class="external-link"><code>ggplot2</code></a> scales for brand colors</li>
+<code><a href="reference/scale_brand.html">scale_brand()</a></code>, <code><a href="reference/scale_brand.html">scale_color_brand_d()</a></code>, <code><a href="reference/scale_brand.html">scale_color_brand_c()</a></code>, <code><a href="reference/scale_brand.html">scale_color_brand_b()</a></code>, <code><a href="reference/scale_brand.html">scale_fill_brand_d()</a></code>, <code><a href="reference/scale_brand.html">scale_fill_brand_c()</a></code>, <code><a href="reference/scale_brand.html">scale_fill_brand_b()</a></code>: Discrete, continuous, and binned brand color scales for <a href="https://ggplot2.tidyverse.org/" class="external-link"><code>ggplot2</code></a>
+</li>
 <li>
 <code><a href="reference/get_brand_color.html">get_brand_color()</a></code>: Get a brand color by name</li>
 <li>
@@ -101,6 +111,41 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/get_brand_color.html">get_brand_color</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"primary"</span>, <span class="st">"red"</span>, <span class="st">"dark"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"#DA4E3C"</span> <span class="st">"#DA4E3C"</span> <span class="st">"#35131F"</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="configuration">Configuration<a class="anchor" aria-label="anchor" href="#configuration"></a>
+</h2>
+<div class="section level3">
+<h3 id="path-to-_brandyml">Path to <code>_brand.yml</code>
+<a class="anchor" aria-label="anchor" href="#path-to-_brandyml"></a>
+</h3>
+<p><code>brandr</code> will always look for a <code>_brand.yml</code> file in the root directory of your project. If the file is not found, an error message will be displayed. You can also set the path to the file manually using the <code><a href="https://rdrr.io/r/base/options.html" class="external-link">options()</a></code> function:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">BRANDR_BRAND_YML =</span> [PATH_TO_BRAND.YML])</span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="brand-color-scales">Brand Color Scales<a class="anchor" aria-label="anchor" href="#brand-color-scales"></a>
+</h3>
+<p>To control the colors of each brand color scale, assign hexadecimal color codes in a [<code>character</code>][base::character] vector to the following options:</p>
+<ul>
+<li>
+<code>BRANDR_COLOR_SEQUENTIAL</code>: For sequential color scales</li>
+<li>
+<code>BRANDR_COLOR_DIVERGING</code>: For diverging color scales</li>
+<li>
+<code>BRANDR_COLOR_QUALITATIVE</code>: For qualitative color scales</li>
+</ul>
+<p>You can use [<code><a href="reference/get_brand_color.html">get_brand_color()</a></code>][get_brand_color] to get the hexadecimal color codes from the <code>_brand.yml</code> file.</p>
+<p>Example:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span></span>
+<span> BRANDR_COLOR_SEQUENTIAL <span class="op">=</span></span>
+<span>   <span class="fu"><a href="reference/get_brand_color.html">get_brand_color</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"primary"</span>, <span class="st">"secondary"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span> BRANDR_COLOR_DIVERGING <span class="op">=</span></span>
+<span>   <span class="fu"><a href="reference/get_brand_color.html">get_brand_color</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"primary"</span>, <span class="st">"white"</span>, <span class="st">"secondary"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span> BRANDR_COLOR_QUALITATIVE <span class="op">=</span></span>
+<span>   <span class="fu"><a href="reference/get_brand_color.html">get_brand_color</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"primary"</span>, <span class="st">"secondary"</span>, <span class="st">"tertiary"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+</div>
 </div>
 <div class="section level2">
 <h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
