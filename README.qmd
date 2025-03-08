@@ -1,4 +1,4 @@
-# brandr <a href = "https://danielvartan.github.io/brandr/"><img src = "man/figures/hex-logo.svg" align="right" width="135" /></a>
+# brandr <a href = "https://danielvartan.github.io/brandr/"><img src = "man/figures/logo.png" align="right" width="120" /></a>
 
 <!-- quarto render -->
 
@@ -34,7 +34,7 @@ library(stringr)
 
 `brandr` is an R package designed to facilitate brand identity management using the [brand.yml](https://posit-dev.github.io/brand-yml/) standard, providing functions to consistently access and apply brand colors, typography, and other visual elements across your R projects.
 
-Please note that `brandr` **is not affiliated with [Posit](https://posit.co/)**.
+**Please note that `brandr` is not affiliated with [Posit](https://posit.co/)**.
 
 ## Installation
 
@@ -48,10 +48,10 @@ remotes::install_github("danielvartan/brandr")
 
 ## Usage
 
-`brandr` is equipped with several functions to help you use your `_brand.yml` file. Like:
+`brandr` is equipped with several functions to help you use your `_brand.yml` file, like:
 
 - `color_brand_sequential()`, `color_brand_diverging()`, `color_brand_qualitative()`: Brand color functions
-- `scale_brand()`, `scale_color_brand_d()`, `scale_color_brand_c()`, `scale_color_brand_b()`, `scale_fill_brand_d()`, `scale_fill_brand_c()`, `scale_fill_brand_b()`: [`ggplot2`](https://ggplot2.tidyverse.org/) scales for brand colors
+- `scale_brand()`, `scale_color_brand_d()`, `scale_color_brand_c()`, `scale_color_brand_b()`, `scale_fill_brand_d()`, `scale_fill_brand_c()`, `scale_fill_brand_b()`: Discrete, continuous, and binned brand color scales for [`ggplot2`](https://ggplot2.tidyverse.org/)
 - `get_brand_color()`: Get a brand color by name
 - `get_brand_color_tint()`: Get a brand color tint by name
 - `get_brand_color_mix()`: Get a mix of brand colors
@@ -61,6 +61,39 @@ Example:
 
 ```{r}
 get_brand_color(c("primary", "red", "dark"))
+```
+
+## Configuration
+
+### Path to `_brand.yml`
+
+`brandr` will always look for a `_brand.yml` file in the root directory of your project. If the file is not found, an error message will be displayed. You can also set the path to the file manually using the `options()` function:
+
+```r
+options(BRANDR_BRAND_YML = [PATH_TO_BRAND.YML])
+```
+
+### Brand Color Scales
+
+To control the colors of each brand color scale, assign hexadecimal color codes in a [`character`][base::character] vector to the following options:
+
+- `BRANDR_COLOR_SEQUENTIAL`: For sequential color scales
+- `BRANDR_COLOR_DIVERGING`:  For diverging color scales
+- `BRANDR_COLOR_QUALITATIVE`: For qualitative color scales
+
+You can use [`get_brand_color()`][get_brand_color] to get the hexadecimal color codes from the `_brand.yml` file.
+
+Example:
+
+```r
+options(
+ BRANDR_COLOR_SEQUENTIAL =
+   get_brand_color(c("primary", "secondary")),
+ BRANDR_COLOR_DIVERGING =
+   get_brand_color(c("primary", "white", "secondary")),
+ BRANDR_COLOR_QUALITATIVE =
+   get_brand_color(c("primary", "secondary", "tertiary"))
+)
 ```
 
 ## License

@@ -52,10 +52,10 @@ interpolate_colors <- function(
     "qual", "qualitative"
   )
 
-  prettycheck::assert_numeric(n, lower = 0, min_len = 1)
+  checkmate::assert_numeric(n, lower = 0, min.len = 1)
   checkmate::assert_character(colors, null.ok = TRUE)
   if (is.null(colors)) colors <- get_default_brandr_color_type(type)
-  prettycheck::assert_color(colors)
+  assert_color(colors)
   checkmate::assert_choice(type, type_choices)
   checkmate::assert_choice(direction, c(-1, 1))
 
@@ -157,9 +157,9 @@ make_color_ramp <- function(
   ) {
   checkmate::assert_int(n, lower = 1, null.ok = TRUE)
   if (is.null(colors)) colors <- get_default_brandr_color_type("seq")
-  prettycheck::assert_color(colors)
+  assert_color(colors)
   checkmate::assert_choice(direction, c(-1, 1))
-  prettycheck::assert_numeric(n_prop, lower = 0, upper = 1, null_ok = TRUE)
+  checkmate::assert_numeric(n_prop, lower = 0, upper = 1, null.ok = TRUE)
   checkmate::assert_int(n_prop_res, lower = 1)
 
   if (direction == -1) colors <- rev(colors)

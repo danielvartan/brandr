@@ -10,9 +10,9 @@ Authors@R: c(
             comment = c(ORCID = "0000-0001-7782-759X")
         )
     )
-Description: Facilitate brand identity management using the 'brand.yml'
-    standard, providing functions to consistently access and apply brand
-    colors, typography, and other visual elements across your R projects.
+Description: A system to facilitate brand identity management using the
+    'brand.yml' standard, providing functions to consistently access and apply
+    brand colors, typography, and other visual elements across your R projects.
 License: MIT + file LICENSE
 URL: https://danielvartan.github.io/brandr/,
     https://github.com/danielvartan/brandr/
@@ -28,13 +28,13 @@ Imports:
     lifecycle (>= 1.0.4),
     ggplot2 (>= 3.5.1),
     grDevices (>= 4.3.0),
-    prettycheck,
-    rutils,
+    hexbin (>= 1.28.5),
     yaml (>= 2.3.10)
 Suggests:
     bslib (>= 0.9.0),
     covr (>= 3.6.4),
     knitr (>= 1.49),
+    mockr (>= 0.2.1),
     rmarkdown (>= 2.29),
     spelling (>= 2.3.1),
     testthat (>= 3.2.2)

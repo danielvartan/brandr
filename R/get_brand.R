@@ -103,9 +103,6 @@ get_brand_color <- function(color) {
 #' get_brand_font("monospace")
 #' #> [1] "IBM Plex Mono" # Expected
 #'
-#' get_brand_font("monospace-inline")
-#' #> [1] "IBM Plex Mono" # Expected
-#'
 #' get_brand_font("monospace-block")
 #' #> [1] "IBM Plex Mono" # Expected
 #'
@@ -201,7 +198,7 @@ get_brand_color_tint <- function(
 
   color <- get_brand_color(color)
 
-  prettycheck::assert_color(color)
+  assert_color(color)
 
   color_fun <- grDevices::colorRampPalette(c("black", color, "white"))
   color_values <- color_fun(1001)

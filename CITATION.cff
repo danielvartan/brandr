@@ -12,9 +12,9 @@ version: 0.0.0
 identifiers:
 - type: url
   value: https://github.com/danielvartan/brandr/
-abstract: Facilitate brand identity management using the 'brand.yml' standard, providing
-  functions to consistently access and apply brand colors, typography, and other visual
-  elements across your R projects.
+abstract: A system to facilitate brand identity management using the 'brand.yml' standard,
+  providing functions to consistently access and apply brand colors, typography, and
+  other visual elements across your R projects.
 authors:
 - family-names: Vartanian
   given-names: Daniel
@@ -228,27 +228,26 @@ references:
   year: '2025'
   version: '>= 4.3.0'
 - type: software
-  title: prettycheck
-  abstract: 'prettycheck: Pretty assertive programming'
+  title: hexbin
+  abstract: 'hexbin: Hexagonal Binning Routines'
   notes: Imports
-  url: https://danielvartan.github.io/prettycheck/
+  url: https://github.com/edzer/hexbin
+  repository: https://CRAN.R-project.org/package=hexbin
   authors:
-  - family-names: Vartanian
-    given-names: Daniel
-    email: danvartan@gmail.com
-    orcid: https://orcid.org/0000-0001-7782-759X
+  - family-names: Carr
+    given-names: Dan
+    email: dcarr@voxel.galaxy.gmu.edu
+  - family-names: Lewin-Koh
+    given-names: Nicholas
+  - family-names: Maechler
+    given-names: Martin
+    email: maechler@stat.math.ethz.ch
+  - family-names: Sarkar
+    given-names: Deepayan
+    email: deepayan.sarkar@r-project.org
   year: '2025'
-- type: software
-  title: rutils
-  abstract: 'rutils: Utility Functions for R'
-  notes: Imports
-  url: https://danielvartan.github.io/rutils/
-  authors:
-  - family-names: Vartanian
-    given-names: Daniel
-    email: danvartan@gmail.com
-    orcid: https://orcid.org/0000-0001-7782-759X
-  year: '2025'
+  doi: 10.32614/CRAN.package.hexbin
+  version: '>= 1.28.5'
 - type: software
   title: yaml
   abstract: 'yaml: Methods to Convert R Data to YAML and Back'

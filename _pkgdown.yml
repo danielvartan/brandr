@@ -9,6 +9,10 @@ template:
     brand: "./_brand.yml"
   math-rendering: mathjax
   light-switch: true
+  opengraph:
+    image:
+      src: man/figures/og-image.png
+      alt: "{brandr} logo"
   params:
     noindex: false
 

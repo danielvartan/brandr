@@ -28,7 +28,7 @@ code at the specified position.
 \details{
 \subsection{Path to \verb{_brand.yml}}{
 
-\code{brandr} will always look for the \verb{_brand.yml} file in the root directory of
+\code{brandr} will always look for a \verb{_brand.yml} file in the root directory of
 your project. If the file is not found, an error message will be displayed.
 You can also set the path to the file manually using the
 \code{\link[base:options]{options()}} function:
@@ -37,7 +37,7 @@ You can also set the path to the file manually using the
 }\if{html}{\out{</div>}}
 }
 
-\subsection{Brand color scales}{
+\subsection{Brand Color Scales}{
 
 To control the colors for each brand color scale, assign the desired
 hexadecimal color codes in a \code{\link[base:character]{character}} vector to the
@@ -48,13 +48,12 @@ following options:
 \item \code{BRANDR_COLOR_QUALITATIVE}: For qualitative color scales
 }
 
-Use \code{\link[=get_brand_color]{get_brand_color()}} to get the hexadecimal
+You can use \code{\link[=get_brand_color]{get_brand_color()}} to get the hexadecimal
 color codes from the \verb{_brand.yml} file.
 
 Example:
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{options(
-  BRANDR_BRAND_YML = here::here("_brand.yml"),
   BRANDR_COLOR_SEQUENTIAL =
     get_brand_color(c("primary", "secondary")),
   BRANDR_COLOR_DIVERGING =

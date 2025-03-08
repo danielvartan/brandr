@@ -1,7 +1,30 @@
-# TO DO: Move this functions to `rutils` package -----
+# See https://danielvartan.github.io/rutils/reference/grab_fun_par.html
+grab_fun_par <- function() {
+  args_names <- ls(envir = parent.frame(), all.names = TRUE, sorted = FALSE)
 
-# library(prettycheck) # github.com/danielvartan/prettycheck
+  if ("..." %in% args_names) {
+    dots <- eval(quote(list(...)), envir = parent.frame())
+  } else {
+    dots <- list()
+  }
 
+  args_names <- sapply(setdiff(args_names, "..."), as.name)
+
+  if (!length(args_names) == 0) {
+    not_dots <- lapply(args_names, eval, envir = parent.frame())
+  } else {
+    not_dots <- list()
+  }
+
+  out <- c(not_dots, dots)
+
+  out[names(out) != ""]
+}
+
+
+# library(checkmate)
+
+# Already in the `rutils` package
 clean_arg_list <- function(list) {
   checkmate::assert_multi_class(list, c("list", "pairlist"))
   checkmate::assert_list(as.list(list), names = "named")
@@ -19,8 +42,9 @@ clean_arg_list <- function(list) {
   out
 }
 
-# library(prettycheck) # github.com/danielvartan/prettycheck
+# library(checkmate)
 
+# Already in the `rutils` package
 nullify_list <- function(list) {
   checkmate::assert_multi_class(list, c("list", "pairlist"))
   checkmate::assert_list(as.list(list), names = "named")

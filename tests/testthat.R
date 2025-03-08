@@ -10,6 +10,7 @@ test_check("brandr")
 #
 # cffr::cff_write()
 # codemetar::write_codemeta()
+# covr::codecov(token = "d0a0e45a-42a2-4177-be8a-8d8b465d8d19")
 # covr::package_coverage()
 # devtools::check()
 # devtools::check(remote = TRUE, manual = TRUE)
