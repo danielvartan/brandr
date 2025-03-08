@@ -1,5 +1,6 @@
 library(checkmate)
 library(dplyr)
+library(magrittr)
 library(testthat)
 
 library(brandr)

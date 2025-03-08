@@ -147,16 +147,10 @@ get_brand_font <- function(font) { #nolint
 
     j <- brands_list$typography[[i]]
 
-    if (!is.null(j)) {
-      if (is.list(j) && "family" %in% names(j)) {
-        out <- c(out, j$family)
-      } else if (is.character(j) && length(j) == 1) {
-        out <- c(out, j)
-      } else {
-        out <- c(out, NA)
-      }
-    } else {
-      out <- c(out, NA)
+    if (is.list(j) && "family" %in% names(j)) {
+      out <- c(out, j$family)
+    } else if (is.character(j) && length(j) == 1) {
+      out <- c(out, j)
     }
   }
 

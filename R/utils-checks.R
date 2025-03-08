@@ -36,7 +36,7 @@ assert_color <- function(
   color_pattern <- "(?i)^#[a-f0-9]{3}$|(?i)^#[a-f0-9]{6}$|(?i)^transparent$"
 
   for (i in color) {
-    if (!i %in% grDevices::colors() && #nolint
+    if (!is.na(i) && !i %in% grDevices::colors() && #nolint
         !checkmate::test_string(i, pattern = color_pattern)) { #nolint
       cli::cli_abort(
         paste0(

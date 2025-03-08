@@ -12,7 +12,6 @@ testthat::test_that("get_brand_color() | General test", {
     testthat::expect_equal(c("#DA4E3C", "#390963", "#FB9706"))
 
   # get_brand_color(c("TeSt")) |> testthat::expect_equal(NA)
-
 })
 
 testthat::test_that("get_brand_color() | Error test", {

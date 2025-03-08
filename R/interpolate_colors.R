@@ -23,20 +23,20 @@
 #' @export
 #'
 #' @examples
-#' interpolate_colors(3, color = c("red", "blue"), type = "seq")
+#' interpolate_colors(3, colors = c("red", "blue"), type = "seq")
 #' #> [1] "#FF0000" "#7F007F" "#0000FF" # Expected
 #'
 #' # Same results of `type = "seq"`
-#' interpolate_colors(3, color = c("red", "white", "blue"), type = "div")
+#' interpolate_colors(3, colors = c("red", "white", "blue"), type = "div")
 #' #> [1] "#FF0000" "#FFFFFF" "#0000FF" # Expected
 #'
-#' interpolate_colors(3, color = c("red", "blue"), type = "qual")
+#' interpolate_colors(3, colors = c("red", "blue"), type = "qual")
 #' #> [1] "red"  "blue" "red" # Expected
 #'
-#' interpolate_colors(3, color = c("red", "blue"), type = "seq", direction = -1)
+#' interpolate_colors(3, colors = c("red", "blue"), type = "seq", direction = -1)
 #' #> [1] "#0000FF" "#7F007F" "#FF0000" # Expected
 #'
-#' interpolate_colors(3, color = c("red", "blue"), type = "seq", bias = 100)
+#' interpolate_colors(3, colors = c("red", "blue"), type = "seq", bias = 100)
 #' #> [1] "#FF0000" "#7F007F" "#0000FF" # Expected
 interpolate_colors <- function(
     n, #nolint
@@ -53,7 +53,7 @@ interpolate_colors <- function(
   )
 
   checkmate::assert_numeric(n, lower = 0, min.len = 1)
-  checkmate::assert_character(colors, null.ok = TRUE)
+  checkmate::assert_character(colors, min.len = 2, null.ok = TRUE)
   if (is.null(colors)) colors <- get_default_brandr_color_type(type)
   assert_color(colors)
   checkmate::assert_choice(type, type_choices)
@@ -157,6 +157,7 @@ make_color_ramp <- function(
   ) {
   checkmate::assert_int(n, lower = 1, null.ok = TRUE)
   if (is.null(colors)) colors <- get_default_brandr_color_type("seq")
+  checkmate::assert_character(colors, min.len = 2, null.ok = TRUE)
   assert_color(colors)
   checkmate::assert_choice(direction, c(-1, 1))
   checkmate::assert_numeric(n_prop, lower = 0, upper = 1, null.ok = TRUE)
@@ -180,8 +181,17 @@ make_color_ramp <- function(
 
     out <- color_fun(n_prop_res)[n]
     n <- length(n)
-  } else {
+  } else if (!is.null(n)) {
+    checkmate::assert_int(n_prop_res, lower = n)
+
     out <- color_fun(n)
+  } else {
+    cli::cli_abort(
+      paste0(
+        "You must provide either {.strong {cli::col_red('n')}} or ",
+        "{.strong {cli::col_blue('n_prop')}} to create the color ramp."
+      )
+    )
   }
 
   if (!is.null(values)) {

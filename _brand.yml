@@ -68,10 +68,10 @@ typography:
   monospace:
     family: IBM Plex Mono
     size: 1em
-  # monospace-inline:
-  #   family: IBM Plex Mono
-  #   color: purple
-  #   background-color: gray-light
+  monospace-inline:
+    family: IBM Plex Mono
+    color: purple
+    background-color: gray-light
   monospace-block:
     family: IBM Plex Mono
     line-height: 1.2

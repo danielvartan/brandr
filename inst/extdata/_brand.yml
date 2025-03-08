@@ -65,9 +65,7 @@ typography:
   link:
     color: red
     decoration: underline
-  monospace:
-    family: IBM Plex Mono
-    size: 1em
+  monospace: IBM Plex Mono
   # monospace-inline:
   #   family: IBM Plex Mono
   #   color: purple
@@ -75,7 +73,7 @@ typography:
   monospace-block:
     family: IBM Plex Mono
     line-height: 1.2
-    background-color: grsecondaryay-light
+    background-color: gray-light
 
 defaults:
   bootstrap:
