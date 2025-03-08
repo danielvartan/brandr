@@ -52,6 +52,14 @@ testthat::test_that("interpolate_colors() | General test", {
     testthat::expect_equal("red")
 
   interpolate_colors(
+    n = 1,
+    colors = c("red", "green", "blue"),
+    type = "qual",
+    direction = -1
+  ) |>
+    testthat::expect_equal("blue")
+
+  interpolate_colors(
     n = 4,
     colors = c("red", "green", "blue"),
     type = "qual",

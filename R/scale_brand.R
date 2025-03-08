@@ -102,6 +102,7 @@ scale_brand <- function(
   checkmate::assert_choice(scale_type, scale_type_choices)
   checkmate::assert_choice(color_type, color_type_choices)
   checkmate::assert_choice(direction, c(-1, 1))
+  checkmate::assert_string(na.value, na.ok = TRUE)
   if (!is.na(na.value)) assert_color(na.value)
   checkmate::assert_flag(reverse)
 
