@@ -19,5 +19,6 @@
 ^Meta$
 ^pkgdown$
 ^R/\.post-render\.R$
+^R/\.setup\.R$
 ^README\.qmd$
 ^ttf$
