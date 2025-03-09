@@ -17,6 +17,7 @@ scale_brand(
   aesthetics = "color",
   scale_type = "c",
   color_type = "seq",
+  alpha = NULL,
   direction = 1,
   na.value = NA,
   reverse = FALSE,
@@ -27,6 +28,7 @@ scale_color_brand_d(
   aesthetics = "color",
   scale_type = "d",
   color_type = "qual",
+  alpha = NULL,
   direction = 1,
   ...
 )
@@ -35,6 +37,7 @@ scale_color_brand_c(
   aesthetics = "color",
   scale_type = "c",
   color_type = "seq",
+  alpha = NULL,
   direction = 1,
   ...
 )
@@ -43,6 +46,7 @@ scale_color_brand_b(
   aesthetics = "color",
   scale_type = "b",
   color_type = "seq",
+  alpha = NULL,
   direction = 1,
   ...
 )
@@ -51,6 +55,7 @@ scale_colour_brand_d(
   aesthetics = "color",
   scale_type = "d",
   color_type = "qual",
+  alpha = NULL,
   direction = 1,
   ...
 )
@@ -59,6 +64,7 @@ scale_colour_brand_c(
   aesthetics = "color",
   scale_type = "c",
   color_type = "seq",
+  alpha = NULL,
   direction = 1,
   ...
 )
@@ -67,6 +73,7 @@ scale_colour_brand_b(
   aesthetics = "color",
   scale_type = "b",
   color_type = "seq",
+  alpha = NULL,
   direction = 1,
   ...
 )
@@ -75,6 +82,7 @@ scale_fill_brand_d(
   aesthetics = "fill",
   scale_type = "d",
   color_type = "qual",
+  alpha = NULL,
   direction = 1,
   ...
 )
@@ -83,6 +91,7 @@ scale_fill_brand_c(
   aesthetics = "fill",
   scale_type = "c",
   color_type = "seq",
+  alpha = NULL,
   direction = 1,
   ...
 )
@@ -91,22 +100,28 @@ scale_fill_brand_b(
   aesthetics = "fill",
   scale_type = "b",
   color_type = "seq",
+  alpha = NULL,
   direction = 1,
   ...
 )
 }
 \arguments{
 \item{aesthetics}{(Optional) A \code{\link[base:character]{character}} string
-indicating the name of the aesthetic of the scale (e.g., \verb{"color"``, }"fill"`).}
+indicating the name of the aesthetic of the scale (e.g., \code{"color"},
+\code{"fill"}) (Default: \code{"color"}).}
 
 \item{scale_type}{(Optional) A \code{\link[base:character]{character}} string
 indicating the type of scale: \code{"d"}/\code{"discrete"}, \code{"c"}/\code{"continuous"},
-or \code{"b"}/\code{"binned"}.}
+or \code{"b"}/\code{"binned"} (Default: \code{"c"}).}
 
 \item{color_type}{(Optional) A \code{\link[base:character]{character}} string
-indicating the type of color scale: \code{"seq"}/\verb{"sequential"``, }"div"\code{/}"diverging"``, or \code{"qual"}/`"qualitative"` (Default: `c `).}
+indicating the type of color scale: \code{"seq"}/\code{"sequential"},
+\code{"div"}/\code{"diverging"}, or \code{"qual"}/\code{"qualitative"} (Default: \code{"seq"}).}
 
-\item{direction}{(Optional) Sets the order of colors in the scale. If \code{1}
+\item{alpha}{(Optional) A number between \code{0} and \code{1}, indicating the
+transparency of the colors (Default: \code{NULL}).}
+
+\item{direction}{(Optional) Sets the order of colors in the scale. If \code{1},
 colors are as output by the palette function. If \code{-1}, the order of
 colors is reversed (Default: \code{1}).}
 
@@ -115,8 +130,8 @@ indicating the color to use for missing values. It must contain a
 hexadecimal color code or one of the values in
 \code{\link[grDevices:colors]{colors()}} (Default: \code{NA}).}
 
-\item{reverse}{A \code{\link[base:logical]{logical}} indicating whether the
-legend or color bar should be reversed (Default: \code{FALSE}).}
+\item{reverse}{(Optional) A \code{\link[base:logical]{logical}} indicating whether
+the legend or color bar should be reversed (Default: \code{FALSE}).}
 
 \item{...}{Additional arguments passed to the \code{ggplot2} scale function:
 \code{\link[ggplot2:discrete_scale]{discrete_scale()}},
@@ -127,6 +142,8 @@ legend or color bar should be reversed (Default: \code{FALSE}).}
 A \code{\link[ggplot2:continuous_scale]{ggplot2}} scale object.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#maturing}{\figure{lifecycle-maturing.svg}{options: alt='[Maturing]'}}}{\strong{[Maturing]}}
+
 \verb{scale_*_brand_*()} functions provide color scales for
 \href{https://ggplot2.tidyverse.org/}{ggplot2} based on brand colors defined
 in the \verb{_brand.yml} file. These functions create discrete, continuous, or
@@ -141,7 +158,7 @@ your project. If the file is not found, an error message will be displayed.
 You can also set the path to the file manually using the
 \code{\link[base:options]{options()}} function:
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = [PATH TO _brand.yml])
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = "PATH_TO_BRAND.YML")
 }\if{html}{\out{</div>}}
 }
 
@@ -173,43 +190,108 @@ Example:
 }
 }
 \examples{
-library(ggplot2)
-
-iris |>
-  ggplot(
-    aes(
-      x = Sepal.Length,
-      y = Sepal.Width,
-      shape = Species,
-      color = Species
+if (requireNamespace(
+      c("palmerpenguins", "tidyr", "ggplot2"),
+      quiet = TRUE
     )
-  ) +
-  geom_point(size = 5) +
-  scale_color_brand_d() +
-  theme_bw()
+   ) {
+  library(ggplot2)
+  library(palmerpenguins)
+  library(tidyr)
 
-faithfuld |>
-  ggplot(aes(waiting, eruptions, fill = density)) +
-  geom_raster() +
-  scale_x_continuous(NULL, expand = c(0, 0)) +
-  scale_y_continuous(NULL, expand = c(0, 0)) +
-  scale_fill_brand_b() +
-  labs(fill = "Density") +
-  theme_bw()
+  penguins |>
+    drop_na(bill_length_mm, species) |>
+    ggplot(aes(x = species, y = bill_length_mm, fill = species)) +
+    geom_boxplot(outlier.color = get_brand_color("red")) +
+    geom_jitter(width = 0.2, alpha = 0.1) +
+    scale_fill_brand_d(alpha = 0.5) +
+    labs(
+      x = "Species",
+      y = "Bill Length (mm)",
+      fill = "Species"
+    ) +
+    theme_bw()
+}
 
-mtcars |>
-  ggplot(aes(mpg, wt, fill = factor(cyl))) +
-  geom_boxplot() +
-  scale_fill_brand_d() +
-  labs(fill = "cyl") +
-  theme_bw()
+if (requireNamespace(
+      c("palmerpenguins", "tidyr", "ggplot2"),
+      quiet = TRUE
+    )
+   ) {
+  library(ggplot2)
+  library(palmerpenguins)
+  library(tidyr)
 
-data.frame(x = runif(10000), y = runif(10000)) |>
-  ggplot(aes(x, y)) +
-  geom_hex() +
-  coord_fixed() +
-  scale_fill_brand_c() +
-  labs(fill = "") +
-  theme_bw()
+  penguins |>
+  drop_na(flipper_length_mm, species) |>
+    ggplot(aes(x = flipper_length_mm, fill = species)) +
+      geom_histogram(alpha = 0.5, bins = 30, position = "identity") +
+      scale_fill_brand_d() +
+      labs(
+        x = "Flipper Length (mm)",
+        y = "Frequency",
+        fill = "Species"
+      ) +
+      theme_bw()
+}
+
+if (requireNamespace(
+      c("palmerpenguins", "tidyr", "ggplot2"),
+      quiet = TRUE
+    )
+   ) {
+  library(ggplot2)
+  library(palmerpenguins)
+  library(tidyr)
+
+  penguins |>
+    drop_na(flipper_length_mm, body_mass_g, species) |>
+    ggplot(
+      aes(
+        x = flipper_length_mm,
+        y = body_mass_g,
+        color = species,
+        shape = species
+      )
+    ) +
+    geom_point(size = 2) +
+    geom_smooth(method = "lm", formula = y ~ x, se = FALSE) +
+    scale_color_brand_d() +
+    labs(
+      x = "Flipper Length (mm)",
+      y = "Body Mass (g)",
+      color = "Species",
+      shape = "Species"
+    ) +
+    theme_bw()
+}
+
+if (requireNamespace("ggplot2", quiet = TRUE)) {
+  library(ggplot2)
+
+  faithfuld |>
+    ggplot(aes(waiting, eruptions, fill = density)) +
+    geom_raster() +
+    scale_fill_brand_b() +
+    labs(
+      x = "Waiting Time to Next Eruption (min)",
+      y = "Eruption Time (min)",
+      fill = "Density"
+    ) +
+    theme_bw()
+}
+
+if (requireNamespace("ggplot2", quiet = TRUE)) {
+  library(ggplot2)
+  library(hexbin)
+
+  data.frame(x = runif(10000), y = runif(10000)) |>
+    ggplot(aes(x, y)) +
+    geom_hex() +
+    coord_fixed() +
+    scale_fill_brand_c() +
+    labs(fill = "") +
+    theme_bw()
+}
 }
 \concept{ggplot2 functions.}

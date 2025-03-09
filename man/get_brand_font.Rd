@@ -15,6 +15,8 @@ fonts/typefaces categories present in the \code{typography} section of the
 A \code{\link[base:character]{character}} vector with fonts/typeface names.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#maturing}{\figure{lifecycle-maturing.svg}{options: alt='[Maturing]'}}}{\strong{[Maturing]}}
+
 \code{get_brand_font()} retrieves the names of fonts/typefaces in the
 \verb{_brand.yml} file.
 }
@@ -26,7 +28,7 @@ your project. If the file is not found, an error message will be displayed.
 You can also set the path to the file manually using the
 \code{\link[base:options]{options()}} function:
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = [PATH TO _brand.yml])
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = "PATH_TO_BRAND.YML")
 }\if{html}{\out{</div>}}
 }
 

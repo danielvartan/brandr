@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-A system to facilitate brand identity management using the 'brand.yml' standard, providing functions to consistently access and apply brand colors, typography, and other visual elements across your R projects.
+A system to facilitate brand identity management using the brand.yml standard, providing functions to consistently access and apply brand colors, typography, and other visual elements across your R projects.
 }
 \seealso{
 Useful links:

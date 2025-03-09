@@ -4,17 +4,22 @@
 \alias{get_brand_color}
 \title{Get brand colors}
 \usage{
-get_brand_color(color)
+get_brand_color(color, alpha = NULL)
 }
 \arguments{
 \item{color}{A \code{\link[base:character]{character}} vector indicating the name of
 colors present in the \code{color} section of the \verb{_brand.yml} file.}
+
+\item{alpha}{(Optional) A number between \code{0} and \code{1}, indicating the
+transparency of the colors (Default: \code{NULL}).}
 }
 \value{
 A \code{\link[base:character]{character}} vector with hexadecimal color
 codes.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#maturing}{\figure{lifecycle-maturing.svg}{options: alt='[Maturing]'}}}{\strong{[Maturing]}}
+
 \code{get_brand_color()} retrieves hexadecimal color codes from the \verb{_brand.yml}
 file.
 }
@@ -26,7 +31,7 @@ your project. If the file is not found, an error message will be displayed.
 You can also set the path to the file manually using the
 \code{\link[base:options]{options()}} function:
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = [PATH TO _brand.yml])
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = "PATH_TO_BRAND.YML")
 }\if{html}{\out{</div>}}
 }
 

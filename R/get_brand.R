@@ -2,6 +2,8 @@
 #'
 #' @description
 #'
+#' `r lifecycle::badge("maturing")`
+#'
 #' `get_brand_color()` retrieves hexadecimal color codes from the `_brand.yml`
 #' file.
 #'
@@ -11,6 +13,7 @@
 #' @return A [`character`][base::character] vector with hexadecimal color
 #'   codes.
 #'
+#' @template param_alpha
 #' @template details_options
 #' @family utility functions.
 #' @export
@@ -30,8 +33,9 @@
 #'
 #' get_brand_color(c("red", "purple", "orange"))
 #' #> [1] "#DA4E3C" "#390963" "#F06F20" # Expected
-get_brand_color <- function(color) {
+get_brand_color <- function(color, alpha = NULL) {
   checkmate::assert_character(color, null.ok = FALSE, any.missing = FALSE)
+  checkmate::assert_number(alpha, lower = 0, upper = 1, null.ok = TRUE)
 
   brands_list <- yaml::read_yaml(assert_brand_yml())
   palette_names <- brands_list$color$palette |> names()
@@ -73,12 +77,18 @@ get_brand_color <- function(color) {
     }
   }
 
-  out
+  if (!is.null(alpha)) {
+    out <- colorspace::adjust_transparency(out, alpha)
+  }
+
+  out |> col2hex()
 }
 
 #' Get brand fonts/typefaces
 #'
 #' @description
+#'
+#' `r lifecycle::badge("maturing")`
 #'
 #' `get_brand_font()` retrieves the names of fonts/typefaces in the
 #' `_brand.yml` file.
@@ -161,6 +171,8 @@ get_brand_font <- function(font) { #nolint
 #'
 #' @description
 #'
+#' `r lifecycle::badge("maturing")`
+#'
 #' `get_brand_color_tint()` generates a range of tints (color variations) for a
 #' specific brand color, from black (position 0) through the brand color
 #' (position 500) to white (position 1000), and returns the hexadecimal color
@@ -204,13 +216,15 @@ get_brand_color_tint <- function(
 #'
 #' @description
 #'
+#' `r lifecycle::badge("maturing")`
+#'
 #' `get_brand_color_mix()` mixes two specific brand colors.
 #'
 #' @param color_1,color_2 A [`character`][base::character] string indicating
 #'   the name of a color present in the `color` section of the `_brand.yml`
 #'   file.
-#' @param alpha A number between 0 and 1 indicating the alpha transparency of
-#'   the color mix (Default: `0.5`).
+#' @param alpha A number between `0`` and `1`` indicating the alpha
+#'   (transparency) of the color mix (Default: `0.5`).
 #'
 #' @return A [`character`][base::character] vector with hexadecimal color
 #'   codes.
@@ -236,8 +250,6 @@ get_brand_color_mix <- function(
   ) {
   checkmate::assert_integerish(position, lower = 0, upper = 1000)
   checkmate::assert_number(alpha, lower = 0, upper = 1)
-
-  # scales::rescale(0.9, to = c(0, 1000), from = c(-1, 1))
 
   colorspace::mixcolor(
     alpha,

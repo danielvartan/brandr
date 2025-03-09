@@ -8,7 +8,7 @@
 #' [`options()`][base::options] function:
 #'
 #' ```r
-#' options(BRANDR_BRAND_YML = [PATH TO _brand.yml])
+#' options(BRANDR_BRAND_YML = "PATH_TO_BRAND.YML")
 #' ```
 #'
 #' ## Brand Color Scales

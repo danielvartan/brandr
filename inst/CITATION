@@ -17,7 +17,7 @@ utils::bibentry(
   year = "2025",
   url = paste0(
     "https://danielvartan.github.io/",
-    "brandr"
+    "brandr/"
   ),
   note = "R package",
   textVersion = paste0(
@@ -27,6 +27,6 @@ utils::bibentry(
     "Brand identity management using brand.yml standard", ". ",
     "R package", ". ",
     "https://danielvartan.github.io/",
-    "brandr"
+    "brandr/"
   )
 )

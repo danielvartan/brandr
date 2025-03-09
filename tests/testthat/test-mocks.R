@@ -9,4 +9,3 @@ test_that("is_interactive() | General test", {
 test_that("test_file_exists() | General test", {
   test_file_exists("TeST") |> testthat::expect_false()
 })
-

@@ -20,14 +20,16 @@ positions is from \code{0} to \code{1000} (Default: \code{500}).}
 the name of a color present in the \code{color} section of the \verb{_brand.yml}
 file.}
 
-\item{alpha}{A number between 0 and 1 indicating the alpha transparency of
-the color mix (Default: \code{0.5}).}
+\item{alpha}{A number between \verb{0`` and }1`` indicating the alpha
+(transparency) of the color mix (Default: \code{0.5}).}
 }
 \value{
 A \code{\link[base:character]{character}} vector with hexadecimal color
 codes.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#maturing}{\figure{lifecycle-maturing.svg}{options: alt='[Maturing]'}}}{\strong{[Maturing]}}
+
 \code{get_brand_color_mix()} mixes two specific brand colors.
 }
 \details{
@@ -38,7 +40,7 @@ your project. If the file is not found, an error message will be displayed.
 You can also set the path to the file manually using the
 \code{\link[base:options]{options()}} function:
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = [PATH TO _brand.yml])
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = "PATH_TO_BRAND.YML")
 }\if{html}{\out{</div>}}
 }
 

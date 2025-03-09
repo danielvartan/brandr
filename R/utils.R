@@ -8,7 +8,8 @@ grab_fun_par <- function() {
     dots <- list()
   }
 
-  args_names <- sapply(setdiff(args_names, "..."), as.name)
+  args_names <- setdiff(args_names, "...") |> lapply(as.name)
+  names(args_names) <- setdiff(args_names, "...")
 
   if (!length(args_names) == 0) {
     not_dots <- lapply(args_names, eval, envir = parent.frame())
@@ -58,4 +59,23 @@ nullify_list <- function(list) {
   }
 
   list
+}
+
+# See https://danielvartan.github.io/rutils/reference/col2hex.html
+col2hex <- function(x) {
+  checkmate::assert_character(x)
+  assert_color(x, any_missing = TRUE)
+
+  dplyr::case_when(
+    grepl("(?i)^#[a-f0-9]{8}$", x) ~ x,
+    is.na(x) ~ NA_character_,
+    TRUE ~
+      x |>
+      grDevices::col2rgb() |>
+      t() |>
+      as.data.frame() |>
+      c(list(names = x, maxColorValue = 255)) |>
+      do.call(grDevices::rgb, args = _) |>
+      unname()
+  )
 }

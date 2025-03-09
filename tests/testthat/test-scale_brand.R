@@ -3,6 +3,7 @@ testthat::test_that("scale_brand() | General test", {
     aesthetics = "color",
     scale_type = "d",
     color_type = "seq",
+    alpha = NULL,
     direction = 1,
     na.value = NA,
     reverse = FALSE
@@ -13,9 +14,10 @@ testthat::test_that("scale_brand() | General test", {
     aesthetics = "color",
     scale_type = "c",
     color_type = "div",
-    direction = 1,
-    na.value = NA,
-    reverse = FALSE
+    alpha = 0.5,
+    direction = -1,
+    na.value = "white",
+    reverse = TRUE
   ) |>
     testthat::expect_s3_class("gg")
 
@@ -23,6 +25,7 @@ testthat::test_that("scale_brand() | General test", {
     aesthetics = "color",
     scale_type = "b",
     color_type = "qual",
+    alpha = NULL,
     direction = 1,
     na.value = NA,
     reverse = FALSE
@@ -61,6 +64,18 @@ testthat::test_that("scale_brand() | Error test", {
     direction = 1,
     na.value = NA,
     reverse = FALSE
+  ) |>
+    testthat::expect_error()
+
+  # checkmate::assert_number(alpha, lower = 0, upper = 1, null.ok = TRUE)
+  scale_brand(
+    aesthetics = "color",
+    scale_type = "d",
+    color_type = "qual",
+    direction = 1,
+    na.value = NA,
+    reverse = FALSE,
+    alpha = -1
   ) |>
     testthat::expect_error()
 

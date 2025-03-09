@@ -8,11 +8,11 @@ message: 'To cite package "brandr" in publications use:'
 type: software
 license: MIT
 title: 'brandr: Brand Identity Management Using brand.yml Standard'
-version: 0.0.0
+version: 0.1.0
 identifiers:
 - type: url
   value: https://github.com/danielvartan/brandr/
-abstract: A system to facilitate brand identity management using the 'brand.yml' standard,
+abstract: A system to facilitate brand identity management using the brand.yml standard,
   providing functions to consistently access and apply brand colors, typography, and
   other visual elements across your R projects.
 authors:
@@ -29,7 +29,7 @@ preferred-citation:
     email: danvartan@gmail.com
     orcid: https://orcid.org/0000-0001-7782-759X
   year: '2025'
-  url: https://danielvartan.github.io/brandr
+  url: https://danielvartan.github.io/brandr/
   notes: R package
 repository-code: https://github.com/danielvartan/brandr/issues/
 url: https://danielvartan.github.io/brandr/
@@ -228,27 +228,6 @@ references:
   year: '2025'
   version: '>= 4.3.0'
 - type: software
-  title: hexbin
-  abstract: 'hexbin: Hexagonal Binning Routines'
-  notes: Imports
-  url: https://github.com/edzer/hexbin
-  repository: https://CRAN.R-project.org/package=hexbin
-  authors:
-  - family-names: Carr
-    given-names: Dan
-    email: dcarr@voxel.galaxy.gmu.edu
-  - family-names: Lewin-Koh
-    given-names: Nicholas
-  - family-names: Maechler
-    given-names: Martin
-    email: maechler@stat.math.ethz.ch
-  - family-names: Sarkar
-    given-names: Deepayan
-    email: deepayan.sarkar@r-project.org
-  year: '2025'
-  doi: 10.32614/CRAN.package.hexbin
-  version: '>= 1.28.5'
-- type: software
   title: yaml
   abstract: 'yaml: Methods to Convert R Data to YAML and Back'
   notes: Imports
@@ -320,6 +299,27 @@ references:
   doi: 10.32614/CRAN.package.covr
   version: '>= 3.6.4'
 - type: software
+  title: hexbin
+  abstract: 'hexbin: Hexagonal Binning Routines'
+  notes: Suggests
+  url: https://github.com/edzer/hexbin
+  repository: https://CRAN.R-project.org/package=hexbin
+  authors:
+  - family-names: Carr
+    given-names: Dan
+    email: dcarr@voxel.galaxy.gmu.edu
+  - family-names: Lewin-Koh
+    given-names: Nicholas
+  - family-names: Maechler
+    given-names: Martin
+    email: maechler@stat.math.ethz.ch
+  - family-names: Sarkar
+    given-names: Deepayan
+    email: deepayan.sarkar@r-project.org
+  year: '2025'
+  doi: 10.32614/CRAN.package.hexbin
+  version: '>= 1.28.5'
+- type: software
   title: knitr
   abstract: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
   notes: Suggests
@@ -333,6 +333,44 @@ references:
   year: '2025'
   doi: 10.32614/CRAN.package.knitr
   version: '>= 1.49'
+- type: software
+  title: magrittr
+  abstract: 'magrittr: A Forward-Pipe Operator for R'
+  notes: Suggests
+  url: https://magrittr.tidyverse.org
+  repository: https://CRAN.R-project.org/package=magrittr
+  authors:
+  - family-names: Bache
+    given-names: Stefan Milton
+    email: stefan@stefanbache.dk
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@rstudio.com
+  year: '2025'
+  doi: 10.32614/CRAN.package.magrittr
+  version: '>= 2.0.3'
+- type: software
+  title: palmerpenguins
+  abstract: 'palmerpenguins: Palmer Archipelago (Antarctica) Penguin Data'
+  notes: Suggests
+  url: https://allisonhorst.github.io/palmerpenguins/
+  repository: https://CRAN.R-project.org/package=palmerpenguins
+  authors:
+  - family-names: Horst
+    given-names: Allison
+    email: ahorst@ucsb.edu
+    orcid: https://orcid.org/0000-0002-6047-5564
+  - family-names: Hill
+    given-names: Alison
+    email: apresstats@gmail.com
+    orcid: https://orcid.org/0000-0002-8082-1890
+  - family-names: Gorman
+    given-names: Kristen
+    email: kbgorman@alaska.edu
+    orcid: https://orcid.org/0000-0002-0258-9264
+  year: '2025'
+  doi: 10.32614/CRAN.package.palmerpenguins
+  version: '>= 0.1.1'
 - type: software
   title: rmarkdown
   abstract: 'rmarkdown: Dynamic Documents for R'
@@ -411,4 +449,22 @@ references:
   year: '2025'
   doi: 10.32614/CRAN.package.testthat
   version: '>= 3.2.2'
+- type: software
+  title: tidyr
+  abstract: 'tidyr: Tidy Messy Data'
+  notes: Suggests
+  url: https://tidyr.tidyverse.org
+  repository: https://CRAN.R-project.org/package=tidyr
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@posit.co
+  - family-names: Vaughan
+    given-names: Davis
+    email: davis@posit.co
+  - family-names: Girlich
+    given-names: Maximilian
+  year: '2025'
+  doi: 10.32614/CRAN.package.tidyr
+  version: '>= 1.3.1'
 

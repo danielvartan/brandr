@@ -8,8 +8,8 @@ assert_brand_yml <- function() {
       cli_abort( # mockr
         paste0(
           "The {.strong {cli::col_red('_brand.yml')}} file was not found. ",
-          "Please make sure the file is in the root directory of your project. ",
-          "You can also set the path to the file using ",
+          "Please make sure the file is in the root directory of your ",
+          "project. You can also set the path to the file using ",
           "{.strong {cli::col_blue('options(BRANDR_BRAND_YML = [PATH])')}}."
         )
       )
@@ -33,7 +33,16 @@ assert_color <- function(
     color, any.missing = any_missing, null.ok = null_ok
   )
 
-  color_pattern <- "(?i)^#[a-f0-9]{3}$|(?i)^#[a-f0-9]{6}$|(?i)^transparent$"
+  color_pattern <-
+    paste0(
+      c(
+        "(?i)^#[a-f0-9]{3}$",
+        "(?i)^#[a-f0-9]{6}$",
+        "(?i)^#[a-f0-9]{8}$",
+        "(?i)^transparent$"
+      ),
+      collapse = "|"
+    )
 
   for (i in color) {
     if (!is.na(i) && !i %in% grDevices::colors() && #nolint

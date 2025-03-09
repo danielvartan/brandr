@@ -1,6 +1,7 @@
 # library(beepr)
 # library(cffr)
 # library(codemetar)
+# library(fs)
 # library(groomr) # github.com/danielvartan/groomr
 # library(here)
 # library(readr)
@@ -11,13 +12,32 @@
 
 groomr::remove_blank_line_dups(here::here("README.md"))
 
-# Copy `_brand.yml` to `./inst/extdata/` -----
+# Fix image links in `README.md` -----
 
-file.copy(
-  from = here::here("_brand.yml"),
-  to = here::here("inst", "extdata", "_brand.yml"),
-  overwrite = TRUE
-)
+readme_files_dir <- here::here("README_files")
+readme_image_dir <- file.path(readme_files_dir, "figure-commonmark")
+pkg_image_dir <- here::here("man", "figures")
+
+if (checkmate::test_directory_exists(readme_files_dir)) {
+  if (checkmate::test_directory_exists(readme_image_dir)) {
+    fs::dir_map(
+      path = readme_image_dir,
+      \(x) fs::file_move(x, file.path(pkg_image_dir, basename(x)))
+    )
+  }
+
+  fs::dir_delete(readme_files_dir)
+}
+
+file <- here::here("README.md")
+
+file |>
+  readr::read_lines() |>
+  stringr::str_replace_all(
+    pattern = "README_files/figure-commonmark/",
+    replacement = "man/figures/"
+  ) |>
+  readr::write_lines(file)
 
 # Update package versions in `DESCRIPTION` -----
 
@@ -31,8 +51,7 @@ file |>
     pattern = "\\.90[0-9]{2}",
     replacement = ""
   ) |>
-
-readr::write_lines(file)
+  readr::write_lines(file)
 
 # Update package year -----
 

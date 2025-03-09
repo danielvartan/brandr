@@ -3,7 +3,8 @@ testthat::test_that("interpolate_colors() | General test", {
     n = 3,
     colors = c("red", "blue"),
     type = "seq",
-    direction = 1
+    direction = 1,
+    alpha = NULL
   ) |>
     testthat::expect_equal(c("#FF0000", "#7F007F", "#0000FF"))
 
@@ -11,7 +12,8 @@ testthat::test_that("interpolate_colors() | General test", {
     n = c(0, 0.5, 1),
     colors = c("red", "blue"),
     type = "seq",
-    direction = -1
+    direction = -1,
+    alpha = NULL
   ) |>
     testthat::expect_equal(c("#0000FF", "#7F007F", "#FF0000"))
 
@@ -20,6 +22,7 @@ testthat::test_that("interpolate_colors() | General test", {
     colors = c("red", "blue"),
     type = "seq",
     direction = 1,
+    alpha = NULL,
     values = c("low", "middle", "high")
   ) |>
     testthat::expect_equal(
@@ -31,7 +34,8 @@ testthat::test_that("interpolate_colors() | General test", {
     n = 3,
     colors = c("red", "white", "blue"),
     type = "div",
-    direction = 1
+    direction = 1,
+    alpha = NULL
   ) |>
     testthat::expect_equal(c("#FF0000", "#FFFFFF", "#0000FF"))
 
@@ -39,7 +43,8 @@ testthat::test_that("interpolate_colors() | General test", {
     n = 1,
     colors = c("red", "white", "blue"),
     type = "div",
-    direction = 1
+    direction = 1,
+    alpha = NULL
   ) |>
     testthat::expect_equal("#0000FF")
 
@@ -49,29 +54,43 @@ testthat::test_that("interpolate_colors() | General test", {
     type = "qual",
     direction = 1
   ) |>
-    testthat::expect_equal("red")
+    testthat::expect_equal("#FF0000")
 
   interpolate_colors(
     n = 1,
     colors = c("red", "green", "blue"),
     type = "qual",
-    direction = -1
+    direction = -1,
+    alpha = NULL
   ) |>
-    testthat::expect_equal("blue")
+    testthat::expect_equal("#0000FF")
+
+  interpolate_colors(
+    n = 1,
+    colors = c("red", "green", "blue"),
+    type = "qual",
+    direction = 1,
+    alpha = 0.5,
+  ) |>
+    testthat::expect_equal("#FF000080")
 
   interpolate_colors(
     n = 4,
     colors = c("red", "green", "blue"),
     type = "qual",
-    direction = 1
+    direction = 1,
+    alpha = NULL
   ) |>
-    testthat::expect_equal(c("red", "green", "blue", "red"))
+    testthat::expect_equal(
+      c("#FF0000", "#00FF00", "#0000FF", "#FF0000")
+    )
 
   interpolate_colors(
     n = 3,
     colors = NULL,
     type = "seq",
-    direction = 1
+    direction = 1,
+    alpha = NULL
   ) |>
     testthat::expect_equal(c("#390963", "#DA4E3C", "#FB9706"))
 
@@ -79,7 +98,8 @@ testthat::test_that("interpolate_colors() | General test", {
     n = 1,
     colors = NULL,
     type = "seq",
-    direction = -1
+    direction = -1,
+    alpha = NULL
   ) |>
     testthat::expect_equal("#390963")
 })
@@ -90,7 +110,8 @@ testthat::test_that("interpolate_colors() | Error test", {
     n = -1,
     colors = c("red", "blue"),
     type = "seq",
-    direction = 1
+    direction = 1,
+    alpha = NULL
   ) |>
     testthat::expect_error()
 
@@ -99,7 +120,8 @@ testthat::test_that("interpolate_colors() | Error test", {
     n = 3,
     colors = 1:3,
     type = "seq",
-    direction = 1
+    direction = 1,
+    alpha = NULL
   ) |>
     testthat::expect_error()
 
@@ -107,7 +129,8 @@ testthat::test_that("interpolate_colors() | Error test", {
     n = 3,
     colors = "a",
     type = "seq",
-    direction = 1
+    direction = 1,
+    alpha = NULL
   ) |>
     testthat::expect_error()
 
@@ -116,7 +139,8 @@ testthat::test_that("interpolate_colors() | Error test", {
     n = 3,
     colors = c("test1", "test2", "test3"),
     type = "seq",
-    direction = 1
+    direction = 1,
+    alpha = NULL
   ) |>
     testthat::expect_error()
 
@@ -125,7 +149,18 @@ testthat::test_that("interpolate_colors() | Error test", {
     n = 3,
     colors = c("red", "blue"),
     type = "test",
-    direction = 1
+    direction = 1,
+    alpha = NULL
+  ) |>
+    testthat::expect_error()
+
+  # checkmate::assert_number(alpha, lower = 0, upper = 1, null.ok = TRUE)
+  interpolate_colors(
+    n = 3,
+    colors = c("red", "blue"),
+    type = "seq",
+    direction = 1,
+    alpha = -1
   ) |>
     testthat::expect_error()
 
@@ -134,7 +169,8 @@ testthat::test_that("interpolate_colors() | Error test", {
     n = 3,
     colors = c("red", "blue"),
     type = "seq",
-    direction = 0
+    direction = 0,
+    alpha = NULL
   ) |>
     testthat::expect_error()
 
@@ -143,7 +179,8 @@ testthat::test_that("interpolate_colors() | Error test", {
     n = 0.5,
     colors = c("red", "blue"),
     type = "qual",
-    direction = 1
+    direction = 1,
+    alpha = NULL
   ) |>
     testthat::expect_error()
 })

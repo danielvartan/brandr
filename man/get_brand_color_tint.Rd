@@ -20,6 +20,8 @@ A \code{\link[base:character]{character}} vector with hexadecimal color
 codes.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#maturing}{\figure{lifecycle-maturing.svg}{options: alt='[Maturing]'}}}{\strong{[Maturing]}}
+
 \code{get_brand_color_tint()} generates a range of tints (color variations) for a
 specific brand color, from black (position 0) through the brand color
 (position 500) to white (position 1000), and returns the hexadecimal color
@@ -33,7 +35,7 @@ your project. If the file is not found, an error message will be displayed.
 You can also set the path to the file manually using the
 \code{\link[base:options]{options()}} function:
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = [PATH TO _brand.yml])
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = "PATH_TO_BRAND.YML")
 }\if{html}{\out{</div>}}
 }
 
