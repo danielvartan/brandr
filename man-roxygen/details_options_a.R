@@ -14,8 +14,8 @@
 #' ## Brand Color Scales
 #'
 #' To control the colors for each brand color scale, assign the desired
-#' hexadecimal color codes in a [`character`][base::character] vector to the
-#' following options:
+#' [hexadecimal](https://en.wikipedia.org/wiki/Web_colors) color codes in a
+#' [`character`][base::character] vector to the following options:
 #'
 #' - `BRANDR_COLOR_SEQUENTIAL`: For sequential color scales
 #' - `BRANDR_COLOR_DIVERGING`:  For diverging color scales

@@ -16,16 +16,16 @@ get_brand_color_mix(
 the position of the brand color in the range of tints. The range of
 positions is from \code{0} to \code{1000} (Default: \code{500}).}
 
-\item{color_1, color_2}{A \code{\link[base:character]{character}} string indicating
-the name of a color present in the \code{color} section of the \verb{_brand.yml}
-file.}
+\item{color_1, color_2}{(Optional) A \code{\link[base:character]{character}} string
+indicating the name of a color present in the \code{color} section of the
+\verb{_brand.yml} file (Default: \code{primary}, \code{secondary}).}
 
-\item{alpha}{A number between \verb{0`` and }1`` indicating the alpha
+\item{alpha}{(Optional) A number between \code{0} and \code{1} indicating the alpha
 (transparency) of the color mix (Default: \code{0.5}).}
 }
 \value{
-A \code{\link[base:character]{character}} vector with hexadecimal color
-codes.
+A \code{\link[base:character]{character}} vector with
+\href{https://en.wikipedia.org/wiki/Web_colors}{hexadecimal} color codes.
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#maturing}{\figure{lifecycle-maturing.svg}{options: alt='[Maturing]'}}}{\strong{[Maturing]}}
@@ -43,33 +43,6 @@ You can also set the path to the file manually using the
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = "PATH_TO_BRAND.YML")
 }\if{html}{\out{</div>}}
 }
-
-\subsection{Brand Color Scales}{
-
-To control the colors for each brand color scale, assign the desired
-hexadecimal color codes in a \code{\link[base:character]{character}} vector to the
-following options:
-\itemize{
-\item \code{BRANDR_COLOR_SEQUENTIAL}: For sequential color scales
-\item \code{BRANDR_COLOR_DIVERGING}:  For diverging color scales
-\item \code{BRANDR_COLOR_QUALITATIVE}: For qualitative color scales
-}
-
-You can use \code{\link[=get_brand_color]{get_brand_color()}} to get the hexadecimal
-color codes from the \verb{_brand.yml} file.
-
-Example:
-
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(
-  BRANDR_COLOR_SEQUENTIAL =
-    get_brand_color(c("primary", "secondary")),
-  BRANDR_COLOR_DIVERGING =
-    get_brand_color(c("primary", "white", "secondary")),
-  BRANDR_COLOR_QUALITATIVE =
-    get_brand_color(c("primary", "secondary", "tertiary"))
-)
-}\if{html}{\out{</div>}}
-}
 }
 \examples{
 get_brand_color_mix(
@@ -79,11 +52,19 @@ get_brand_color_mix(
   alpha = 0.5
 )
 #> [1] "#8A2C50" # Expected
+
+get_brand_color_mix(
+  position = c(250, 500, 750),
+  color_1 = "primary",
+  color_2 = "secondary",
+  alpha = 0.25
+)
+#> [1] "#591E23" "#B23D46" "#D89EA2" # Expected
 }
 \seealso{
-Other utility functions.: 
+Other utility functions: 
 \code{\link{get_brand_color}()},
 \code{\link{get_brand_color_tint}()},
 \code{\link{get_brand_font}()}
 }
-\concept{utility functions.}
+\concept{utility functions}

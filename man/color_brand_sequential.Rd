@@ -4,7 +4,7 @@
 \alias{color_brand_sequential}
 \alias{color_brand_diverging}
 \alias{color_brand_qualitative}
-\title{Brand color functions}
+\title{Brand color palettes}
 \usage{
 color_brand_sequential(n, alpha = NULL, direction = 1)
 
@@ -15,34 +15,34 @@ color_brand_qualitative(n, alpha = NULL, direction = 1)
 \arguments{
 \item{n}{This parameter accepts two types of inputs:
 \itemize{
-\item If the value is an integer number and \code{type} is \code{seq} or \code{div}, the
-function will return a discrete color spectrum with \code{n} colors.
-\item If the value is an integer number and \code{type} is \code{qual}, the function
-will return \code{n} colors from the \code{colors} parameter, in the same order,
-repeating them, if necessary.
+\item If the value is an integer number and \code{type} is \code{"seq"} or \code{"div"}, the
+function will return a discrete color spectrum with \code{n} colors
+\item If the value is an integer number and \code{type} is \code{"qual"}, the function
+will return \code{n} colors from the \code{colors} parameter, repeating them if
+necessary
 \item If the value is a \code{\link[base:numeric]{numeric}} vector between \code{0} and \code{1},
 the function will return the color positions at \code{n} considering a
-continuous color spectrum ranging from \code{0} to \code{1}.
+continuous color spectrum ranging from \code{0} to \code{1}
 }}
 
 \item{alpha}{(Optional) A number between \code{0} and \code{1}, indicating the
 transparency of the colors (Default: \code{NULL}).}
 
-\item{direction}{(Optional) Sets the order of colors in the scale. If \code{1},
-colors are as output by the palette function. If \code{-1}, the order of
-colors is reversed (Default: \code{1}).}
+\item{direction}{(Optional) A number (\code{1} or \code{-1}) indicating the direction
+of the colors. If \code{1}, the order remains the same. If \code{-1}, the order is
+reversed. (Default: \code{1}).}
 }
 \value{
-A \code{\link[base:character]{character}} vector with hexadecimal color
-codes.
+A \code{\link[base:character]{character}} vector with
+\href{https://en.wikipedia.org/wiki/Web_colors}{hexadecimal} color codes.
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#maturing}{\figure{lifecycle-maturing.svg}{options: alt='[Maturing]'}}}{\strong{[Maturing]}}
 
 \verb{color_brand_*} functions are wrappers of
 \code{\link[=interpolate_colors]{interpolate_colors()}} for sequential, diverging,
-and qualitative brand color scales. They serve as facilitators for the
-visualization of the colors being used in each brand scale.
+and qualitative brand color palettes. They serve as facilitators for
+getting the colors being used in each brand scale.
 }
 \details{
 \subsection{Path to \verb{_brand.yml}}{
@@ -59,8 +59,8 @@ You can also set the path to the file manually using the
 \subsection{Brand Color Scales}{
 
 To control the colors for each brand color scale, assign the desired
-hexadecimal color codes in a \code{\link[base:character]{character}} vector to the
-following options:
+\href{https://en.wikipedia.org/wiki/Web_colors}{hexadecimal} color codes in a
+\code{\link[base:character]{character}} vector to the following options:
 \itemize{
 \item \code{BRANDR_COLOR_SEQUENTIAL}: For sequential color scales
 \item \code{BRANDR_COLOR_DIVERGING}:  For diverging color scales
@@ -85,10 +85,10 @@ Example:
 }
 \examples{
 color_brand_sequential(5)
-#> [1] "#DA4E3C" "#B13C45" "#892B4F" "#611A59" "#390963" # Expected
+#> [1] "#390963" "#892B4F" "#DA4E3C" "#EA7220" "#FB9706" # Expected
 
 color_brand_diverging(5)
-#> [1] "#DA4E3C" "#ECA69D" "#FFFFFF" "#9C83B1" "#390963" # Expected
+#> [1] "#390963" "#9C84B1" "#FFFFFF" "#FDCB82" "#FB9706" # Expected
 
 color_brand_qualitative(5)
 #> [1] "#DA4E3C" "#390963" "#FB9706" "#DA4E3C" "#390963" # Expected
@@ -97,7 +97,7 @@ color_brand_qualitative(3, alpha = 0.5)
 #> [1] "#DA4E3C80" "#39096380" "#FB970680" # Expected
 }
 \seealso{
-Other color functions.: 
+Other color functions: 
 \code{\link{interpolate_colors}()}
 }
-\concept{color functions.}
+\concept{color functions}

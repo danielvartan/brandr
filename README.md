@@ -53,7 +53,8 @@ remotes::install_github("danielvartan/brandr")
 `_brand.yml` file, like:
 
 - `color_brand_sequential()`, `color_brand_diverging()`,
-  `color_brand_qualitative()`: Create scales with your brand colors
+  `color_brand_qualitative()`: Sequential, diverging, and qualitative
+  brand color palettes
 - `scale_brand()`, `scale_color_brand_d()`, `scale_color_brand_c()`,
   `scale_color_brand_b()`, `scale_fill_brand_d()`,
   `scale_fill_brand_c()`, `scale_fill_brand_b()`: Discrete, continuous,
@@ -99,8 +100,9 @@ options(BRANDR_BRAND_YML = "PATH_TO_BRAND.YML")
 
 ### Brand Color Scales
 
-To control the colors of each brand color scale, assign hexadecimal
-color codes in a `character` vector to the following options:
+To control the colors of each brand color scale, assign
+[hexadecimal](https://en.wikipedia.org/wiki/Web_colors) color codes in a
+`character` vector to the following options:
 
 - `BRANDR_COLOR_SEQUENTIAL`: For sequential color scales
 - `BRANDR_COLOR_DIVERGING`: For diverging color scales

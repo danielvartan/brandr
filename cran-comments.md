@@ -1,6 +1,6 @@
 ## Release Summary
 
-- This is the first release of the package.
+- This is the first release of the package to CRAN.
 
 ## Test Environments
 
@@ -23,9 +23,9 @@ devtools::check_win_oldrelease()
 
 ```
 lintr::lint_package()
-goodpractice::gp()
 urlchecker::url_check()
 spelling::spell_check_package()
+goodpractice::gp()
 ```
 
 ## R CMD Check Results (See 'Test Environments')
@@ -61,12 +61,6 @@ This is a false positive. The title is correct as is, since 'brand.yml'
 ℹ No lints found.
 ```
 
-## `goodpractice` Results (Ubuntu 24.04.2 LTS)
-
-```
-♥ Wow! Great package! Keep up the impressive work!
-```
-
 ## `urlchecker` Results (Ubuntu 24.04.2 LTS)
 
 ```
@@ -77,6 +71,12 @@ This is a false positive. The title is correct as is, since 'brand.yml'
 
 ```
 No spelling errors found.
+```
+
+## `goodpractice` Results (Ubuntu 24.04.2 LTS)
+
+```
+♥ Huh! Super package! Keep up the striking work!
 ```
 
 ---

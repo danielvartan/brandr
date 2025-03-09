@@ -37,6 +37,7 @@ reference:
 - title: Colors
   contents:
   - color_brand_sequential
+  - interpolate_colors
 
 - title: ggplot2
   contents:
@@ -45,10 +46,9 @@ reference:
 - title: Utilities
   contents:
   - get_brand_color
-  - get_brand_font
   - get_brand_color_tint
   - get_brand_color_mix
-  - interpolate_colors
+  - get_brand_font
 
 authors:
   Daniel Vartanian:

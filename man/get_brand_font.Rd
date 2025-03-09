@@ -31,33 +31,6 @@ You can also set the path to the file manually using the
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = "PATH_TO_BRAND.YML")
 }\if{html}{\out{</div>}}
 }
-
-\subsection{Brand Color Scales}{
-
-To control the colors for each brand color scale, assign the desired
-hexadecimal color codes in a \code{\link[base:character]{character}} vector to the
-following options:
-\itemize{
-\item \code{BRANDR_COLOR_SEQUENTIAL}: For sequential color scales
-\item \code{BRANDR_COLOR_DIVERGING}:  For diverging color scales
-\item \code{BRANDR_COLOR_QUALITATIVE}: For qualitative color scales
-}
-
-You can use \code{\link[=get_brand_color]{get_brand_color()}} to get the hexadecimal
-color codes from the \verb{_brand.yml} file.
-
-Example:
-
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(
-  BRANDR_COLOR_SEQUENTIAL =
-    get_brand_color(c("primary", "secondary")),
-  BRANDR_COLOR_DIVERGING =
-    get_brand_color(c("primary", "white", "secondary")),
-  BRANDR_COLOR_QUALITATIVE =
-    get_brand_color(c("primary", "secondary", "tertiary"))
-)
-}\if{html}{\out{</div>}}
-}
 }
 \examples{
 get_brand_font("base")
@@ -76,9 +49,9 @@ get_brand_font(c("base", "headings"))
 #> [1] "Open Sans" "Rubik" # Expected
 }
 \seealso{
-Other utility functions.: 
+Other utility functions: 
 \code{\link{get_brand_color}()},
 \code{\link{get_brand_color_mix}()},
 \code{\link{get_brand_color_tint}()}
 }
-\concept{utility functions.}
+\concept{utility functions}

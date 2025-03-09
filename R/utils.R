@@ -71,11 +71,11 @@ col2hex <- function(x) {
     is.na(x) ~ NA_character_,
     TRUE ~
       x |>
-      grDevices::col2rgb() |>
-      t() |>
-      as.data.frame() |>
-      c(list(names = x, maxColorValue = 255)) |>
-      do.call(grDevices::rgb, args = _) |>
-      unname()
+        grDevices::col2rgb() |>
+        t() |>
+        as.data.frame() |>
+        c(list(names = x, maxColorValue = 255)) |>
+        do.call(grDevices::rgb, args = _) |>
+        unname()
   )
 }

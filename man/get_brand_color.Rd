@@ -14,14 +14,13 @@ colors present in the \code{color} section of the \verb{_brand.yml} file.}
 transparency of the colors (Default: \code{NULL}).}
 }
 \value{
-A \code{\link[base:character]{character}} vector with hexadecimal color
-codes.
+A \code{\link[base:character]{character}} vector with
+\href{https://en.wikipedia.org/wiki/Web_colors}{hexadecimal} color codes.
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#maturing}{\figure{lifecycle-maturing.svg}{options: alt='[Maturing]'}}}{\strong{[Maturing]}}
 
-\code{get_brand_color()} retrieves hexadecimal color codes from the \verb{_brand.yml}
-file.
+\code{get_brand_color()} retrieves color codes from the \verb{_brand.yml} file.
 }
 \details{
 \subsection{Path to \verb{_brand.yml}}{
@@ -32,33 +31,6 @@ You can also set the path to the file manually using the
 \code{\link[base:options]{options()}} function:
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = "PATH_TO_BRAND.YML")
-}\if{html}{\out{</div>}}
-}
-
-\subsection{Brand Color Scales}{
-
-To control the colors for each brand color scale, assign the desired
-hexadecimal color codes in a \code{\link[base:character]{character}} vector to the
-following options:
-\itemize{
-\item \code{BRANDR_COLOR_SEQUENTIAL}: For sequential color scales
-\item \code{BRANDR_COLOR_DIVERGING}:  For diverging color scales
-\item \code{BRANDR_COLOR_QUALITATIVE}: For qualitative color scales
-}
-
-You can use \code{\link[=get_brand_color]{get_brand_color()}} to get the hexadecimal
-color codes from the \verb{_brand.yml} file.
-
-Example:
-
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(
-  BRANDR_COLOR_SEQUENTIAL =
-    get_brand_color(c("primary", "secondary")),
-  BRANDR_COLOR_DIVERGING =
-    get_brand_color(c("primary", "white", "secondary")),
-  BRANDR_COLOR_QUALITATIVE =
-    get_brand_color(c("primary", "secondary", "tertiary"))
-)
 }\if{html}{\out{</div>}}
 }
 }
@@ -72,6 +44,9 @@ get_brand_color("secondary")
 get_brand_color("tertiary")
 #> [1] "#FB9706" # Expected
 
+get_brand_color("tertiary", alpha = 0.5)
+#> [1] "#FB970680" # Expected
+
 get_brand_color(c("primary", "secondary"))
 #> [1] "#DA4E3C" "#390963" # Expected
 
@@ -79,9 +54,9 @@ get_brand_color(c("red", "purple", "orange"))
 #> [1] "#DA4E3C" "#390963" "#F06F20" # Expected
 }
 \seealso{
-Other utility functions.: 
+Other utility functions: 
 \code{\link{get_brand_color_mix}()},
 \code{\link{get_brand_color_tint}()},
 \code{\link{get_brand_font}()}
 }
-\concept{utility functions.}
+\concept{utility functions}

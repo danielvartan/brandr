@@ -1,4 +1,4 @@
-#' Brand color functions
+#' Brand color palettes
 #'
 #' @description
 #'
@@ -6,25 +6,25 @@
 #'
 #' `color_brand_*` functions are wrappers of
 #' [`interpolate_colors()`][interpolate_colors] for sequential, diverging,
-#' and qualitative brand color scales. They serve as facilitators for the
-#' visualization of the colors being used in each brand scale.
+#' and qualitative brand color palettes. They serve as facilitators for
+#' getting the colors being used in each brand scale.
 #'
-#' @return A [`character`][base::character] vector with hexadecimal color
-#'   codes.
+#' @return A [`character`][base::character] vector with
+#'   [hexadecimal](https://en.wikipedia.org/wiki/Web_colors) color codes.
 #'
 #' @template param_n
 #' @template param_alpha
 #' @template param_direction
-#' @template details_options
-#' @family color functions.
+#' @template details_options_a
+#' @family color functions
 #' @export
 #'
 #' @examples
 #' color_brand_sequential(5)
-#' #> [1] "#DA4E3C" "#B13C45" "#892B4F" "#611A59" "#390963" # Expected
+#' #> [1] "#390963" "#892B4F" "#DA4E3C" "#EA7220" "#FB9706" # Expected
 #'
 #' color_brand_diverging(5)
-#' #> [1] "#DA4E3C" "#ECA69D" "#FFFFFF" "#9C83B1" "#390963" # Expected
+#' #> [1] "#390963" "#9C84B1" "#FFFFFF" "#FDCB82" "#FB9706" # Expected
 #'
 #' color_brand_qualitative(5)
 #' #> [1] "#DA4E3C" "#390963" "#FB9706" "#DA4E3C" "#390963" # Expected

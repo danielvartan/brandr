@@ -9,22 +9,21 @@
 #'
 #' @param type (Optional) A [`character`][base::character] string indicating
 #'   the type of color scale: `"seq"`/`"sequential"`,
-#'   `"div"`/`"diverging"``, or `"qual"`/`"qualitative"` (Default: `seq`).
+#'   `"div"`/`"diverging"`, or `"qual"`/`"qualitative"` (Default: `seq`).
 #' @param alpha (Optional) A number between `0` and `1`, indicating the
 #'   transparency of the colors (Default: `NULL`).
 #' @param ... Additional arguments passed to
 #'   [`colorRampPalette()`][grDevices::colorRampPalette] when creating the
-#'   color ramp. Only valid when type is `seq` or `div`.
+#'   color ramp. Only valid when type is `"seq"` or `"div"`.
 #'
-#' @return A [`character`][base::character] vector with hexadecimal color
-#'   codes.
+#' @return A [`character`][base::character] vector with
+#'   [hexadecimal](https://en.wikipedia.org/wiki/Web_colors) color codes.
 #'
 #' @template param_n
 #' @template param_colors
 #' @template param_alpha
 #' @template param_direction
-#' @template details_options
-#' @family color functions.
+#' @family color functions
 #' @export
 #'
 #' @examples
@@ -37,7 +36,7 @@
 #' interpolate_colors(3, colors = c("red", "blue"), alpha = 0.5)
 #' #> [1] "#FF000080" "#7F007F80" "#0000FF80" # Expected
 #'
-#' # `type = "seq"` and `type = "div"` produce the same result.
+#' # `type = "seq"` and `type = "div"` produce the same result
 #' interpolate_colors(3, colors = c("red", "white", "blue"), type = "div")
 #' #> [1] "#FF0000" "#FFFFFF" "#0000FF" # Expected
 #'
@@ -134,8 +133,7 @@ interpolate_colors <- function(
 #' @template param_n
 #' @template param_colors
 #' @template param_direction
-#' @template details_options
-#' @family color functions.
+#' @family color functions
 #' @noRd
 #'
 #' @examples

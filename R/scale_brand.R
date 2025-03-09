@@ -21,10 +21,11 @@
 #'   `"div"`/`"diverging"`, or `"qual"`/`"qualitative"` (Default: `"seq"`).
 #' @param na.value (Optional) A [`character`][base::character] string
 #'   indicating the color to use for missing values. It must contain a
-#'   hexadecimal color code or one of the values in
+#'   [hexadecimal](https://en.wikipedia.org/wiki/Web_colors) color code or
+#'   one of the values output by
 #'   [`colors()`][grDevices::colors] (Default: `NA`).
-#' @param reverse (Optional) A [`logical`][base::logical] indicating whether
-#'   the legend or color bar should be reversed (Default: `FALSE`).
+#' @param reverse (Optional) A [`logical`][base::logical] flag indicating
+#'   whether the legend or color bar should be reversed (Default: `FALSE`).
 #' @param ... Additional arguments passed to the `ggplot2` scale function:
 #'   [`discrete_scale()`][ggplot2::discrete_scale],
 #'   [`continuous_scale()`][ggplot2::continuous_scale], or
@@ -34,7 +35,7 @@
 #'
 #' @template param_alpha
 #' @template param_direction
-#' @template details_options
+#' @template details_options_a
 #' @family ggplot2 functions.
 #' @export
 #'
@@ -177,17 +178,17 @@ scale_brand <- function(
   checkmate::assert_flag(reverse)
 
   if (color_type %in% c("seq", "sequential")) {
-    palette <- function(x) {
-      color_brand_sequential(x, alpha = alpha, direction = direction)
-    }
+    palette <- \(x) color_brand_sequential( #nolint
+      x, alpha = alpha, direction = direction
+    )
   } else if (color_type %in% c("div", "diverging")) {
-    palette <- function (x) {
-      color_brand_diverging(x, alpha = alpha, direction = direction)
-    }
+    palette <- \(x) color_brand_diverging( #nolint
+      x, alpha = alpha, direction = direction
+    )
   } else if (color_type %in% c("qual", "qualitative")) {
-    palette <- function(x) {
-      color_brand_qualitative(x, alpha = alpha, direction = direction)
-    }
+    palette <- \(x) color_brand_qualitative( #nolint
+      x, alpha = alpha, direction = direction
+    )
   }
 
   if (scale_type %in% c("d", "discrete")) {
@@ -226,6 +227,8 @@ scale_color_brand_d <- function(
     color_type = "qual",
     alpha = NULL,
     direction = 1,
+    na.value = NA, #nolint
+    reverse = FALSE,
     ...
   ) {
   do.call("scale_brand", grab_fun_par())
@@ -239,6 +242,8 @@ scale_color_brand_c <- function(
     color_type = "seq",
     alpha = NULL,
     direction = 1,
+    na.value = NA, #nolint
+    reverse = FALSE,
     ...
   ) {
   do.call("scale_brand", grab_fun_par())
@@ -252,6 +257,8 @@ scale_color_brand_b <- function(
     color_type = "seq",
     alpha = NULL,
     direction = 1,
+    na.value = NA, #nolint
+    reverse = FALSE,
     ...
   ) {
   do.call("scale_brand", grab_fun_par())
@@ -277,6 +284,8 @@ scale_fill_brand_d <- function(
     color_type = "qual",
     alpha = NULL,
     direction = 1,
+    na.value = NA, #nolint
+    reverse = FALSE,
     ...
   ) {
   do.call("scale_brand", grab_fun_par())
@@ -290,6 +299,8 @@ scale_fill_brand_c <- function(
     color_type = "seq",
     alpha = NULL,
     direction = 1,
+    na.value = NA, #nolint
+    reverse = FALSE,
     ...
   ) {
   do.call("scale_brand", grab_fun_par())
@@ -303,6 +314,8 @@ scale_fill_brand_b <- function(
     color_type = "seq",
     alpha = NULL,
     direction = 1,
+    na.value = NA, #nolint
+    reverse = FALSE,
     ...
   ) {
   do.call("scale_brand", grab_fun_par())

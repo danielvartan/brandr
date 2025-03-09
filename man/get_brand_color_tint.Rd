@@ -11,21 +11,20 @@ get_brand_color_tint(position = 500, color = "primary")
 the position of the brand color in the range of tints. The range of
 positions is from \code{0} to \code{1000} (Default: \code{500}).}
 
-\item{color}{A \code{\link[base:character]{character}} string indicating the name
-of a color present in the \code{color} section of the \verb{_brand.yml}
+\item{color}{(Optional) A \code{\link[base:character]{character}} string indicating
+the name of a color present in the \code{color} section of the \verb{_brand.yml}
 file (Default: \code{"primary"}).}
 }
 \value{
-A \code{\link[base:character]{character}} vector with hexadecimal color
-codes.
+A \code{\link[base:character]{character}} vector with
+\href{https://en.wikipedia.org/wiki/Web_colors}{hexadecimal} color codes.
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#maturing}{\figure{lifecycle-maturing.svg}{options: alt='[Maturing]'}}}{\strong{[Maturing]}}
 
 \code{get_brand_color_tint()} generates a range of tints (color variations) for a
 specific brand color, from black (position 0) through the brand color
-(position 500) to white (position 1000), and returns the hexadecimal color
-code at the specified position.
+(position 500) to white (position 1000).
 }
 \details{
 \subsection{Path to \verb{_brand.yml}}{
@@ -38,33 +37,6 @@ You can also set the path to the file manually using the
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{options(BRANDR_BRAND_YML = "PATH_TO_BRAND.YML")
 }\if{html}{\out{</div>}}
 }
-
-\subsection{Brand Color Scales}{
-
-To control the colors for each brand color scale, assign the desired
-hexadecimal color codes in a \code{\link[base:character]{character}} vector to the
-following options:
-\itemize{
-\item \code{BRANDR_COLOR_SEQUENTIAL}: For sequential color scales
-\item \code{BRANDR_COLOR_DIVERGING}:  For diverging color scales
-\item \code{BRANDR_COLOR_QUALITATIVE}: For qualitative color scales
-}
-
-You can use \code{\link[=get_brand_color]{get_brand_color()}} to get the hexadecimal
-color codes from the \verb{_brand.yml} file.
-
-Example:
-
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(
-  BRANDR_COLOR_SEQUENTIAL =
-    get_brand_color(c("primary", "secondary")),
-  BRANDR_COLOR_DIVERGING =
-    get_brand_color(c("primary", "white", "secondary")),
-  BRANDR_COLOR_QUALITATIVE =
-    get_brand_color(c("primary", "secondary", "tertiary"))
-)
-}\if{html}{\out{</div>}}
-}
 }
 \examples{
 seq(0, 1000, 250)
@@ -74,9 +46,9 @@ get_brand_color_tint(seq(0, 1000, 250), color = "primary")
 #> [1] "#000000" "#6D271E" "#DA4E3C" "#ECA69D" "#FFFFFF" # Expected
 }
 \seealso{
-Other utility functions.: 
+Other utility functions: 
 \code{\link{get_brand_color}()},
 \code{\link{get_brand_color_mix}()},
 \code{\link{get_brand_font}()}
 }
-\concept{utility functions.}
+\concept{utility functions}

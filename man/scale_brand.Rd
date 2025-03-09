@@ -30,6 +30,8 @@ scale_color_brand_d(
   color_type = "qual",
   alpha = NULL,
   direction = 1,
+  na.value = NA,
+  reverse = FALSE,
   ...
 )
 
@@ -39,6 +41,8 @@ scale_color_brand_c(
   color_type = "seq",
   alpha = NULL,
   direction = 1,
+  na.value = NA,
+  reverse = FALSE,
   ...
 )
 
@@ -48,6 +52,8 @@ scale_color_brand_b(
   color_type = "seq",
   alpha = NULL,
   direction = 1,
+  na.value = NA,
+  reverse = FALSE,
   ...
 )
 
@@ -57,6 +63,8 @@ scale_colour_brand_d(
   color_type = "qual",
   alpha = NULL,
   direction = 1,
+  na.value = NA,
+  reverse = FALSE,
   ...
 )
 
@@ -66,6 +74,8 @@ scale_colour_brand_c(
   color_type = "seq",
   alpha = NULL,
   direction = 1,
+  na.value = NA,
+  reverse = FALSE,
   ...
 )
 
@@ -75,6 +85,8 @@ scale_colour_brand_b(
   color_type = "seq",
   alpha = NULL,
   direction = 1,
+  na.value = NA,
+  reverse = FALSE,
   ...
 )
 
@@ -84,6 +96,8 @@ scale_fill_brand_d(
   color_type = "qual",
   alpha = NULL,
   direction = 1,
+  na.value = NA,
+  reverse = FALSE,
   ...
 )
 
@@ -93,6 +107,8 @@ scale_fill_brand_c(
   color_type = "seq",
   alpha = NULL,
   direction = 1,
+  na.value = NA,
+  reverse = FALSE,
   ...
 )
 
@@ -102,6 +118,8 @@ scale_fill_brand_b(
   color_type = "seq",
   alpha = NULL,
   direction = 1,
+  na.value = NA,
+  reverse = FALSE,
   ...
 )
 }
@@ -121,17 +139,18 @@ indicating the type of color scale: \code{"seq"}/\code{"sequential"},
 \item{alpha}{(Optional) A number between \code{0} and \code{1}, indicating the
 transparency of the colors (Default: \code{NULL}).}
 
-\item{direction}{(Optional) Sets the order of colors in the scale. If \code{1},
-colors are as output by the palette function. If \code{-1}, the order of
-colors is reversed (Default: \code{1}).}
+\item{direction}{(Optional) A number (\code{1} or \code{-1}) indicating the direction
+of the colors. If \code{1}, the order remains the same. If \code{-1}, the order is
+reversed. (Default: \code{1}).}
 
 \item{na.value}{(Optional) A \code{\link[base:character]{character}} string
 indicating the color to use for missing values. It must contain a
-hexadecimal color code or one of the values in
+\href{https://en.wikipedia.org/wiki/Web_colors}{hexadecimal} color code or
+one of the values output by
 \code{\link[grDevices:colors]{colors()}} (Default: \code{NA}).}
 
-\item{reverse}{(Optional) A \code{\link[base:logical]{logical}} indicating whether
-the legend or color bar should be reversed (Default: \code{FALSE}).}
+\item{reverse}{(Optional) A \code{\link[base:logical]{logical}} flag indicating
+whether the legend or color bar should be reversed (Default: \code{FALSE}).}
 
 \item{...}{Additional arguments passed to the \code{ggplot2} scale function:
 \code{\link[ggplot2:discrete_scale]{discrete_scale()}},
@@ -165,8 +184,8 @@ You can also set the path to the file manually using the
 \subsection{Brand Color Scales}{
 
 To control the colors for each brand color scale, assign the desired
-hexadecimal color codes in a \code{\link[base:character]{character}} vector to the
-following options:
+\href{https://en.wikipedia.org/wiki/Web_colors}{hexadecimal} color codes in a
+\code{\link[base:character]{character}} vector to the following options:
 \itemize{
 \item \code{BRANDR_COLOR_SEQUENTIAL}: For sequential color scales
 \item \code{BRANDR_COLOR_DIVERGING}:  For diverging color scales
