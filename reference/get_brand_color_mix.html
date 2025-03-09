@@ -9,7 +9,7 @@ get_brand_color_mix() mixes two specific brand colors."><meta property="og:image
 
     <a class="navbar-brand me-2" href="../index.html">brandr</a>
 
-    <small class="nav-text text-warning me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Unreleased version">0.0.0.9000</small>
+    <small class="nav-text text-warning me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,20 +66,20 @@ positions is from <code>0</code> to <code>1000</code> (Default: <code>500</code>
 
 
 <dt id="arg-color-color-">color_1, color_2<a class="anchor" aria-label="anchor" href="#arg-color-color-"></a></dt>
-<dd><p>A <code><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></code> string indicating
-the name of a color present in the <code>color</code> section of the <code>_brand.yml</code>
-file.</p></dd>
+<dd><p>(Optional) A <code><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></code> string
+indicating the name of a color present in the <code>color</code> section of the
+<code>_brand.yml</code> file (Default: <code>primary</code>, <code>secondary</code>).</p></dd>
 
 
 <dt id="arg-alpha">alpha<a class="anchor" aria-label="anchor" href="#arg-alpha"></a></dt>
-<dd><p>A number between <code>0`` and </code>1“ indicating the alpha
+<dd><p>(Optional) A number between <code>0</code> and <code>1</code> indicating the alpha
 (transparency) of the color mix (Default: <code>0.5</code>).</p></dd>
 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></code> vector with hexadecimal color
-codes.</p>
+    <p>A <code><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></code> vector with
+<a href="https://en.wikipedia.org/wiki/Web_colors" class="external-link">hexadecimal</a> color codes.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
@@ -95,32 +95,10 @@ You can also set the path to the file manually using the
 <p></p><div class="sourceCode r"><pre><code><span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span>BRANDR_BRAND_YML <span class="op">=</span> <span class="st">"PATH_TO_BRAND.YML"</span><span class="op">)</span></span></code></pre><p></p></div>
 </div>
 
-<div class="section">
-<h3 id="brand-color-scales">Brand Color Scales<a class="anchor" aria-label="anchor" href="#brand-color-scales"></a></h3>
-
-
-<p>To control the colors for each brand color scale, assign the desired
-hexadecimal color codes in a <code><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></code> vector to the
-following options:</p><ul><li><p><code>BRANDR_COLOR_SEQUENTIAL</code>: For sequential color scales</p></li>
-<li><p><code>BRANDR_COLOR_DIVERGING</code>:  For diverging color scales</p></li>
-<li><p><code>BRANDR_COLOR_QUALITATIVE</code>: For qualitative color scales</p></li>
-</ul><p>You can use <code><a href="get_brand_color.html">get_brand_color()</a></code> to get the hexadecimal
-color codes from the <code>_brand.yml</code> file.</p>
-<p>Example:</p>
-<p></p><div class="sourceCode r"><pre><code><span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span></span>
-<span>  BRANDR_COLOR_SEQUENTIAL <span class="op">=</span></span>
-<span>    <span class="fu"><a href="../reference/get_brand_color.html">get_brand_color</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"primary"</span>, <span class="st">"secondary"</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>  BRANDR_COLOR_DIVERGING <span class="op">=</span></span>
-<span>    <span class="fu"><a href="../reference/get_brand_color.html">get_brand_color</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"primary"</span>, <span class="st">"white"</span>, <span class="st">"secondary"</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>  BRANDR_COLOR_QUALITATIVE <span class="op">=</span></span>
-<span>    <span class="fu"><a href="../reference/get_brand_color.html">get_brand_color</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"primary"</span>, <span class="st">"secondary"</span>, <span class="st">"tertiary"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre><p></p></div>
-</div>
-
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p>Other utility functions.:
+    <div class="dont-index"><p>Other utility functions:
 <code><a href="get_brand_color.html">get_brand_color</a>()</code>,
 <code><a href="get_brand_color_tint.html">get_brand_color_tint</a>()</code>,
 <code><a href="get_brand_font.html">get_brand_font</a>()</code></p></div>
@@ -136,6 +114,15 @@ color codes from the <code>_brand.yml</code> file.</p>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "#8A2C50"</span>
 <span class="r-in"><span><span class="co">#&gt; [1] "#8A2C50" # Expected</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">get_brand_color_mix</span><span class="op">(</span></span></span>
+<span class="r-in"><span>  position <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">250</span>, <span class="fl">500</span>, <span class="fl">750</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  color_1 <span class="op">=</span> <span class="st">"primary"</span>,</span></span>
+<span class="r-in"><span>  color_2 <span class="op">=</span> <span class="st">"secondary"</span>,</span></span>
+<span class="r-in"><span>  alpha <span class="op">=</span> <span class="fl">0.25</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "#591E23" "#B23D46" "#D89EA2"</span>
+<span class="r-in"><span><span class="co">#&gt; [1] "#591E23" "#B23D46" "#D89EA2" # Expected</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
