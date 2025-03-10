@@ -15,18 +15,16 @@ utils::bibentry(
     )
   ),
   year = "2025",
-  url = paste0(
-    "https://danielvartan.github.io/",
-    "brandr/"
-  ),
+  publisher = "CRAN",
+  doi = "10.32614/CRAN.package.brandr",
   note = "R package",
   textVersion = paste0(
-    "Vartanian, D.", ". ",
+    "Vartanian, D", ". ",
     "(2025)", ". ",
     "{brandr}:", " ",
     "Brand identity management using brand.yml standard", ". ",
-    "R package", ". ",
-    "https://danielvartan.github.io/",
-    "brandr/"
+    "[Computer software - R package]", ". ",
+    "CRAN", ". ",
+    "https://doi.org/10.32614/CRAN.package.brandr"
   )
 )

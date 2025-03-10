@@ -10,6 +10,7 @@
 ^codecov\.yml$
 ^codemeta\.json$
 ^cran-comments\.md$
+^CRAN-SUBMISSION$
 ^data-raw$
 ^doc$
 ^docs$

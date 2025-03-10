@@ -6,6 +6,12 @@
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/brandr)](https://CRAN.R-project.org/package=brandr)
+[![CRAN
+DOI](http://img.shields.io/badge/DOI-10.32614/CRAN.package.brandr-1284C5.svg)](https://doi.org/10.32614/CRAN.package.brandr)
+[![CRAN
+downloads](https://cranlogs.r-pkg.org/badges/grand-total/brandr)](https://danielvartan.shinyapps.io/cran-logs/?package=brandr)
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)
 [![R-CMD-check.yaml](https://github.com/danielvartan/brandr/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/danielvartan/brandr/actions/workflows/check-standard.yaml)
@@ -29,12 +35,13 @@ Unlike [Posit](https://posit.co/)’s
 offers more refined control over brand assets.
 
 **Please note that `brandr` is not affiliated with
-[Posit](https://posit.co/)**.
+[Posit](https://posit.co/) or the developers of
+[brand.yml](https://posit-dev.github.io/brand-yml/).**
 
 ## Installation
 
 You can install the released version of `brandr` from
-[CRAN](https://CRAN.R-project.org) with:
+[CRAN](https://CRAN.R-project.org/package=brandr) with:
 
 ``` r
 install.packages("brandr")
@@ -52,18 +59,23 @@ remotes::install_github("danielvartan/brandr")
 `brandr` is equipped with several functions to help you use your
 `_brand.yml` file, like:
 
-- `color_brand_sequential()`, `color_brand_diverging()`,
-  `color_brand_qualitative()`: Sequential, diverging, and qualitative
-  brand color palettes
-- `scale_brand()`, `scale_color_brand_d()`, `scale_color_brand_c()`,
+- [`color_brand_sequential()`](https://danielvartan.github.io/brandr/reference/color_brand_sequential.html),
+  `color_brand_diverging()`, `color_brand_qualitative()`: Sequential,
+  diverging, and qualitative brand color palettes
+- [`scale_brand()`](https://danielvartan.github.io/brandr/reference/scale_brand.html),
+  `scale_color_brand_d()`, `scale_color_brand_c()`,
   `scale_color_brand_b()`, `scale_fill_brand_d()`,
   `scale_fill_brand_c()`, `scale_fill_brand_b()`: Discrete, continuous,
   and binned brand color scales for
   [`ggplot2`](https://ggplot2.tidyverse.org/)
-- `get_brand_color()`: Get a brand color by name (e.g., primary)
-- `get_brand_color_tint()`: Get a brand color tint
-- `get_brand_color_mix()`: Get a mix of brand colors
-- `get_brand_font()`: Get a brand font by name (e.g., headings)
+- [`get_brand_color()`](https://danielvartan.github.io/brandr/reference/get_brand_color.html):
+  Get a brand color by name (e.g., primary)
+- [`get_brand_color_tint()`](https://danielvartan.github.io/brandr/reference/get_brand_color_tint.html):
+  Get a brand color tint
+- [`get_brand_color_mix()`](https://danielvartan.github.io/brandr/reference/get_brand_color_mix.html):
+  Get a mix of brand colors
+- [`get_brand_font()`](https://danielvartan.github.io/brandr/reference/get_brand_font.html):
+  Get a brand font by name (e.g., headings)
 
 Example:
 
@@ -182,6 +194,11 @@ license](https://opensource.org/license/mit).
 Contributions are welcome, including bug reports. Take a moment to
 review the [Guidelines for
 Contributing](https://danielvartan.github.io/brandr/CONTRIBUTING.html).
+
+## Acknowledgments
+
+`brandr` brand identity is based on
+[brand.yml](https://posit-dev.github.io/brand-yml/) brand identity.
 
 <br>
 

@@ -4,7 +4,7 @@
   "identifier": "brandr",
   "description": "A system to facilitate brand identity management using the brand.yml standard, providing functions to consistently access and apply brand colors, typography, and other visual elements across your R projects.",
   "name": "brandr: Brand Identity Management Using brand.yml Standard",
-  "relatedLink": "https://danielvartan.github.io/brandr/",
+  "relatedLink": ["https://danielvartan.github.io/brandr/", "https://CRAN.R-project.org/package=brandr"],
   "codeRepository": "https://github.com/danielvartan/brandr/",
   "issueTracker": "https://github.com/danielvartan/brandr/issues/",
   "license": "https://spdx.org/licenses/MIT",
@@ -14,7 +14,13 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.4.2 (2024-10-31)",
+  "runtimePlatform": "R version 4.4.3 (2025-02-28)",
+  "provider": {
+    "@id": "https://cran.r-project.org",
+    "@type": "Organization",
+    "name": "Comprehensive R Archive Network (CRAN)",
+    "url": "https://cran.r-project.org"
+  },
   "author": [
     {
       "@type": "Person",
@@ -293,7 +299,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "605.435KB",
+  "fileSize": "606.495KB",
   "citation": [
     {
       "@type": "CreativeWork",
@@ -308,8 +314,10 @@
         }
       ],
       "name": "{brandr}: Brand identity management using brand.yml standard",
-      "url": "https://danielvartan.github.io/brandr/",
-      "description": "R package"
+      "identifier": "10.32614/CRAN.package.brandr",
+      "description": "R package",
+      "@id": "https://doi.org/10.32614/CRAN.package.brandr",
+      "sameAs": "https://doi.org/10.32614/CRAN.package.brandr"
     }
   ],
   "releaseNotes": "https://github.com/danielvartan/brandr/blob/master/NEWS.md",

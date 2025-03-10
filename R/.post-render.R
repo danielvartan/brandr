@@ -48,7 +48,7 @@ file <- here::here("DESCRIPTION")
 file |>
   readr::read_lines() |>
   stringr::str_replace_all(
-    pattern = "\\.90[0-9]{2}",
+    pattern = "\\.90[0-9]{2}(?=\\))",
     replacement = ""
   ) |>
   readr::write_lines(file)

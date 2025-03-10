@@ -9,7 +9,10 @@ type: software
 license: MIT
 title: 'brandr: Brand Identity Management Using brand.yml Standard'
 version: 0.1.0
+doi: 10.32614/CRAN.package.brandr
 identifiers:
+- type: doi
+  value: 10.32614/CRAN.package.brandr
 - type: url
   value: https://github.com/danielvartan/brandr/
 abstract: A system to facilitate brand identity management using the brand.yml standard,
@@ -29,8 +32,11 @@ preferred-citation:
     email: danvartan@gmail.com
     orcid: https://orcid.org/0000-0001-7782-759X
   year: '2025'
-  url: https://danielvartan.github.io/brandr/
+  publisher:
+    name: CRAN
+  doi: 10.32614/CRAN.package.brandr
   notes: R package
+repository: https://CRAN.R-project.org/package=brandr
 repository-code: https://github.com/danielvartan/brandr/issues/
 url: https://danielvartan.github.io/brandr/
 contact:
