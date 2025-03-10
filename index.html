@@ -79,12 +79,12 @@
 </h2>
 <p><code>brandr</code> is an R package designed to facilitate brand identity management using the <a href="https://posit-dev.github.io/brand-yml/" class="external-link">brand.yml</a> standard. It provides functions to consistently access and apply brand colors, typography, and other visual elements across your R projects.</p>
 <p>Unlike <a href="https://posit.co/" class="external-link">Posit</a>’s <a href="https://rstudio.github.io/thematic/" class="external-link"><code>thematic</code></a> package, <code>brandr</code> offers more refined control over brand assets.</p>
-<p><strong>Please note that <code>brandr</code> is not affiliated with <a href="https://posit.co/" class="external-link">Posit</a></strong>.</p>
+<p><strong>Please note that <code>brandr</code> is not affiliated with <a href="https://posit.co/" class="external-link">Posit</a> or the developers of <a href="https://posit-dev.github.io/brand-yml/" class="external-link">brand.yml</a>.</strong></p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the released version of <code>brandr</code> from <a href="https://CRAN.R-project.org" class="external-link">CRAN</a> with:</p>
+<p>You can install the released version of <code>brandr</code> from <a href="https://CRAN.R-project.org/package=brandr" class="external-link">CRAN</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"brandr"</span><span class="op">)</span></span></code></pre></div>
 <p>And the development version from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
@@ -98,18 +98,18 @@
 <p><code>brandr</code> is equipped with several functions to help you use your <code>_brand.yml</code> file, like:</p>
 <ul>
 <li>
-<code><a href="reference/color_brand_sequential.html">color_brand_sequential()</a></code>, <code><a href="reference/color_brand_sequential.html">color_brand_diverging()</a></code>, <code><a href="reference/color_brand_sequential.html">color_brand_qualitative()</a></code>: Sequential, diverging, and qualitative brand color palettes</li>
+<a href="https://danielvartan.github.io/brandr/reference/color_brand_sequential.html"><code>color_brand_sequential()</code></a>, <code><a href="reference/color_brand_sequential.html">color_brand_diverging()</a></code>, <code><a href="reference/color_brand_sequential.html">color_brand_qualitative()</a></code>: Sequential, diverging, and qualitative brand color palettes</li>
 <li>
-<code><a href="reference/scale_brand.html">scale_brand()</a></code>, <code><a href="reference/scale_brand.html">scale_color_brand_d()</a></code>, <code><a href="reference/scale_brand.html">scale_color_brand_c()</a></code>, <code><a href="reference/scale_brand.html">scale_color_brand_b()</a></code>, <code><a href="reference/scale_brand.html">scale_fill_brand_d()</a></code>, <code><a href="reference/scale_brand.html">scale_fill_brand_c()</a></code>, <code><a href="reference/scale_brand.html">scale_fill_brand_b()</a></code>: Discrete, continuous, and binned brand color scales for <a href="https://ggplot2.tidyverse.org/" class="external-link"><code>ggplot2</code></a>
+<a href="https://danielvartan.github.io/brandr/reference/scale_brand.html"><code>scale_brand()</code></a>, <code><a href="reference/scale_brand.html">scale_color_brand_d()</a></code>, <code><a href="reference/scale_brand.html">scale_color_brand_c()</a></code>, <code><a href="reference/scale_brand.html">scale_color_brand_b()</a></code>, <code><a href="reference/scale_brand.html">scale_fill_brand_d()</a></code>, <code><a href="reference/scale_brand.html">scale_fill_brand_c()</a></code>, <code><a href="reference/scale_brand.html">scale_fill_brand_b()</a></code>: Discrete, continuous, and binned brand color scales for <a href="https://ggplot2.tidyverse.org/" class="external-link"><code>ggplot2</code></a>
 </li>
 <li>
-<code><a href="reference/get_brand_color.html">get_brand_color()</a></code>: Get a brand color by name (e.g., primary)</li>
+<a href="https://danielvartan.github.io/brandr/reference/get_brand_color.html"><code>get_brand_color()</code></a>: Get a brand color by name (e.g., primary)</li>
 <li>
-<code><a href="reference/get_brand_color_tint.html">get_brand_color_tint()</a></code>: Get a brand color tint</li>
+<a href="https://danielvartan.github.io/brandr/reference/get_brand_color_tint.html"><code>get_brand_color_tint()</code></a>: Get a brand color tint</li>
 <li>
-<code><a href="reference/get_brand_color_mix.html">get_brand_color_mix()</a></code>: Get a mix of brand colors</li>
+<a href="https://danielvartan.github.io/brandr/reference/get_brand_color_mix.html"><code>get_brand_color_mix()</code></a>: Get a mix of brand colors</li>
 <li>
-<code><a href="reference/get_brand_font.html">get_brand_font()</a></code>: Get a brand font by name (e.g., headings)</li>
+<a href="https://danielvartan.github.io/brandr/reference/get_brand_font.html"><code>get_brand_font()</code></a>: Get a brand font by name (e.g., headings)</li>
 </ul>
 <p>Example:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
@@ -210,6 +210,11 @@
 <h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
 </h2>
 <p>Contributions are welcome, including bug reports. Take a moment to review the <a href="https://danielvartan.github.io/brandr/CONTRIBUTING.html">Guidelines for Contributing</a>.</p>
+</div>
+<div class="section level2">
+<h2 id="acknowledgments">Acknowledgments<a class="anchor" aria-label="anchor" href="#acknowledgments"></a>
+</h2>
+<p><code>brandr</code> brand identity is based on <a href="https://posit-dev.github.io/brand-yml/" class="external-link">brand.yml</a> brand identity.</p>
 <p><br></p>
 <p>Become a <code>brandr</code> supporter!</p>
 <p>Click <a href="https://github.com/sponsors/danielvartan" class="external-link">here</a> to make a donation. Please indicate the <code>brandr</code> package in your donation message.</p>
@@ -218,6 +223,7 @@
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
+<li><a href="https://cloud.r-project.org/package=brandr" class="external-link">View on CRAN</a></li>
 <li><a href="https://github.com/danielvartan/brandr/" class="external-link">Browse source code</a></li>
 <li><a href="https://github.com/danielvartan/brandr/issues/" class="external-link">Report a bug</a></li>
 </ul>
