@@ -16,7 +16,7 @@ source(here::here("R", ".setup.R"))
 [![CRAN status](https://www.r-pkg.org/badges/version/brandr)](https://CRAN.R-project.org/package=brandr)
 [![CRAN DOI](http://img.shields.io/badge/DOI-10.32614/CRAN.package.brandr-1284C5.svg)](https://doi.org/10.32614/CRAN.package.brandr)
 [![CRAN downloads](https://cranlogs.r-pkg.org/badges/grand-total/brandr)](https://danielvartan.shinyapps.io/cran-logs/?package=brandr)
-[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)
+[![Lifecycle: Stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R-CMD-check.yaml](https://github.com/danielvartan/brandr/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/danielvartan/brandr/actions/workflows/check-standard.yaml)
 [![Codecov test coverage](https://codecov.io/gh/danielvartan/brandr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/danielvartan/brandr?branch=main)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/license/mit)
@@ -77,6 +77,8 @@ penguins |>
       fill = "Species"
     )
 ```
+
+Click [here](https://danielvartan.github.io/brandr/) to see the full list.
 
 ## Configuration
 

@@ -2,6 +2,7 @@
 ^\.lintr$
 ^.quarto$
 ^\.Rproj\.user$
+^.vscode$
 ^_brand\.yml$
 ^_quarto\.yml$
 ^_pkgdown\.yml$

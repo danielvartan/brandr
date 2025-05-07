@@ -2,7 +2,7 @@
 #'
 #' @description
 #'
-#' `r lifecycle::badge("maturing")`
+#' `r lifecycle::badge("stable")`
 #'
 #' `color_brand_*` functions are wrappers of
 #' [`interpolate_colors()`][interpolate_colors] for sequential, diverging,

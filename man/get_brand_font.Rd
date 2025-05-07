@@ -15,7 +15,7 @@ fonts/typefaces categories present in the \code{typography} section of the
 A \code{\link[base:character]{character}} vector with fonts/typeface names.
 }
 \description{
-\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#maturing}{\figure{lifecycle-maturing.svg}{options: alt='[Maturing]'}}}{\strong{[Maturing]}}
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#stable}{\figure{lifecycle-stable.svg}{options: alt='[Stable]'}}}{\strong{[Stable]}}
 
 \code{get_brand_font()} retrieves the names of fonts/typefaces in the
 \verb{_brand.yml} file.

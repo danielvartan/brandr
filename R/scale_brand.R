@@ -2,7 +2,7 @@
 #'
 #' @description
 #'
-#' `r lifecycle::badge("maturing")`
+#' `r lifecycle::badge("stable")`
 #'
 #' `scale_*_brand_*()` functions provide color scales for
 #' [ggplot2](https://ggplot2.tidyverse.org/) based on brand colors defined

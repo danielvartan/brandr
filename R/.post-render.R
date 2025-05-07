@@ -43,35 +43,9 @@ file |>
 
 rutils::update_pkg_versions()
 
-file <- here::here("DESCRIPTION")
+# Update package year in `LICENSE`, `LICENSE.md`, and `inst/CITATION` -----
 
-file |>
-  readr::read_lines() |>
-  stringr::str_replace_all(
-    pattern = "\\.90[0-9]{2}(?=\\))",
-    replacement = ""
-  ) |>
-  readr::write_lines(file)
-
-# Update package year -----
-
-files <- c(
-  here::here("LICENSE"),
-  here::here("LICENSE.md"),
-  here::here("inst", "CITATION")
-)
-
-for (i in files) {
-  data <-
-    i |>
-    readr::read_lines() |>
-    stringr::str_replace_all(
-      pattern = "20\\d{2}",
-      replacement = as.character(Sys.Date() |> lubridate::year())
-    )
-
-  data |> readr::write_lines(i)
-}
+rutils::update_pkg_year()
 
 # Update `cffr` and `codemeta` -----
 

@@ -14,7 +14,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.4.3 (2025-02-28)",
+  "runtimePlatform": "R version 4.5.0 (2025-04-11)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -92,7 +92,7 @@
       "@type": "SoftwareApplication",
       "identifier": "knitr",
       "name": "knitr",
-      "version": ">= 1.49",
+      "version": ">= 1.50",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -157,7 +157,7 @@
       "@type": "SoftwareApplication",
       "identifier": "testthat",
       "name": "testthat",
-      "version": ">= 3.2.2",
+      "version": ">= 3.2.3",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -204,7 +204,7 @@
       "@type": "SoftwareApplication",
       "identifier": "cli",
       "name": "cli",
-      "version": ">= 3.6.3",
+      "version": ">= 3.6.5",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -269,7 +269,7 @@
       "@type": "SoftwareApplication",
       "identifier": "ggplot2",
       "name": "ggplot2",
-      "version": ">= 3.5.1",
+      "version": ">= 3.5.2",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -282,7 +282,7 @@
       "@type": "SoftwareApplication",
       "identifier": "grDevices",
       "name": "grDevices",
-      "version": ">= 4.3.0"
+      "version": ">= 4.4"
     },
     "10": {
       "@type": "SoftwareApplication",
@@ -299,7 +299,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "606.495KB",
+  "fileSize": "606.568KB",
   "citation": [
     {
       "@type": "CreativeWork",
@@ -323,6 +323,6 @@
   "releaseNotes": "https://github.com/danielvartan/brandr/blob/master/NEWS.md",
   "readme": "https://github.com/danielvartan/brandr/blob/main/README.md",
   "contIntegration": ["https://github.com/danielvartan/brandr/actions/workflows/check-standard.yaml", "https://app.codecov.io/gh/danielvartan/brandr?branch=main"],
-  "developmentStatus": ["https://www.repostatus.org/#active", "https://lifecycle.r-lib.org/articles/stages.html#maturing"],
+  "developmentStatus": ["https://www.repostatus.org/#active", "https://lifecycle.r-lib.org/articles/stages.html#stable"],
   "keywords": ["brand-identity", "brand-management", "branding", "color-palettes", "color-schemes", "r-programming", "typography", "visual-assets", "visual-identity", "branding-tools", "project-theming", "brand-yml"]
 }

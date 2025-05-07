@@ -2,7 +2,7 @@
 #'
 #' @description
 #'
-#' `r lifecycle::badge("maturing")`
+#' `r lifecycle::badge("stable")`
 #'
 #' `interpolate_colors()` interpolate colors for sequential, diverging,
 #' and qualitative color scales.
@@ -104,7 +104,7 @@ interpolate_colors <- function(
 #'
 #' @description
 #'
-#' `r lifecycle::badge("maturing")`
+#' `r lifecycle::badge("stable")`
 #'
 #' `make_color_ramp()` creates a color ramp for a given number of colors.
 #'

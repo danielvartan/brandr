@@ -13,7 +13,7 @@ DOI](http://img.shields.io/badge/DOI-10.32614/CRAN.package.brandr-1284C5.svg)](h
 [![CRAN
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/brandr)](https://danielvartan.shinyapps.io/cran-logs/?package=brandr)
 [![Lifecycle:
-maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)
+Stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R-CMD-check.yaml](https://github.com/danielvartan/brandr/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/danielvartan/brandr/actions/workflows/check-standard.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/danielvartan/brandr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/danielvartan/brandr?branch=main)
@@ -96,6 +96,9 @@ penguins |>
 ```
 
 ![](man/figures/readme-figure-1.png)
+
+Click [here](https://danielvartan.github.io/brandr/) to see the full
+list.
 
 ## Configuration
 

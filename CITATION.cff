@@ -79,10 +79,10 @@ references:
   authors:
   - family-names: Csárdi
     given-names: Gábor
-    email: csardi.gabor@gmail.com
+    email: gabor@posit.co
   year: '2025'
   doi: 10.32614/CRAN.package.cli
-  version: '>= 3.6.3'
+  version: '>= 3.6.5'
 - type: software
   title: colorspace
   abstract: 'colorspace: A Toolbox for Manipulating and Assessing Colors and Palettes'
@@ -221,7 +221,7 @@ references:
     orcid: https://orcid.org/0000-0002-9335-7468
   year: '2025'
   doi: 10.32614/CRAN.package.ggplot2
-  version: '>= 3.5.1'
+  version: '>= 3.5.2'
 - type: software
   title: grDevices
   abstract: 'R: A Language and Environment for Statistical Computing'
@@ -232,7 +232,7 @@ references:
     name: R Foundation for Statistical Computing
     address: Vienna, Austria
   year: '2025'
-  version: '>= 4.3.0'
+  version: '>= 4.4'
 - type: software
   title: yaml
   abstract: 'yaml: Methods to Convert R Data to YAML and Back'
@@ -338,7 +338,7 @@ references:
     orcid: https://orcid.org/0000-0003-0645-5666
   year: '2025'
   doi: 10.32614/CRAN.package.knitr
-  version: '>= 1.49'
+  version: '>= 1.50'
 - type: software
   title: magrittr
   abstract: 'magrittr: A Forward-Pipe Operator for R'
@@ -437,9 +437,6 @@ references:
     given-names: Jim
     email: james.hester@rstudio.com
   year: '2025'
-  identifiers:
-  - type: url
-    value: https://docs.ropensci.org/spelling/
   doi: 10.32614/CRAN.package.spelling
   version: '>= 2.3.1'
 - type: software
@@ -454,7 +451,7 @@ references:
     email: hadley@posit.co
   year: '2025'
   doi: 10.32614/CRAN.package.testthat
-  version: '>= 3.2.2'
+  version: '>= 3.2.3'
 - type: software
   title: tidyr
   abstract: 'tidyr: Tidy Messy Data'
