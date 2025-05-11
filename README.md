@@ -28,7 +28,9 @@ Unlike [Posit](https://posit.co/)’s
 [`thematic`](https://rstudio.github.io/thematic/) package, `brandr`
 offers more refined control over brand assets.
 
-> If you appreciate the project, consider giving it a star! (⭐)
+> If you find this project useful, please consider giving it a star!  
+> [![GitHub repo
+> stars](https://img.shields.io/github/stars/danielvartan/brandr)](https://github.com/danielvartan/brandr/)
 
 **Please note that `brandr` is not affiliated with
 [Posit](https://posit.co/) or the developers of
