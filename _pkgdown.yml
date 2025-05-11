@@ -55,5 +55,5 @@ authors:
     href: https://github.com/danielvartan/
 
 development:
-  mode: auto
+  mode: unreleased
   version_label: warning
