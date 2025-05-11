@@ -6,7 +6,7 @@ utils::bibentry(
     "Brand identity management using brand.yml standard"
   ),
   author = c(
-    person(
+    utils::person(
       given = "Daniel",
       family = "Vartanian",
       role = c("aut", "cre", "ccp", "cph"),
@@ -22,7 +22,7 @@ utils::bibentry(
     "Vartanian, D", ". ",
     "(2025)", ". ",
     "{brandr}:", " ",
-    "Brand identity management using brand.yml standard", ". ",
+    "Brand identity management using brand.yml standard", " ",
     "[Computer software - R package]", ". ",
     "CRAN", ". ",
     "https://doi.org/10.32614/CRAN.package.brandr"

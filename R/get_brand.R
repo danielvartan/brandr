@@ -2,8 +2,6 @@
 #'
 #' @description
 #'
-#' `r lifecycle::badge("stable")`
-#'
 #' `get_brand_color()` retrieves color codes from the `_brand.yml` file.
 #'
 #' @param color A [`character`][base::character] vector indicating the name of
@@ -90,8 +88,6 @@ get_brand_color <- function(color, alpha = NULL) {
 #'
 #' @description
 #'
-#' `r lifecycle::badge("stable")`
-#'
 #' `get_brand_color_tint()` generates a range of tints (color variations) for a
 #' specific brand color, from black (position 0) through the brand color
 #' (position 500) to white (position 1000).
@@ -133,8 +129,6 @@ get_brand_color_tint <- function(
 #' Get a mix of brand colors
 #'
 #' @description
-#'
-#' `r lifecycle::badge("stable")`
 #'
 #' `get_brand_color_mix()` mixes two specific brand colors.
 #'
@@ -188,8 +182,6 @@ get_brand_color_mix <- function(
 #' Get brand fonts/typefaces
 #'
 #' @description
-#'
-#' `r lifecycle::badge("stable")`
 #'
 #' `get_brand_font()` retrieves the names of fonts/typefaces in the
 #' `_brand.yml` file.

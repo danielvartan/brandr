@@ -20,8 +20,6 @@ A \code{\link[base:character]{character}} vector with
 \href{https://en.wikipedia.org/wiki/Web_colors}{hexadecimal} color codes.
 }
 \description{
-\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#stable}{\figure{lifecycle-stable.svg}{options: alt='[Stable]'}}}{\strong{[Stable]}}
-
 \code{get_brand_color_tint()} generates a range of tints (color variations) for a
 specific brand color, from black (position 0) through the brand color
 (position 500) to white (position 1000).

@@ -8,7 +8,7 @@ message: 'To cite package "brandr" in publications use:'
 type: software
 license: MIT
 title: 'brandr: Brand Identity Management Using brand.yml Standard'
-version: 0.1.0
+version: 0.1.0.9000
 doi: 10.32614/CRAN.package.brandr
 identifiers:
 - type: doi

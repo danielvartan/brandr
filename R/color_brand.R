@@ -2,8 +2,6 @@
 #'
 #' @description
 #'
-#' `r lifecycle::badge("stable")`
-#'
 #' `color_brand_*` functions are wrappers of
 #' [`interpolate_colors()`][interpolate_colors] for sequential, diverging,
 #' and qualitative brand color palettes. They serve as facilitators for

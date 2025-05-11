@@ -1,8 +1,3 @@
-# For detailed documentation on the format, refer to:
-#
-# - https://posit-dev.github.io/brand-yml
-# - https://quarto.org/docs/authoring/brand.html
-
 meta:
   name:
     short: "{brandr}"
@@ -17,9 +12,15 @@ meta:
 
 logo:
   images:
-    hex-logo:
-      path: man/figures/logo.svg
-      alt: "Hex logo"
+    logo:
+      path: man/figures/logo.png
+      alt: "Logo"
+    og-image:
+      path: man/figures/og-image.png
+      alt: "Open Graph Image"
+  small: logo
+  medium: logo
+  large: logo
 
 color:
   palette:
@@ -90,4 +91,3 @@ defaults:
       [data-bs-theme="dark"] pre, [data-bs-theme="dark"] code {
         color: #FFFFFF;
       }
-

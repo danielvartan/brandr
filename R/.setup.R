@@ -1,23 +1,21 @@
-## Based on: https://github.com/hadley/r4ds/blob/main/_common.R
-
 # Load packages -----
 
 # Related to './R/.post-render.R'
 library(downlit)
 library(beepr)
-library(cffr)
-library(codemetar)
-library(fs)
+# library(cffr)
+# library(codemetar)
+# library(fs)
 library(ggplot2)
-library(groomr) # https://github.com/danielvartan/groomr
-library(here)
+# library(groomr) # https://github.com/danielvartan/groomr
+# library(here)
 library(httpgd)
 library(magrittr)
 library(ragg)
-library(readr)
+# library(readr)
 library(rlang)
-library(rutils) # https://github.com/danielvartan/rutils
-library(stringr)
+# library(rutils) # https://github.com/danielvartan/rutils
+# library(stringr)
 library(showtext)
 library(sysfonts)
 library(xml2)
@@ -97,16 +95,8 @@ ggplot2::theme_set(
         family = "open-sans",
         face = "plain"
       ),
-    #   panel.background = ggplot2::element_rect(fill = "transparent"),
-    #   plot.background = ggplot2::element_rect(
-    #     fill = "transparent", color = NA
-    #   ),
       panel.grid.major = ggplot2::element_blank(),
       panel.grid.minor = ggplot2::element_blank(),
-    #   legend.background = ggplot2::element_rect(fill = "transparent"),
-    #   legend.box.background = ggplot2::element_rect(
-    #     fill = "transparent", color = NA
-    #   ),
       legend.frame = ggplot2::element_blank(),
       legend.ticks = ggplot2::element_line(color = "white")
     )

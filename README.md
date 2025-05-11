@@ -3,24 +3,18 @@
 <!-- quarto render -->
 
 <!-- badges: start -->
-[![Project Status: Active – The project has reached a stable, usable
+[![Project Status: Active - The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/brandr)](https://CRAN.R-project.org/package=brandr)
-[![CRAN
-DOI](http://img.shields.io/badge/DOI-10.32614/CRAN.package.brandr-1284C5.svg)](https://doi.org/10.32614/CRAN.package.brandr)
-[![CRAN
-downloads](https://cranlogs.r-pkg.org/badges/grand-total/brandr)](https://danielvartan.shinyapps.io/cran-logs/?package=brandr)
-[![Lifecycle:
-Stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![R-CMD-check.yaml](https://github.com/danielvartan/brandr/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/danielvartan/brandr/actions/workflows/check-standard.yaml)
-[![Codecov test
-coverage](https://codecov.io/gh/danielvartan/brandr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/danielvartan/brandr?branch=main)
+[![](https://www.r-pkg.org/badges/version/brandr)](https://cran.r-project.org/package=brandr)
+[![](https://img.shields.io/badge/doi-10.32614/CRAN.package.brandr-1284C5.svg)](https://doi.org/10.32614/CRAN.package.brandr)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/brandr)](https://cran.r-project.org/package=brandr)
+[![R build
+status](https://github.com/danielvartan/brandr/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/danielvartan/brandr/actions)
+[![](https://codecov.io/gh/danielvartan/brandr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/danielvartan/brandr)
 [![License:
-MIT](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/license/mit)
-[![Contributor
-Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)
+MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 <!-- badges: end -->
 
 ## Overview
@@ -33,6 +27,8 @@ colors, typography, and other visual elements across your R projects.
 Unlike [Posit](https://posit.co/)’s
 [`thematic`](https://rstudio.github.io/thematic/) package, `brandr`
 offers more refined control over brand assets.
+
+> If you appreciate the project, consider giving it a star! (⭐)
 
 **Please note that `brandr` is not affiliated with
 [Posit](https://posit.co/) or the developers of
@@ -187,25 +183,26 @@ theme_set(
 ## License
 
 [![License:
-MIT](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/license/mit)
+MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
 `brandr` code is released under the [MIT
 license](https://opensource.org/license/mit).
 
 ## Contributing
 
+[![](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+
 Contributions are welcome, including bug reports. Take a moment to
 review the [Guidelines for
 Contributing](https://danielvartan.github.io/brandr/CONTRIBUTING.html).
+
+[![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/danielvartan)
+
+You can also support the development of `brandr` by becoming a sponsor.
+Click [here](https://github.com/sponsors/danielvartan) to make a
+donation. Please mention `brandr` in your donation message.
 
 ## Acknowledgments
 
 `brandr` brand identity is based on
 [brand.yml](https://posit-dev.github.io/brand-yml/) brand identity.
-
-<br>
-
-Become a `brandr` supporter!
-
-Click [here](https://github.com/sponsors/danielvartan) to make a
-donation. Please indicate the `brandr` package in your donation message.

@@ -37,8 +37,6 @@ A \code{\link[base:character]{character}} vector with
 \href{https://en.wikipedia.org/wiki/Web_colors}{hexadecimal} color codes.
 }
 \description{
-\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#stable}{\figure{lifecycle-stable.svg}{options: alt='[Stable]'}}}{\strong{[Stable]}}
-
 \verb{color_brand_*} functions are wrappers of
 \code{\link[=interpolate_colors]{interpolate_colors()}} for sequential, diverging,
 and qualitative brand color palettes. They serve as facilitators for

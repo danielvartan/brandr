@@ -15,14 +15,14 @@ groomr::remove_blank_line_dups(here::here("README.md"))
 # Fix image links in `README.md` -----
 
 readme_files_dir <- here::here("README_files")
-readme_image_dir <- file.path(readme_files_dir, "figure-commonmark")
+readme_image_dir <- fs::path(readme_files_dir, "figure-commonmark")
 pkg_image_dir <- here::here("man", "figures")
 
 if (checkmate::test_directory_exists(readme_files_dir)) {
   if (checkmate::test_directory_exists(readme_image_dir)) {
     fs::dir_map(
       path = readme_image_dir,
-      \(x) fs::file_move(x, file.path(pkg_image_dir, basename(x)))
+      \(x) fs::file_move(x, fs::path(pkg_image_dir, basename(x)))
     )
   }
 

@@ -161,8 +161,6 @@ whether the legend or color bar should be reversed (Default: \code{FALSE}).}
 A \code{\link[ggplot2:continuous_scale]{ggplot2}} scale object.
 }
 \description{
-\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#stable}{\figure{lifecycle-stable.svg}{options: alt='[Stable]'}}}{\strong{[Stable]}}
-
 \verb{scale_*_brand_*()} functions provide color scales for
 \href{https://ggplot2.tidyverse.org/}{ggplot2} based on brand colors defined
 in the \verb{_brand.yml} file. These functions create discrete, continuous, or

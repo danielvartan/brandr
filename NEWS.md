@@ -1,6 +1,6 @@
-<!--- https://devguide.ropensci.org/releasing.html -->
-<!--- https://style.tidyverse.org/news.html -->
-<!--- https://semver.org/ -->
+# brandr 0.1.0.9000 Development version
+
+- Changed `brandr` logo design.
 
 # brandr 0.1.0
 
