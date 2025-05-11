@@ -1,0 +1,19 @@
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://danielvartan.github.io/brandr/dev/CODE_OF_CONDUCT.html</loc></url>
+<url><loc>https://danielvartan.github.io/brandr/dev/CONTRIBUTING.html</loc></url>
+<url><loc>https://danielvartan.github.io/brandr/dev/LICENSE-text.html</loc></url>
+<url><loc>https://danielvartan.github.io/brandr/dev/LICENSE.html</loc></url>
+<url><loc>https://danielvartan.github.io/brandr/dev/authors.html</loc></url>
+<url><loc>https://danielvartan.github.io/brandr/dev/index.html</loc></url>
+<url><loc>https://danielvartan.github.io/brandr/dev/news/index.html</loc></url>
+<url><loc>https://danielvartan.github.io/brandr/dev/reference/brandr-package.html</loc></url>
+<url><loc>https://danielvartan.github.io/brandr/dev/reference/color_brand_sequential.html</loc></url>
+<url><loc>https://danielvartan.github.io/brandr/dev/reference/get_brand_color.html</loc></url>
+<url><loc>https://danielvartan.github.io/brandr/dev/reference/get_brand_color_mix.html</loc></url>
+<url><loc>https://danielvartan.github.io/brandr/dev/reference/get_brand_color_tint.html</loc></url>
+<url><loc>https://danielvartan.github.io/brandr/dev/reference/get_brand_font.html</loc></url>
+<url><loc>https://danielvartan.github.io/brandr/dev/reference/index.html</loc></url>
+<url><loc>https://danielvartan.github.io/brandr/dev/reference/interpolate_colors.html</loc></url>
+<url><loc>https://danielvartan.github.io/brandr/dev/reference/scale_brand.html</loc></url>
+</urlset>
+
