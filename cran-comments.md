@@ -13,7 +13,7 @@
 
 ## Local Calls
 
-```
+```r
 devtools::check(remote = TRUE, manual = TRUE)
 devtools::check_mac_release()
 devtools::check_win_devel()
@@ -21,7 +21,7 @@ devtools::check_win_release()
 devtools::check_win_oldrelease()
 ```
 
-```
+```r
 lintr::lint_package()
 urlchecker::url_check()
 spelling::spell_check_package()
@@ -36,7 +36,7 @@ There were 2 NOTEs.
 
 ### Note 1
 
-```
+```text
 Possibly misspelled words in DESCRIPTION:
     yml (2:46, 14:11)
 ```
@@ -45,7 +45,7 @@ This is a false positive. The word 'yml' refers to the YAML file format.
 
 ### Note 2
 
-```
+```text
 The Title field should be in title case. Current version is:
 ‘Brand Identity Management Using brand.yml Standard’
 In title case that is:
@@ -57,25 +57,25 @@ This is a false positive. The title is correct as is, since 'brand.yml'
 
 ## `lintr` Results (Ubuntu 24.04.2 LTS)
 
-```
+```text
 ℹ No lints found.
 ```
 
 ## `urlchecker` Results (Ubuntu 24.04.2 LTS)
 
-```
+```text
 ✔ All URLs are correct!
 ```
 
 ## `spelling` Results (Ubuntu 24.04.2 LTS)
 
-```
+```text
 No spelling errors found.
 ```
 
 ## `goodpractice` Results (Ubuntu 24.04.2 LTS)
 
-```
+```text
 ♥ Huh! Super package! Keep up the striking work!
 ```
 

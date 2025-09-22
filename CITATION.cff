@@ -6,13 +6,11 @@
 cff-version: 1.2.0
 message: 'To cite package "brandr" in publications use:'
 type: software
-license: MIT
+license: GPL-3.0-or-later
 title: 'brandr: Brand Identity Management Using brand.yml Standard'
 version: 0.1.0.9000
 doi: 10.32614/CRAN.package.brandr
 identifiers:
-- type: doi
-  value: 10.32614/CRAN.package.brandr
 - type: url
   value: https://github.com/danielvartan/brandr/
 abstract: A system to facilitate brand identity management using the brand.yml standard,
@@ -35,8 +33,7 @@ preferred-citation:
   publisher:
     name: CRAN
   doi: 10.32614/CRAN.package.brandr
-  notes: R package
-repository: https://CRAN.R-project.org/package=brandr
+  notes: Computer software
 repository-code: https://github.com/danielvartan/brandr/issues/
 url: https://danielvartan.github.io/brandr/
 contact:
@@ -55,7 +52,7 @@ references:
     name: R Foundation for Statistical Computing
     address: Vienna, Austria
   year: '2025'
-  version: '>= 4.3'
+  version: '>= 4.4'
 - type: software
   title: checkmate
   abstract: 'checkmate: Fast and Versatile Argument Checks'
@@ -69,7 +66,7 @@ references:
     orcid: https://orcid.org/0000-0001-9754-0393
   year: '2025'
   doi: 10.32614/CRAN.package.checkmate
-  version: '>= 2.3.2'
+  version: '>= 2.3.3'
 - type: software
   title: cli
   abstract: 'cli: Helpers for Developing Command Line Interfaces'
@@ -159,11 +156,11 @@ references:
   authors:
   - family-names: Müller
     given-names: Kirill
-    email: krlmlr+r@mailbox.org
+    email: kirill@cynkra.com
     orcid: https://orcid.org/0000-0002-1416-3412
   year: '2025'
   doi: 10.32614/CRAN.package.here
-  version: '>= 1.0.1'
+  version: '>= 1.0.2'
 - type: software
   title: lifecycle
   abstract: 'lifecycle: Manage the Life Cycle of your Package Functions'
@@ -221,7 +218,7 @@ references:
     orcid: https://orcid.org/0000-0002-9335-7468
   year: '2025'
   doi: 10.32614/CRAN.package.ggplot2
-  version: '>= 3.5.2'
+  version: '>= 4.0.0'
 - type: software
   title: grDevices
   abstract: 'R: A Language and Environment for Statistical Computing'
@@ -292,19 +289,6 @@ references:
   doi: 10.32614/CRAN.package.bslib
   version: '>= 0.9.0'
 - type: software
-  title: covr
-  abstract: 'covr: Test Coverage for Packages'
-  notes: Suggests
-  url: https://covr.r-lib.org
-  repository: https://CRAN.R-project.org/package=covr
-  authors:
-  - family-names: Hester
-    given-names: Jim
-    email: james.f.hester@gmail.com
-  year: '2025'
-  doi: 10.32614/CRAN.package.covr
-  version: '>= 3.6.4'
-- type: software
   title: hexbin
   abstract: 'hexbin: Hexagonal Binning Routines'
   notes: Suggests
@@ -351,10 +335,10 @@ references:
     email: stefan@stefanbache.dk
   - family-names: Wickham
     given-names: Hadley
-    email: hadley@rstudio.com
+    email: hadley@posit.co
   year: '2025'
   doi: 10.32614/CRAN.package.magrittr
-  version: '>= 2.0.3'
+  version: '>= 2.0.4'
 - type: software
   title: palmerpenguins
   abstract: 'palmerpenguins: Palmer Archipelago (Antarctica) Penguin Data'
@@ -438,7 +422,7 @@ references:
     email: james.hester@rstudio.com
   year: '2025'
   doi: 10.32614/CRAN.package.spelling
-  version: '>= 2.3.1'
+  version: '>= 2.3.2'
 - type: software
   title: testthat
   abstract: 'testthat: Unit Testing for R'

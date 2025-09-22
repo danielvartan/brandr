@@ -1,8 +1,8 @@
 utils::bibentry(
-  header = "To cite {brandr} in publications use:",
+  header = "To cite brandr in publications use:",
   bibtype = "Misc",
   title = paste0(
-    "{brandr}:", " ",
+    "brandr:", " ",
     "Brand identity management using brand.yml standard"
   ),
   author = c(
@@ -17,13 +17,13 @@ utils::bibentry(
   year = "2025",
   publisher = "CRAN",
   doi = "10.32614/CRAN.package.brandr",
-  note = "R package",
+  note = "Computer software",
   textVersion = paste0(
     "Vartanian, D", ". ",
     "(2025)", ". ",
-    "{brandr}:", " ",
+    "brandr:", " ",
     "Brand identity management using brand.yml standard", " ",
-    "[Computer software - R package]", ". ",
+    "[Computer software]", ". ",
     "CRAN", ". ",
     "https://doi.org/10.32614/CRAN.package.brandr"
   )

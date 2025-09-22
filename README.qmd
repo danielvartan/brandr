@@ -8,9 +8,10 @@
 
 library(badger)
 library(brandr)
-# library(rutils) # github.com/danielvartan/rutils
+library(here)
+library(rutils) # github.com/danielvartan/rutils
 
-source(here::here("R", ".setup.R"))
+source(here("R", ".setup.R"))
 ```
 
 <!-- badges: start -->
@@ -19,37 +20,39 @@ source(here::here("R", ".setup.R"))
 #| output: asis
 
 cat(
-  badger::badge_repostatus("active"),
-  badger::badge_cran_release(),
-  badger::badge_doi(
+  badge_repostatus("active"),
+  badge_cran_release(),
+  badge_doi(
     doi = "10.32614/CRAN.package.brandr",
     color = "1284C5"
   ),
-  badger::badge_cran_download(type = "grand-total"),
-  badger::badge_github_actions(action = "R-CMD-check.yaml"),
-  badger::badge_codecov() |> rutils::shush(),
-  # badger::badge_custom(
+  badge_cran_download(type = "grand-total"),
+  badge_github_actions(action = "R-CMD-check.yaml"),
+  badge_codecov() |> rutils::shush(),
+  # paste0(
+  #   "[![",
+  #   "FAIR checklist badge",
+  #   "](",
+  #   "https://img.shields.io/badge/",
+  #   "fairsoftwarechecklist.net", "-",
+  #   "-",
+  #   "00a7d9",
+  #   ")](",
+  #   "https://fairsoftwarechecklist.net/v0.2?f=31&a=30112&i=32301&r=123",
+  #   ")"
+  # ),
+  # badge_custom(
   #   "fair--software.eu",
   #   "%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8B%20%20%E2%97%8F%20%20%E2%97%8B-",
   #   "orange",
   #   "https://fair-software.eu"
   # ),
-  # paste0(
-  #   "[![FAIR checklist badge](https://fairsoftwarechecklist.net/badge.svg)]",
-  #   "(https://fairsoftwarechecklist.net/v0.2?f=21&a=32113&i=32001&r=123)"
-  # ),
-  # badger::badge_custom( # CII Best Practices
-  #   "openssf%20best%20practices",
-  #   "Placeholder",
-  #   "orange",
-  #   "https://bestpractices.coreinfrastructure.org/"
-  # ),
-  badger::badge_license(
-    "MIT",
-    "green",
-    url = "https://choosealicense.com/licenses/mit/"
+  badge_license(
+    license = "GPLv3",
+    color = "bd0000",
+    url = "https://www.gnu.org/licenses/gpl-3.0"
   ),
-  badger::badge_custom( # Contributor Covenant
+  badge_custom( # Contributor Covenant
     "Contributor%20Covenant",
     "2.1",
     "4baaaa",
@@ -67,7 +70,10 @@ Unlike [Posit](https://posit.co/)'s [`thematic`](https://rstudio.github.io/thema
 
 > If you find this project useful, please consider giving it a star! &nbsp; [![GitHub repo stars](https://img.shields.io/github/stars/danielvartan/brandr)](https://github.com/danielvartan/brandr/)
 
-**Please note that `brandr` is not affiliated with [Posit](https://posit.co/) or the developers of [brand.yml](https://posit-dev.github.io/brand-yml/).**
+```{=gfm}
+> [!IMPORTANT]
+> `brandr` is not affiliated with [Posit](https://posit.co/) or the developers of [brand.yml](https://posit-dev.github.io/brand-yml/).
+```
 
 ## Installation
 
@@ -153,11 +159,9 @@ options(
 
 ## Setting Brand Fonts/Typefaces
 
-Currently, `brandr` does not support the use of custom fonts directly. This feature is planned for future releases.
+`brandr` does not support custom fonts directly. We recommend using Yixuan Qiu's [`showtext`](https://doi.org/10.32614/CRAN.package.showtext) R package to apply custom fonts or typefaces to your plots.
 
-In the meantime, you can use Yixuan Qiu's [`showtext`](https://doi.org/10.32614/CRAN.package.showtext) R package to apply custom fonts/typefaces to your plots.
-
-Below is an example of how to use the Google Font [Open Sans](https://fonts.google.com/specimen/Open+Sans) in all of your plots. This example assumes that the font files are located in a `ttf` folder within your project directory.
+Below is an example showing how to use the Google Font [Open Sans](https://fonts.google.com/specimen/Open+Sans) in all of your plots using [`ggplot2`](https://ggplot2.tidyverse.org/). This example assumes that the font files are located in a `ttf` folder within your project directory.
 
 ```r
 library(brandr)
@@ -197,15 +201,29 @@ theme_set(
 #| output: asis
 
 cat(
-  badger::badge_license(
-    "MIT",
-    "green",
-    url = "https://choosealicense.com/licenses/mit/"
+  badge_license(
+    license = "GPLv3",
+    color = "bd0000",
+    url = "https://www.gnu.org/licenses/gpl-3.0"
   )
 )
 ```
 
-`brandr` code is released under the [MIT license](https://opensource.org/license/mit).
+```text
+Copyright (C) 2025 Daniel Vartanian
+
+brandr is free software: you can redistribute it and/or modify it under the
+terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program. If not, see <https://www.gnu.org/licenses/>.
+```
 
 ## Contributing
 
@@ -214,7 +232,7 @@ cat(
 #| output: asis
 
 cat(
-  badger::badge_custom( # Contributor Covenant
+  badge_custom(
     "Contributor%20Covenant",
     "2.1",
     "4baaaa",
@@ -223,12 +241,14 @@ cat(
 )
 ```
 
-Contributions are welcome, including bug reports. Take a moment to review the [Guidelines for Contributing](https://danielvartan.github.io/brandr/CONTRIBUTING.html).
+Contributions are welcome! Whether you want to report bugs, suggest features, or improve the code or documentation, your input is highly valued. Please check the [issues tab](https://github.com/danielvartan/brandr/issues) for existing issues or to open a new one.
 
 [![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/danielvartan)
 
 You can also support the development of `brandr` by becoming a sponsor. Click [here](https://github.com/sponsors/danielvartan) to make a donation. Please mention `brandr` in your donation message.
 
 ## Acknowledgments
+
+`brandr` is not affiliated with [Posit](https://posit.co/) or the developers of [brand.yml](https://posit-dev.github.io/brand-yml/).
 
 `brandr` brand identity is based on [brand.yml](https://posit-dev.github.io/brand-yml/) brand identity.

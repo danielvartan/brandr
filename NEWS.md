@@ -1,6 +1,8 @@
-# brandr 0.1.0.9000 Development version
+# brandr 0.1.0.9000 (development version)
 
 - Changed `brandr` logo design.
+- Changed package license from [MIT](https://opensource.org/license/mit) to [GPLv3](https://www.gnu.org/licenses/gpl-3.0).
+- Updated the documentation.
 
 # brandr 0.1.0
 

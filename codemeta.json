@@ -7,14 +7,14 @@
   "relatedLink": "https://danielvartan.github.io/brandr/",
   "codeRepository": "https://github.com/danielvartan/brandr/",
   "issueTracker": "https://github.com/danielvartan/brandr/issues/",
-  "license": "https://spdx.org/licenses/MIT",
+  "license": "https://spdx.org/licenses/GPL-3.0",
   "version": "0.1.0.9000",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.5.0 (2025-04-11)",
+  "runtimePlatform": "R version 4.5.1 (2025-06-13)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -105,7 +105,7 @@
       "@type": "SoftwareApplication",
       "identifier": "magrittr",
       "name": "magrittr",
-      "version": ">= 2.0.3",
+      "version": ">= 2.0.4",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -144,7 +144,7 @@
       "@type": "SoftwareApplication",
       "identifier": "spelling",
       "name": "spelling",
-      "version": ">= 2.3.1",
+      "version": ">= 2.3.2",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -185,13 +185,13 @@
       "@type": "SoftwareApplication",
       "identifier": "R",
       "name": "R",
-      "version": ">= 4.3"
+      "version": ">= 4.4"
     },
     "2": {
       "@type": "SoftwareApplication",
       "identifier": "checkmate",
       "name": "checkmate",
-      "version": ">= 2.3.2",
+      "version": ">= 2.3.3",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -243,7 +243,7 @@
       "@type": "SoftwareApplication",
       "identifier": "here",
       "name": "here",
-      "version": ">= 1.0.1",
+      "version": ">= 1.0.2",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -269,7 +269,7 @@
       "@type": "SoftwareApplication",
       "identifier": "ggplot2",
       "name": "ggplot2",
-      "version": ">= 3.5.2",
+      "version": ">= 4.0.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -299,7 +299,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "634.892KB",
+  "fileSize": "634.95KB",
   "citation": [
     {
       "@type": "CreativeWork",
@@ -313,14 +313,14 @@
           "@id": "https://orcid.org/0000-0001-7782-759X"
         }
       ],
-      "name": "{brandr}: Brand identity management using brand.yml standard",
+      "name": "brandr: Brand identity management using brand.yml standard",
       "identifier": "10.32614/CRAN.package.brandr",
-      "description": "R package",
+      "description": "Computer software",
       "@id": "https://doi.org/10.32614/CRAN.package.brandr",
       "sameAs": "https://doi.org/10.32614/CRAN.package.brandr"
     }
   ],
-  "releaseNotes": "https://github.com/danielvartan/brandr/blob/master/NEWS.md",
+  "releaseNotes": "https://github.com/danielvartan/brandr/blob/main/NEWS.md",
   "readme": "https://github.com/danielvartan/brandr/blob/main/README.md",
   "contIntegration": ["https://github.com/danielvartan/brandr/actions", "https://app.codecov.io/gh/danielvartan/brandr"],
   "developmentStatus": "https://www.repostatus.org/#active",

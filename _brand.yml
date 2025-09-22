@@ -1,7 +1,7 @@
 meta:
   name:
-    short: "{brandr}"
-    long: "{brandr}: Brand Identity Management Using brand.yml Standard"
+    short: "brandr"
+    long: "brandr: Brand Identity Management Using brand.yml Standard"
   link:
     home: https://danielvartan.github.io/brandr
     github: https://github.com/danielvartan/brandr
