@@ -42,7 +42,7 @@ of the colors. If \code{1}, the order remains the same. If \code{-1}, the order 
 reversed. (Default: \code{1}).}
 
 \item{...}{Additional arguments passed to
-\code{\link[grDevices:colorRampPalette]{colorRampPalette()}} when creating the
+\code{\link[grDevices:colorRamp]{colorRampPalette()}} when creating the
 color ramp. Only valid when type is \code{"seq"} or \code{"div"}.}
 }
 \value{

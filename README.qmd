@@ -70,10 +70,7 @@ Unlike [Posit](https://posit.co/)'s [`thematic`](https://rstudio.github.io/thema
 
 > If you find this project useful, please consider giving it a star! &nbsp; [![GitHub repo stars](https://img.shields.io/github/stars/danielvartan/brandr)](https://github.com/danielvartan/brandr/)
 
-```{=gfm}
-> [!IMPORTANT]
-> `brandr` is not affiliated with [Posit](https://posit.co/) or the developers of [brand.yml](https://posit-dev.github.io/brand-yml/).
-```
+**`brandr` is not affiliated with [Posit](https://posit.co/) or the developers of [brand.yml](https://posit-dev.github.io/brand-yml/).**
 
 ## Installation
 

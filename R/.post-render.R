@@ -1,3 +1,5 @@
+# Load Packages -----
+
 library(beepr)
 library(cffr)
 library(checkmate)
@@ -44,11 +46,9 @@ file |>
 
 update_pkg_versions()
 
-# Update Package Year in `LICENSE`, `LICENSE.md`, and `inst/CITATION` -----
+# Update Package Year in `LICENSE` and `inst/CITATION` -----
 
-update_pkg_year(
-
-)
+update_pkg_year(c(here("LICENSE"), here("inst", "CITATION")))
 
 # Update `cffr` and `codemeta` -----
 

@@ -1,7 +1,4 @@
-# For detailed documentation on the format, refer to:
-#
-# - https://posit-dev.github.io/brand-yml
-# - https://quarto.org/docs/authoring/brand.html
+# assert_brand_yml (DON´T REMOVE)
 
 meta:
   name:
@@ -17,9 +14,15 @@ meta:
 
 logo:
   images:
-    hex-logo:
-      path: man/figures/logo.svg
-      alt: "Hex logo"
+    logo:
+      path: man/figures/logo.png
+      alt: "Logo"
+    og-image:
+      path: man/figures/og-image.png
+      alt: "Open Graph Image"
+  small: logo
+  medium: logo
+  large: logo
 
 color:
   palette:
@@ -68,11 +71,14 @@ typography:
   monospace:
     family: IBM Plex Mono
     size: 1em
-  # monospace-inline:
-  #   family: IBM Plex Mono
-  #   color: purple
-  #   background-color: gray-light
-  monospace-block: IBM Plex Mono
+  monospace-inline:
+    family: IBM Plex Mono
+    color: purple
+    background-color: gray-light
+  monospace-block:
+    family: IBM Plex Mono
+    line-height: 1.2
+    background-color: gray-light
 
 defaults:
   bootstrap:
@@ -87,4 +93,3 @@ defaults:
       [data-bs-theme="dark"] pre, [data-bs-theme="dark"] code {
         color: #FFFFFF;
       }
-

@@ -218,7 +218,8 @@ get_brand_font <- function(font) { #nolint
   typography_names <- brands_list$typography |> names()
 
   valid_values <- c(
-    "base", "headings", "monospace", "monospace-inline", "monospace-block"
+    "base", "headings", "monospace", "monospace-inline", "monospace-block",
+    "testthat"
   )
 
   out <- NULL
@@ -234,7 +235,7 @@ get_brand_font <- function(font) { #nolint
       )
 
       out <- c(out, NA)
-      next()
+      next
     } else if (!i %in% typography_names) {
       cli::cli_alert_warning(
         paste0(
@@ -245,7 +246,7 @@ get_brand_font <- function(font) { #nolint
       )
 
       out <- c(out, NA)
-      next()
+      next
     }
 
     j <- brands_list$typography[[i]]

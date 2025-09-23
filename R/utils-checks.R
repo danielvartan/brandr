@@ -2,7 +2,8 @@ assert_brand_yml <- function() {
   path <- getOption("BRANDR_BRAND_YML")
 
   if (is.null(path) || !test_file_exists(path)) { # mockr
-    if (!is_interactive()) { # mockr
+
+    if (isTRUE(test_r_check())) {
       path <- system.file("extdata", "_brand.yml", package = "brandr")
     } else if (!test_file_exists(here::here("_brand.yml"))) { # mockr
       cli_abort( # mockr
@@ -21,7 +22,8 @@ assert_brand_yml <- function() {
   path
 }
 
-# See https://danielvartan.github.io/prettycheck/reference/assert_color.html
+# See: https://danielvartan.github.io/prettycheck/reference/assert_color.html
+
 assert_color <- function(
     color, #nolint
     any_missing = FALSE,
@@ -58,4 +60,8 @@ assert_color <- function(
   }
 
   invisible(color)
+}
+
+test_r_check <- function(...) {
+  Sys.getenv("_R_CHECK_PACKAGE_NAME_") == "brandr"
 }

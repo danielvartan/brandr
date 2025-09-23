@@ -48,7 +48,7 @@ interpolate_colors <- function(
     direction = 1,
     ...
   ) {
-  # See https://ggplot2.tidyverse.org/reference/scale_brewer.html
+  # See: https://ggplot2.tidyverse.org/reference/scale_brewer.html
   type_choices <- c(
     "seq", "sequential",
     "div", "diverging",

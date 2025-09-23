@@ -1,18 +1,15 @@
-# (2025-03-02) You may have to install the development version of `bslib` to
-# use `_brands.yml` (`remotes::install_github("rstudio/bslib", force = TRUE)`).
-
 url: https://danielvartan.github.io/brandr/
 
 template:
   bslib:
     version: 5
-    brand: "./_brand.yml"
+    brand: "./inst/extdata/_brand.yml"
   math-rendering: mathjax
   light-switch: true
   opengraph:
     image:
       src: man/figures/og-image.png
-      alt: "{brandr} logo"
+      alt: "brandr logo"
   params:
     noindex: false
 

@@ -32,8 +32,8 @@ offers more refined control over brand assets.
 > [![GitHub repo
 > stars](https://img.shields.io/github/stars/danielvartan/brandr)](https://github.com/danielvartan/brandr/)
 
-> [!IMPORTANT]
-> `brandr` is not affiliated with [Posit](https://posit.co/) or the developers of [brand.yml](https://posit-dev.github.io/brand-yml/).
+**`brandr` is not affiliated with [Posit](https://posit.co/) or the
+developers of [brand.yml](https://posit-dev.github.io/brand-yml/).**
 
 ## Installation
 

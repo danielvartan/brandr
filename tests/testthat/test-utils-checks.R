@@ -1,37 +1,24 @@
 testthat::test_that("assert_brand_yml() | General test", {
-  option <- getOption("BRANDR_BRAND_YML")
-  sys_brand_yml <- system.file("extdata", "_brand.yml", package = "brandr")
-
-  assert_brand_yml() |> checkmate::expect_character()
-
-  options("BRANDR_BRAND_YML" = sys_brand_yml)
   assert_brand_yml() |> checkmate::expect_character()
 
   options("BRANDR_BRAND_YML" = NULL)
   testthat::local_mocked_bindings(
-    is_interactive = function(...) TRUE,
+    test_r_check = function(...) FALSE,
     test_file_exists = function(...) TRUE
   )
   assert_brand_yml() |> testthat::expect_equal(here::here("_brand.yml"))
-
-  # do.call("options", list("BRANDR_BRAND_YML" = option))
-  do.call("options", list("BRANDR_BRAND_YML" = NULL))
 })
 
 testthat::test_that("assert_brand_yml() | Error test", {
-  option <- getOption("BRANDR_BRAND_YML")
-
   # cli::cli_abort()
   options("BRANDR_BRAND_YML" = NULL)
   testthat::local_mocked_bindings(
+    test_r_check = function(...) FALSE,
     cli_abort = function(...) NULL,
     is_interactive = function(...) TRUE,
     test_file_exists = function(...) FALSE
   )
   assert_brand_yml() |> testthat::expect_null()
-
-  # do.call("options", list("BRANDR_BRAND_YML" = option))
-  do.call("options", list("BRANDR_BRAND_YML" = NULL))
 })
 
 testthat::test_that("assert_color() | General test", {
@@ -58,4 +45,8 @@ testthat::test_that("assert_color() | Error test", {
 
   # cli::cli_abort()
   assert_color("TeSt", TRUE, TRUE) |> testthat::expect_error()
+})
+
+testthat::test_that("test_r_check() | General test", {
+  test_r_check() |> checkmate::expect_flag()
 })
