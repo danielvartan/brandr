@@ -3,6 +3,7 @@
 - Changed `brandr` logo design.
 - Changed package license from [MIT](https://opensource.org/license/mit) to [GPLv3](https://www.gnu.org/licenses/gpl-3.0).
 - Fixed issue with automatic `_brand.yml` path assignment. It now correctly finds the file in the current working directory.
+- Updated the Code of Conduct to [Contributor Covenant 3.0](https://www.contributor-covenant.org/version/3/0/code_of_conduct/).
 - Updated the documentation.
 
 # brandr 0.1.0

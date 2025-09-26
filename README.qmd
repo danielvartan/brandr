@@ -22,41 +22,50 @@ source(here("R", ".setup.R"))
 cat(
   badge_repostatus("active"),
   badge_cran_release(),
-  badge_doi(
-    doi = "10.32614/CRAN.package.brandr",
-    color = "1284C5"
+  badge_custom(
+    x = "doi",
+    y = "10.32614/CRAN.package.brandr",
+    color = "1284C5",
+    url = "https://CRAN.R-project.org/package=brandr"
   ),
   badge_cran_download(type = "grand-total"),
   badge_github_actions(action = "R-CMD-check.yaml"),
   badge_codecov() |> rutils::shush(),
-  # paste0(
-  #   "[![",
-  #   "FAIR checklist badge",
-  #   "](",
-  #   "https://img.shields.io/badge/",
-  #   "fairsoftwarechecklist.net", "-",
-  #   "-",
-  #   "00a7d9",
-  #   ")](",
-  #   "https://fairsoftwarechecklist.net/v0.2?f=31&a=30112&i=32301&r=123",
-  #   ")"
-  # ),
-  # badge_custom(
-  #   "fair--software.eu",
-  #   "%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8B%20%20%E2%97%8F%20%20%E2%97%8B-",
-  #   "orange",
-  #   "https://fair-software.eu"
-  # ),
   badge_license(
     license = "GPLv3",
     color = "bd0000",
     url = "https://www.gnu.org/licenses/gpl-3.0"
   ),
-  badge_custom( # Contributor Covenant
-    "Contributor%20Covenant",
-    "2.1",
-    "4baaaa",
-    "CODE_OF_CONDUCT.md"
+  paste0(
+    "[![",
+    "FAIR checklist badge",
+    "](",
+    "https://img.shields.io/badge/",
+    "fairsoftwarechecklist.net", "-",
+    "-",
+    "00a7d9",
+    ")](",
+    "https://fairsoftwarechecklist.net/v0.2/?f=31&a=32113&i=32322&r=133",
+    ")"
+  ),
+  paste0(
+    "[![",
+    "fair-software.eu",
+    "](",
+    "https://img.shields.io/badge/",
+    "fair--software.eu", "-",
+    "%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F",
+    "-",
+    "green",
+    ")](",
+    "https://fair-software.eu",
+    ")"
+  ),
+  badge_custom(
+    x = "Contributor%20Covenant",
+    y = "3.0",
+    color = "4baaaa",
+    url = "https://www.contributor-covenant.org/version/3/0/code_of_conduct/"
   )
 )
 ```
@@ -230,10 +239,10 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 
 cat(
   badge_custom(
-    "Contributor%20Covenant",
-    "2.1",
-    "4baaaa",
-    "CODE_OF_CONDUCT.md"
+    x = "Contributor%20Covenant",
+    y = "3.0",
+    color = "4baaaa",
+    url = "https://www.contributor-covenant.org/version/3/0/code_of_conduct/"
   )
 )
 ```
