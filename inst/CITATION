@@ -16,7 +16,10 @@ utils::bibentry(
   ),
   year = "2025",
   publisher = "CRAN",
-  doi = "10.32614/CRAN.package.brandr",
+  doi = paste0(
+    "10.32614/CRAN.package.",
+    "brandr"
+  ),
   note = "Computer software",
   textVersion = paste0(
     "Vartanian, D", ". ",
