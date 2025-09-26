@@ -13,7 +13,7 @@ Authors@R: c(
 Description: A system to facilitate brand identity management using the
     brand.yml standard, providing functions to consistently access and apply
     brand colors, typography, and other visual elements across your R projects.
-License: GPL (>= 3) + file LICENSE
+License: GPL (>= 3)
 URL: https://danielvartan.github.io/brandr/,
     https://github.com/danielvartan/brandr/
 BugReports: https://github.com/danielvartan/brandr/issues/
