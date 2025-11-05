@@ -2,7 +2,6 @@ assert_brand_yml <- function() {
   path <- getOption("BRANDR_BRAND_YML")
 
   if (is.null(path) || !test_file_exists(path)) { # mockr
-
     if (isTRUE(test_r_check())) {
       path <- system.file("extdata", "_brand.yml", package = "brandr")
     } else if (!test_file_exists(here::here("_brand.yml"))) { # mockr

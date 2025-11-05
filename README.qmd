@@ -65,7 +65,8 @@ cat(
     x = "Contributor%20Covenant",
     y = "3.0",
     color = "4baaaa",
-    url = "https://www.contributor-covenant.org/version/3/0/code_of_conduct/"
+    url = "https://www.contributor-covenant.org/version/3/0/code_of_conduct/",
+    alt = "Contributor Covenant 3.0 Code of Conduct"
   )
 )
 ```
@@ -77,7 +78,7 @@ cat(
 
 Unlike [Posit](https://posit.co/)'s [`thematic`](https://rstudio.github.io/thematic/) package, `brandr` offers more refined control over brand assets.
 
-> If you find this project useful, please consider giving it a star! &nbsp; [![GitHub repo stars](https://img.shields.io/github/stars/danielvartan/brandr)](https://github.com/danielvartan/brandr/)
+> If you find this project useful, please consider giving it a star! &nbsp; [![GitHub Repository Stars](https://img.shields.io/github/stars/danielvartan/brandr)](https://github.com/danielvartan/brandr/)
 
 **`brandr` is not affiliated with [Posit](https://posit.co/) or the developers of [brand.yml](https://posit-dev.github.io/brand-yml/).**
 
@@ -242,7 +243,8 @@ cat(
     x = "Contributor%20Covenant",
     y = "3.0",
     color = "4baaaa",
-    url = "https://www.contributor-covenant.org/version/3/0/code_of_conduct/"
+    url = "https://www.contributor-covenant.org/version/3/0/code_of_conduct/",
+    alt = "Contributor Covenant 3.0 Code of Conduct"
   )
 )
 ```

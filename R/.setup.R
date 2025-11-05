@@ -7,7 +7,7 @@ library(here)
 library(knitr)
 library(magrittr)
 library(ragg)
-library(rutils) # https://github.com/danielvartan/rutils
+library(rutils) # github.com/danielvartan/rutils
 library(showtext)
 library(sysfonts)
 library(xml2)
@@ -85,7 +85,7 @@ theme_set(
   theme_bw() +
     theme(
       text = element_text(
-        color = brandr::get_brand_color("black"),
+        color = get_brand_color("black"),
         family = "open-sans",
         face = "plain"
       ),
